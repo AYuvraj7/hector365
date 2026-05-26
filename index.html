@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hector365 — Professional Digital Agency. Portfolio Websites, Business Websites, Landing Pages & Facebook Ads. Lifetime FREE hosting!">
+<title>Hector365 — Digital Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --navy: #0A1628;
+  --navy2: #0D1F3C;
+  --navy3: #112244;
+  --blue: #1E6FFF;
+  --blue2: #1558CC;
+  --blue3: #2979FF;
+  --blue-light: #E8F0FF;
+  --blue-glow: rgba(30,111,255,0.15);
+  --white: #FFFFFF;
+  --text: #FFFFFF;
+  --text2: #B0BEC5;
+  --text3: #607D8B;
+  --border: rgba(255,255,255,0.08);
+  --card: rgba(255,255,255,0.04);
+  --green: #00E676;
+  --orange: #FF6D00;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--navy); color: var(--text); overflow-x: hidden; }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 3px; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(10,22,40,0.95); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 5rem; height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+.nav-logo-box {
+  width: 40px; height: 40px; background: var(--blue);
+  border-radius: 10px; display: flex; align-items: center;
+  justify-content: center; font-weight: 900; font-size: 1.1rem; color: white;
+  box-shadow: 0 0 20px rgba(30,111,255,0.4);
+}
+.nav-logo-text { font-size: 1.3rem; font-weight: 900; color: white; letter-spacing: -0.02em; }
+.nav-logo-text span { color: var(--blue3); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+.nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text2); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--blue3); }
+.nav-cta {
+  background: var(--blue); color: white !important;
+  padding: 0.6rem 1.4rem; border-radius: 8px;
+  font-weight: 700 !important; font-size: 0.85rem !important;
+  transition: all 0.2s !important;
+}
+.nav-cta:hover { background: var(--blue3) !important; box-shadow: 0 0 20px rgba(30,111,255,0.4); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 8rem 5rem 5rem;
+  position: relative; overflow: hidden;
+  background: radial-gradient(ellipse at 70% 50%, rgba(30,111,255,0.1) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(30,111,255,0.06) 0%, transparent 50%),
+              var(--navy);
+}
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%; }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: rgba(30,111,255,0.15); border: 1px solid rgba(30,111,255,0.3);
+  color: #60A5FA; padding: 0.4rem 1rem; border-radius: 100px;
+  font-size: 0.75rem; font-weight: 700; margin-bottom: 1.5rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hero-eyebrow::before { content: '●'; font-size: 0.5rem; animation: blink 1.5s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.hero-h1 {
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 900; line-height: 1.08;
+  letter-spacing: -0.03em; margin-bottom: 1.5rem;
+}
+.hero-h1 .blue { color: var(--blue3); }
+.hero-h1 .outline {
+  -webkit-text-stroke: 2px var(--blue3);
+  color: transparent;
+}
+.hero-p { font-size: 1rem; color: var(--text2); line-height: 1.85; margin-bottom: 2.5rem; max-width: 520px; }
+.hero-p strong { color: var(--green); }
+
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.btn-glow {
+  background: var(--blue); color: white;
+  padding: 0.9rem 2rem; border-radius: 10px;
+  font-weight: 700; font-size: 0.95rem;
+  text-decoration: none; transition: all 0.3s;
+  box-shadow: 0 0 30px rgba(30,111,255,0.3);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-glow:hover { background: var(--blue3); box-shadow: 0 0 50px rgba(30,111,255,0.5); transform: translateY(-2px); }
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,0.2); color: white;
+  padding: 0.9rem 2rem; border-radius: 10px;
+  font-weight: 600; font-size: 0.95rem;
+  text-decoration: none; transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-ghost:hover { border-color: var(--blue3); color: var(--blue3); }
+
+.hero-free {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  background: rgba(0,230,118,0.08); border: 1px solid rgba(0,230,118,0.25);
+  border-radius: 12px; padding: 0.9rem 1.3rem;
+}
+.hero-free-text { font-size: 0.85rem; font-weight: 600; color: var(--green); }
+.hero-free-sub { font-size: 0.75rem; color: var(--text2); margin-top: 0.1rem; }
+
+/* HERO RIGHT CARD */
+.hero-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 2rem;
+  position: relative; overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+.hero-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--blue3), transparent);
+}
+.hero-card-badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: rgba(30,111,255,0.2); color: #60A5FA;
+  padding: 0.3rem 0.8rem; border-radius: 100px;
+  font-size: 0.7rem; font-weight: 700; margin-bottom: 1rem;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.hero-card-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.4rem; }
+.hero-card-sub { font-size: 0.82rem; color: var(--text2); margin-bottom: 1.5rem; }
+.hero-card-features { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.5rem; }
+.hcf {
+  display: flex; align-items: center; gap: 0.8rem;
+  font-size: 0.85rem; color: var(--text2);
+}
+.hcf-check {
+  width: 20px; height: 20px; min-width: 20px;
+  background: rgba(0,230,118,0.15); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.6rem; color: var(--green); font-weight: 900;
+}
+.hero-card-price {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 1.2rem; border-top: 1px solid var(--border);
+}
+.hcp-amount { font-size: 2rem; font-weight: 900; color: var(--blue3); }
+.hcp-note { font-size: 0.72rem; color: var(--text3); margin-top: 0.2rem; }
+.hcp-btn {
+  background: var(--blue); color: white;
+  padding: 0.7rem 1.4rem; border-radius: 8px;
+  font-weight: 700; font-size: 0.85rem;
+  text-decoration: none; transition: all 0.2s;
+  white-space: nowrap;
+}
+.hcp-btn:hover { background: var(--blue3); }
+
+/* Floating */
+.float-tag {
+  position: absolute;
+  background: var(--navy2); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 0.6rem 1rem;
+  font-size: 0.78rem; font-weight: 600;
+  display: flex; align-items: center; gap: 0.5rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.ft1 { top: -18px; right: 20px; color: var(--green); }
+.ft2 { bottom: -18px; left: 20px; color: #60A5FA; }
+
+/* TRUST BAR */
+.trust-bar {
+  background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 1.2rem 5rem;
+  display: flex; align-items: center; justify-content: center; gap: 4rem; flex-wrap: wrap;
+}
+.trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--text2); }
+.trust-item strong { color: white; }
+
+/* SECTIONS */
+section { padding: 7rem 5rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.sec-center { text-align: center; margin-bottom: 4rem; }
+.sec-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(30,111,255,0.15); border: 1px solid rgba(30,111,255,0.25);
+  color: #60A5FA; padding: 0.35rem 1rem; border-radius: 100px;
+  font-size: 0.72rem; font-weight: 700; margin-bottom: 1rem;
+  text-transform: uppercase; letter-spacing: 0.1em;
+}
+.sec-title { font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem; }
+.sec-title .blue { color: var(--blue3); }
+.sec-sub { font-size: 1rem; color: var(--text2); max-width: 580px; margin: 0 auto; line-height: 1.8; }
+
+/* SERVICES */
+.services-bg { background: var(--navy2); }
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.svc-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 2rem; position: relative; overflow: hidden;
+  transition: all 0.3s;
+}
+.svc-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--blue), transparent);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+}
+.svc-card:hover { border-color: rgba(30,111,255,0.3); background: rgba(30,111,255,0.05); transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+.svc-card:hover::before { transform: scaleX(1); }
+.svc-icon {
+  width: 54px; height: 54px; background: rgba(30,111,255,0.15);
+  border-radius: 14px; display: flex; align-items: center;
+  justify-content: center; font-size: 1.5rem; margin-bottom: 1.2rem;
+  border: 1px solid rgba(30,111,255,0.2);
+}
+.svc-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; }
+.svc-desc { font-size: 0.85rem; color: var(--text2); line-height: 1.7; margin-bottom: 1.2rem; }
+.svc-feats { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem; }
+.svc-feat { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--text2); }
+.svc-feat::before { content: '→'; color: var(--blue3); font-weight: 700; }
+.svc-price { font-size: 1.5rem; font-weight: 900; color: var(--blue3); border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem; }
+.svc-price span { font-size: 0.75rem; color: var(--text3); font-weight: 400; }
+
+/* FB ADS */
+.fb-card {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, #0D1F3C, #1877F2 200%);
+  border: 1px solid rgba(24,119,242,0.3);
+  border-radius: 16px; padding: 2rem;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;
+}
+.fb-left { display: flex; align-items: center; gap: 1.5rem; }
+.fb-icon { width: 60px; height: 60px; background: rgba(255,255,255,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+.fb-name { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; }
+.fb-desc { font-size: 0.85rem; color: rgba(255,255,255,0.7); max-width: 450px; margin-bottom: 0.8rem; }
+.fb-chips { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.fb-chip { background: rgba(255,255,255,0.1); padding: 0.25rem 0.8rem; border-radius: 100px; font-size: 0.75rem; }
+.fb-price { text-align: center; }
+.fb-amount { font-size: 2rem; font-weight: 900; }
+.fb-note { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-bottom: 0.8rem; }
+.fb-btn { background: white; color: #1877F2; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 700; font-size: 0.88rem; text-decoration: none; white-space: nowrap; display: inline-block; transition: all 0.2s; }
+.fb-btn:hover { background: #E3F2FD; }
+
+/* FREE SECTION */
+.free-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.free-eyebrow { font-size: 0.72rem; font-weight: 700; color: var(--green); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+.free-eyebrow::before { content: ''; width: 30px; height: 2px; background: var(--green); }
+.free-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1.2rem; }
+.free-title .green { color: var(--green); }
+.free-desc { font-size: 0.95rem; color: var(--text2); line-height: 1.85; margin-bottom: 2rem; }
+.free-points { display: flex; flex-direction: column; gap: 1rem; }
+.fp {
+  display: flex; align-items: flex-start; gap: 1rem;
+  background: rgba(0,230,118,0.05); border: 1px solid rgba(0,230,118,0.12);
+  border-radius: 12px; padding: 1.2rem;
+}
+.fp-icon { width: 36px; height: 36px; min-width: 36px; background: rgba(0,230,118,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+.fp h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.2rem; }
+.fp p { font-size: 0.8rem; color: var(--text2); line-height: 1.5; }
+
+/* COMPARISON TABLE */
+.comp-table {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; overflow: hidden;
+}
+.comp-header-row {
+  display: grid; grid-template-columns: 1fr 120px 140px;
+  padding: 1rem 1.5rem; background: rgba(30,111,255,0.1);
+  border-bottom: 1px solid var(--border);
+}
+.comp-row {
+  display: grid; grid-template-columns: 1fr 120px 140px;
+  padding: 1rem 1.5rem; border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+.comp-row:last-child { border-bottom: none; }
+.comp-feat { font-size: 0.85rem; color: var(--text2); }
+.comp-label { font-size: 0.78rem; font-weight: 700; text-align: center; }
+.comp-label.red { color: #EF5350; }
+.comp-label.green { color: var(--green); }
+.comp-val { font-size: 0.82rem; text-align: center; }
+.comp-val.red { color: #EF5350; }
+.comp-val.green { color: var(--green); font-weight: 700; }
+.comp-val.hector { background: rgba(30,111,255,0.15); padding: 0.2rem 0.6rem; border-radius: 100px; font-weight: 700; color: var(--blue3); font-size: 0.78rem; }
+
+/* PRICING */
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.pc {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 2rem; position: relative; transition: all 0.3s;
+}
+.pc:hover { border-color: rgba(30,111,255,0.3); transform: translateY(-5px); }
+.pc.popular {
+  background: linear-gradient(135deg, rgba(30,111,255,0.1), rgba(30,111,255,0.05));
+  border-color: rgba(30,111,255,0.4);
+  box-shadow: 0 0 40px rgba(30,111,255,0.15);
+  transform: scale(1.03);
+}
+.pc.popular:hover { transform: scale(1.03) translateY(-5px); }
+.pop-badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--blue); color: white;
+  padding: 0.3rem 1.2rem; border-radius: 100px;
+  font-size: 0.7rem; font-weight: 800; white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(30,111,255,0.4);
+}
+.pc-tier { font-size: 0.72rem; font-weight: 800; color: var(--text3); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.4rem; }
+.pc-name { font-size: 1.15rem; font-weight: 800; margin-bottom: 1rem; }
+.pc-price { font-size: 2.5rem; font-weight: 900; color: var(--blue3); margin-bottom: 0.3rem; }
+.pc-note { font-size: 0.75rem; color: var(--text3); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+.pc-feats { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2rem; }
+.pc-feat { display: flex; align-items: center; gap: 0.7rem; font-size: 0.83rem; color: var(--text2); }
+.pcheck { width: 18px; height: 18px; min-width: 18px; background: rgba(0,230,118,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--green); }
+.pc-btn {
+  display: block; text-align: center; padding: 0.9rem;
+  border-radius: 10px; font-weight: 700; font-size: 0.9rem;
+  text-decoration: none; transition: all 0.2s;
+}
+.pc-btn-outline { border: 1px solid rgba(30,111,255,0.4); color: var(--blue3); }
+.pc-btn-outline:hover { background: rgba(30,111,255,0.1); }
+.pc-btn-fill { background: var(--blue); color: white; box-shadow: 0 4px 20px rgba(30,111,255,0.3); }
+.pc-btn-fill:hover { background: var(--blue3); box-shadow: 0 4px 30px rgba(30,111,255,0.5); }
+
+.addon-bar {
+  margin-top: 2rem;
+  background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2);
+  border-radius: 14px; padding: 1.5rem 2rem;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+.addon-icon { font-size: 2rem; }
+.addon-title { font-size: 1rem; font-weight: 800; margin-bottom: 0.2rem; }
+.addon-sub { font-size: 0.82rem; color: var(--text2); }
+.addon-price { font-size: 1.6rem; font-weight: 900; color: #F59E0B; }
+
+/* HOW IT WORKS */
+.how-bg { background: var(--navy2); }
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; }
+.steps-grid::before {
+  content: ''; position: absolute; top: 30px; left: 10%; right: 10%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--blue), var(--blue), transparent);
+  opacity: 0.3;
+}
+.step {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 1.8rem; text-align: center; position: relative;
+  transition: all 0.3s;
+}
+.step:hover { border-color: rgba(30,111,255,0.3); transform: translateY(-4px); }
+.step-num {
+  width: 42px; height: 42px; background: var(--blue);
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-weight: 900; font-size: 0.95rem;
+  margin: 0 auto 1rem; box-shadow: 0 0 20px rgba(30,111,255,0.4);
+}
+.step-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+.step-title { font-size: 0.95rem; font-weight: 800; margin-bottom: 0.5rem; }
+.step-desc { font-size: 0.8rem; color: var(--text2); line-height: 1.6; }
+
+/* CONTACT FORM SECTION */
+.contact-bg { background: var(--navy2); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.contact-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem; }
+.contact-title .blue { color: var(--blue3); }
+.contact-sub { font-size: 0.95rem; color: var(--text2); line-height: 1.8; margin-bottom: 2rem; }
+.contact-links { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem; }
+.clink {
+  display: flex; align-items: center; gap: 1rem;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 0.9rem 1.2rem;
+  text-decoration: none; color: var(--text); transition: all 0.2s;
+}
+.clink:hover { border-color: rgba(30,111,255,0.3); background: rgba(30,111,255,0.05); }
+.clink-icon { width: 36px; height: 36px; min-width: 36px; background: rgba(30,111,255,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
+.clink span { font-size: 0.88rem; font-weight: 600; display: block; }
+.clink small { font-size: 0.75rem; color: var(--text2); }
+
+/* FORM */
+.contact-form {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 2rem;
+  position: relative; overflow: hidden;
+}
+.contact-form::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--blue3));
+}
+.form-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.4rem; }
+.form-sub { font-size: 0.8rem; color: var(--text2); margin-bottom: 1.5rem; }
+.form-group { margin-bottom: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.form-group label { font-size: 0.78rem; font-weight: 600; color: var(--text2); display: block; margin-bottom: 0.4rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border); border-radius: 8px;
+  padding: 0.75rem 1rem; color: white; font-family: inherit;
+  font-size: 0.88rem; transition: all 0.2s; outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--blue3); background: rgba(30,111,255,0.05); box-shadow: 0 0 0 3px rgba(30,111,255,0.1); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text3); }
+.form-group select option { background: var(--navy2); color: white; }
+.form-group textarea { resize: none; height: 90px; }
+.form-submit {
+  width: 100%; background: var(--blue); color: white;
+  padding: 0.9rem; border-radius: 10px; border: none;
+  font-weight: 700; font-size: 0.95rem; cursor: pointer;
+  transition: all 0.3s; font-family: inherit;
+  box-shadow: 0 4px 20px rgba(30,111,255,0.3);
+}
+.form-submit:hover { background: var(--blue3); box-shadow: 0 4px 30px rgba(30,111,255,0.5); transform: translateY(-2px); }
+.form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.form-success {
+  display: none; text-align: center; padding: 2rem;
+  background: rgba(0,230,118,0.08); border: 1px solid rgba(0,230,118,0.2);
+  border-radius: 12px; margin-top: 1rem;
+}
+.form-success h3 { color: var(--green); font-size: 1.1rem; margin-bottom: 0.5rem; }
+.form-success p { font-size: 0.85rem; color: var(--text2); }
+
+/* WA FLOAT */
+.wa-float {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+  width: 58px; height: 58px; background: #25D366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; animation: wap 2s infinite;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+}
+@keyframes wap { 0%,100%{box-shadow:0 6px 20px rgba(37,211,102,0.4)} 50%{box-shadow:0 6px 30px rgba(37,211,102,0.6),0 0 0 8px rgba(37,211,102,0.1)} }
+.wa-float:hover { transform: scale(1.1); }
+.wa-float svg { width: 28px; height: 28px; fill: white; }
+
+/* FOOTER */
+footer {
+  background: #060E1A; padding: 2rem 5rem;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+footer p { font-size: 0.8rem; color: var(--text3); }
+.footer-blue { color: var(--blue3); }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+.hero-eyebrow{animation:fadeUp 0.6s ease 0.1s both}
+.hero-h1{animation:fadeUp 0.6s ease 0.2s both}
+.hero-p{animation:fadeUp 0.6s ease 0.3s both}
+.hero-btns{animation:fadeUp 0.6s ease 0.4s both}
+.hero-free{animation:fadeUp 0.6s ease 0.5s both}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:0 1.2rem} .nav-links{display:none}
+  section{padding:4rem 1.2rem} .hero{padding:6rem 1.2rem 3rem}
+  .hero-grid,.free-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .services-grid,.pricing-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:repeat(2,1fr)} .steps-grid::before{display:none}
+  .pc.popular{transform:scale(1)} .pc.popular:hover{transform:translateY(-5px)}
+  .trust-bar{padding:1rem 1.2rem;gap:1.5rem}
+  footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem}
+  .fb-card{flex-direction:column} .addon-bar{flex-direction:column;text-align:center}
+  .form-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/918959992195" target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-box">H</div>
+    <div class="nav-logo-text">Hector<span>365</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#how">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/918959992195" target="_blank" class="nav-cta">WhatsApp →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">Madhya Pradesh's #1 Digital Agency</div>
+      <h1 class="hero-h1">
+        Grow Your<br>
+        Business <span class="blue">Online</span><br>
+        <span class="outline">Professionally</span>
+      </h1>
+      <p class="hero-p">We build stunning websites, powerful landing pages & run Facebook/Instagram Ads — so you get more clients, more calls, more growth. <strong>Lifetime FREE hosting. Zero monthly charges. Ever.</strong></p>
+      <div class="hero-btns">
+        <a href="https://wa.me/918959992195" target="_blank" class="btn-glow">📱 WhatsApp Now</a>
+        <a href="#services" class="btn-ghost">View Services →</a>
+      </div>
+      <div class="hero-free">
+        <div style="font-size:1.5rem">🎉</div>
+        <div>
+          <div class="hero-free-text">LIFETIME FREE Hosting Included!</div>
+          <div class="hero-free-sub">No yearly charges · No monthly fees · No hidden costs</div>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative; padding: 20px;">
+      <div class="float-tag ft1">✅ Delivered in 24 Hours!</div>
+      <div class="hero-card">
+        <div class="hero-card-badge">⭐ Most Popular Package</div>
+        <div class="hero-card-title">Professional Portfolio + App</div>
+        <div class="hero-card-sub">Everything you need to get noticed online</div>
+        <div class="hero-card-features">
+          <div class="hcf"><div class="hcf-check">✓</div>Beautiful Professional Website</div>
+          <div class="hcf"><div class="hcf-check">✓</div>Installable on Phone (Like an App)</div>
+          <div class="hcf"><div class="hcf-check">✓</div>Social Media Integration</div>
+          <div class="hcf"><div class="hcf-check">✓</div>WhatsApp Contact Button</div>
+          <div class="hcf"><div class="hcf-check">✓</div>FREE Hosting — Lifetime</div>
+          <div class="hcf"><div class="hcf-check">✓</div>Delivered in 48 Hours</div>
+        </div>
+        <div class="hero-card-price">
+          <div>
+            <div class="hcp-amount">₹1,999</div>
+            <div class="hcp-note">One time. No recurring charges.</div>
+          </div>
+          <a href="https://wa.me/918959992195" target="_blank" class="hcp-btn">Order Now →</a>
+        </div>
+      </div>
+      <div class="float-tag ft2">📱 Phone pe App bhi milega!</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">🌐 <strong>FREE</strong> Lifetime Hosting</div>
+  <div class="trust-item">⚡ <strong>24-48 Hr</strong> Delivery</div>
+  <div class="trust-item">📱 <strong>Mobile</strong> Friendly</div>
+  <div class="trust-item">💸 <strong>Zero</strong> Monthly Charges</div>
+  <div class="trust-item">🔄 <strong>Free</strong> Revisions</div>
+  <div class="trust-item">💬 <strong>WhatsApp</strong> Support</div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services-bg">
+  <div class="section-inner">
+    <div class="sec-center">
+      <div class="sec-badge">Our Services</div>
+      <h2 class="sec-title">Everything Your Business <span class="blue">Needs Online</span></h2>
+      <p class="sec-sub">From personal portfolios to full business websites — quality work, honest prices, lifetime free hosting.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-icon">👤</div>
+        <div class="svc-name">Portfolio Website</div>
+        <div class="svc-desc">Job seekers, students, teachers & professionals ke liye. Recruiters aur clients ke saamne ek stunning personal website se impress karo.</div>
+        <div class="svc-feats">
+          <div class="svc-feat">Name, Photo, Skills & Education</div>
+          <div class="svc-feat">Work Experience Section</div>
+          <div class="svc-feat">Contact Details</div>
+          <div class="svc-feat">Mobile Responsive Design</div>
+          <div class="svc-feat">FREE Hosting Forever</div>
+        </div>
+        <div class="svc-price">₹999 <span>one time · no yearly fee</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📱</div>
+        <div class="svc-name">Professional Portfolio + App</div>
+        <div class="svc-desc">Basic ke sab features + website phone pe app ki tarah install hogi! Social media, animations aur offline support bhi milega.</div>
+        <div class="svc-feats">
+          <div class="svc-feat">Everything in Basic +</div>
+          <div class="svc-feat">Phone pe Install (PWA App)</div>
+          <div class="svc-feat">Social Media Links</div>
+          <div class="svc-feat">Smooth Animations</div>
+          <div class="svc-feat">Offline Support</div>
+        </div>
+        <div class="svc-price">₹1,999 <span>one time · no yearly fee</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🎯</div>
+        <div class="svc-name">Landing Page</div>
+        <div class="svc-desc">Coaching classes, events, product launches ke liye. Ek focused page jo visitors ko customers mein convert kare. Facebook Ads ke liye perfect!</div>
+        <div class="svc-feats">
+          <div class="svc-feat">Single High-Converting Page</div>
+          <div class="svc-feat">WhatsApp CTA Button</div>
+          <div class="svc-feat">Testimonials Section</div>
+          <div class="svc-feat">Inquiry/Contact Form</div>
+          <div class="svc-feat">Facebook Ads Ready</div>
+        </div>
+        <div class="svc-price">₹2,499 <span>one time · no yearly fee</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏢</div>
+        <div class="svc-name">Business Website</div>
+        <div class="svc-desc">Shops, agencies, institutes & NGOs ke liye. Multi-page professional website with all sections aapke business ko online grow karne ke liye.</div>
+        <div class="svc-feats">
+          <div class="svc-feat">Multiple Pages (Home, About, Services)</div>
+          <div class="svc-feat">Gallery / Portfolio Section</div>
+          <div class="svc-feat">WhatsApp Float Button</div>
+          <div class="svc-feat">Active Contact Form</div>
+          <div class="svc-feat">FREE Hosting + Domain Setup</div>
+        </div>
+        <div class="svc-price">₹4,999 <span>one time · no yearly fee</span></div>
+      </div>
+    </div>
+    <div class="fb-card">
+      <div class="fb-left">
+        <div class="fb-icon">📢</div>
+        <div>
+          <div class="fb-name">Facebook & Instagram Ads</div>
+          <div class="fb-desc">Targeted ads jo aapke exact customers tak pahunche. Lead generation, sales, brand awareness — maximum ROI ke liye professionally manage karein.</div>
+          <div class="fb-chips">
+            <span class="fb-chip">✓ Campaign Setup</span>
+            <span class="fb-chip">✓ Target Audience</span>
+            <span class="fb-chip">✓ Creative Design</span>
+            <span class="fb-chip">✓ Performance Tracking</span>
+          </div>
+        </div>
+      </div>
+      <div class="fb-price">
+        <div class="fb-amount">₹1,999+</div>
+        <div class="fb-note">per campaign setup</div>
+        <a href="https://wa.me/918959992195" target="_blank" class="fb-btn">Get Quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE HOSTING -->
+<section>
+  <div class="section-inner">
+    <div class="free-grid">
+      <div>
+        <div class="free-eyebrow">Why Choose Hector365</div>
+        <h2 class="free-title">Lifetime <span class="green">FREE</span> Hosting —<br>Koi Yearly Charge Nahi!</h2>
+        <p class="free-desc">Doosri jagah website banwao toh hosting ke liye har saal ₹2,000–₹5,000 dene padte hain. Hector365 ke saath <strong>ek baar pay karo — LIFETIME FREE!</strong></p>
+        <div class="free-points">
+          <div class="fp">
+            <div class="fp-icon">🎉</div>
+            <div><h4>No Yearly Hosting Charges</h4><p>GitHub Pages pe free hosting — koi recurring payment nahi. Ek baar ka kaam, lifetime ka faida!</p></div>
+          </div>
+          <div class="fp">
+            <div class="fp-icon">💸</div>
+            <div><h4>No Monthly Maintenance Fee</h4><p>Website bani toh bani — hum koi monthly fee nahi lete. Updates ke liye affordable rates pe available!</p></div>
+          </div>
+          <div class="fp">
+            <div class="fp-icon">⚡</div>
+            <div><h4>Fast & Always Online</h4><p>GitHub ka reliable infrastructure — 99.9% uptime. Aapki site kabhi down nahi hogi!</p></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="comp-table">
+          <div class="comp-header-row">
+            <div style="font-size:0.8rem; font-weight:800;">Feature</div>
+            <div class="comp-label red">Others</div>
+            <div class="comp-label green">Hector365</div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-feat">Website Development</div>
+            <div class="comp-val red">₹10,000+</div>
+            <div class="comp-val hector">₹999 onwards</div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-feat">Yearly Hosting Fee</div>
+            <div class="comp-val red">₹2,000-5,000</div>
+            <div class="comp-val hector">FREE Forever</div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-feat">Monthly Maintenance</div>
+            <div class="comp-val red">₹500-2,000/mo</div>
+            <div class="comp-val hector">ZERO</div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-feat">Mobile App (PWA)</div>
+            <div class="comp-val red">❌ Extra Cost</div>
+            <div class="comp-val hector">✅ Included</div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-feat">Delivery Time</div>
+            <div class="comp-val red">7-30 days</div>
+            <div class="comp-val hector">24-48 Hours</div>
+          </div>
+          <div class="comp-row">
+            <div class="comp-feat">WhatsApp Support</div>
+            <div class="comp-val red">❌ No</div>
+            <div class="comp-val hector">✅ Direct</div>
+          </div>
+          <div class="comp-row" style="border-bottom:none;">
+            <div class="comp-feat">Contact Form Active</div>
+            <div class="comp-val red">❌ Extra</div>
+            <div class="comp-val hector">✅ Included</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="how-bg">
+  <div class="section-inner">
+    <div class="sec-center">
+      <div class="sec-badge">Pricing</div>
+      <h2 class="sec-title">Simple, <span class="blue">Honest Pricing</span></h2>
+      <p class="sec-sub">Koi hidden charges nahi. Ek baar pay karo — website lifetime chale. Hosting bilkul FREE!</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pc">
+        <div class="pc-tier">Basic</div>
+        <div class="pc-name">Portfolio Website</div>
+        <div class="pc-price">₹999</div>
+        <div class="pc-note">One time. FREE hosting lifetime. Zero yearly charges.</div>
+        <div class="pc-feats">
+          <div class="pc-feat"><div class="pcheck">✓</div>Name, Photo, Skills</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Education & Experience</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Contact Section</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Mobile Responsive</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>FREE Hosting Forever</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Delivered in 24 Hours</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>1 Free Revision</div>
+        </div>
+        <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-btn-outline">Order on WhatsApp</a>
+      </div>
+      <div class="pc popular">
+        <div class="pop-badge">⭐ Most Popular</div>
+        <div class="pc-tier">Professional</div>
+        <div class="pc-name">Portfolio + App</div>
+        <div class="pc-price">₹1,999</div>
+        <div class="pc-note">One time. FREE hosting lifetime. Zero yearly charges.</div>
+        <div class="pc-feats">
+          <div class="pc-feat"><div class="pcheck">✓</div>Everything in Basic +</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Phone pe Install (App)</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Social Media Links</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Animations & Effects</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Offline Support</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Delivered in 48 Hours</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>2 Free Revisions</div>
+        </div>
+        <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-btn-fill">Order on WhatsApp</a>
+      </div>
+      <div class="pc">
+        <div class="pc-tier">Premium</div>
+        <div class="pc-name">Business Website</div>
+        <div class="pc-price">₹4,999</div>
+        <div class="pc-note">One time. FREE hosting lifetime. Zero yearly charges.</div>
+        <div class="pc-feats">
+          <div class="pc-feat"><div class="pcheck">✓</div>Everything in Pro +</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Multiple Pages</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Services & Gallery</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>WhatsApp Float Button</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Active Contact Form</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>Delivered in 72 Hours</div>
+          <div class="pc-feat"><div class="pcheck">✓</div>3 Free Revisions</div>
+        </div>
+        <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-btn-outline">Order on WhatsApp</a>
+      </div>
+    </div>
+    <div class="addon-bar">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="addon-icon">🌐</div>
+        <div>
+          <div class="addon-title">ADD-ON: Custom Domain (.com)</div>
+          <div class="addon-sub">Apna khud ka domain lao — e.g. <strong>yourname.com</strong> — website se connect karein. Hosting still FREE!</div>
+        </div>
+      </div>
+      <div>
+        <div class="addon-price">+ ₹799/year</div>
+        <div style="font-size:0.75rem;color:var(--text3);">Domain cost only. Hosting always FREE!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner">
+    <div class="sec-center">
+      <div class="sec-badge">Our Process</div>
+      <h2 class="sec-title">How It <span class="blue">Works</span></h2>
+      <p class="sec-sub">Sirf 4 aasaan steps — 24-48 ghante mein aapki website live internet pe!</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-icon">📱</div>
+        <div class="step-title">WhatsApp Karo</div>
+        <div class="step-desc">Hume WhatsApp pe message karo — free consultation milegi!</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-icon">📋</div>
+        <div class="step-title">Details Bharo</div>
+        <div class="step-desc">Ek simple form mein apni details bharo — sirf 5 minute!</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-icon">⚡</div>
+        <div class="step-title">Website Banti Hai</div>
+        <div class="step-desc">Hum 24-48 ghante mein aapki professional website taiyar karte hain.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-icon">🎉</div>
+        <div class="step-title">Live Ho Jaao!</div>
+        <div class="step-desc">Website live! Link lo, sabko share karo — lifetime FREE!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-bg">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-title">Ready to Go <span class="blue">Online?</span></h2>
+        <p class="contact-sub">Abhi WhatsApp karo ya form bharo — 24 ghante mein aapki professional website ready hogi. Free consultation available!</p>
+        <a href="https://wa.me/918959992195" target="_blank" class="btn-glow" style="display:inline-flex; margin-bottom:2rem;">📱 WhatsApp — Free Consultation</a>
+        <div class="contact-links">
+          <a href="https://wa.me/918959992195" target="_blank" class="clink">
+            <div class="clink-icon">💬</div>
+            <div><span>WhatsApp</span><small>+91 89599 92195</small></div>
+          </a>
+          <a href="https://www.instagram.com/yuvraaj_sinhh/" target="_blank" class="clink">
+            <div class="clink-icon">📸</div>
+            <div><span>Instagram</span><small>@yuvraaj_sinhh</small></div>
+          </a>
+          <a href="https://www.facebook.com/Uv1306" target="_blank" class="clink">
+            <div class="clink-icon">📘</div>
+            <div><span>Facebook</span><small>@Uv1306</small></div>
+          </a>
+          <div class="clink" style="cursor:default;">
+            <div class="clink-icon">📍</div>
+            <div><span>Location</span><small>Anuppur, Madhya Pradesh</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIVE FORM -->
+      <div class="contact-form" id="contactFormWrap">
+        <div class="form-title">📩 Get a Free Quote</div>
+        <div class="form-sub">Fill this form — hum 2 ghante mein reply karenge!</div>
+        <form id="contactForm">
+          <input type="hidden" name="access_key" value="86431fc2-a899-4091-ad79-7c4b4e17ac2c">
+          <input type="hidden" name="subject" value="New Inquiry — Hector365 Website">
+          <input type="hidden" name="from_name" value="Hector365 Website">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Aapka Naam *</label>
+              <input type="text" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="yourname@gmail.com">
+          </div>
+          <div class="form-group">
+            <label>Service Chahiye *</label>
+            <select name="service" required>
+              <option value="" disabled selected>-- Select Service --</option>
+              <option>Portfolio Website — ₹999</option>
+              <option>Professional Portfolio + App — ₹1,999</option>
+              <option>Landing Page — ₹2,499</option>
+              <option>Business Website — ₹4,999</option>
+              <option>Facebook / Instagram Ads — ₹1,999+</option>
+              <option>Custom Domain Setup — ₹799</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message (Optional)</label>
+            <textarea name="message" placeholder="Koi specific requirement batao..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="submitBtn">🚀 Send Inquiry</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h3>✅ Inquiry Bhej Di!</h3>
+          <p>Shukriya! Hum aapko 2 ghante mein WhatsApp ya Email pe reply karenge. 😊</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span class="footer-blue">Hector365</span>. All rights reserved. Founded by Yuvraj Singh Thakur</p>
+  <p>Anuppur, Madhya Pradesh | <span class="footer-blue">wa.me/918959992195</span></p>
+</footer>
+
+<script>
+// Active Contact Form — Web3Forms
+const form = document.getElementById('contactForm');
+const btn = document.getElementById('submitBtn');
+const success = document.getElementById('formSuccess');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  btn.disabled = true;
+  btn.textContent = '⏳ Sending...';
+  const data = new FormData(form);
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    });
+    const json = await res.json();
+    if (json.success) {
+      form.style.display = 'none';
+      success.style.display = 'block';
+    } else {
+      btn.disabled = false;
+      btn.textContent = '🚀 Send Inquiry';
+      alert('Something went wrong. Please WhatsApp us directly!');
+    }
+  } catch {
+    btn.disabled = false;
+    btn.textContent = '🚀 Send Inquiry';
+    alert('Network error. Please WhatsApp us directly!');
+  }
+});
+
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.svc-card,.pc,.step,.fp,.clink,.comp-row').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
