@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0057FF">
+<meta name="theme-color" content="#0D9488">
 <meta name="description" content="Hector365 — Services. Solutions. Success. Professional Digital Agency. Websites, Landing Pages & Facebook Ads. Lifetime FREE hosting!">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -15,38 +15,40 @@
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --bg: #050D1A;
-  --bg2: #071222;
-  --bg3: #0A1830;
-  --bg4: #0D1F3C;
-  --blue: #0057FF;
-  --blue2: #0066FF;
-  --blue3: #3385FF;
-  --blue4: #66A3FF;
-  --cyan: #00D4FF;
-  --glow: rgba(0,87,255,0.2);
-  --glow2: rgba(0,212,255,0.15);
+  --bg: #FFFFFF;
+  --bg2: #F7F9F9;
+  --bg3: #EEF3F2;
+  --bg4: #E3ECEA;
+  --blue: #0D9488;
+  --blue2: #0B7A70;
+  --blue3: #14B8A6;
+  --blue4: #5EEAD4;
+  --cyan: #0D9488;
+  --glow: rgba(13,148,136,0.14);
+  --glow2: rgba(20,184,166,0.12);
   --white: #FFFFFF;
-  --text: #E8F0FF;
-  --text2: #8BA8D4;
-  --text3: #4A6A9A;
-  --border: rgba(0,87,255,0.15);
-  --border2: rgba(255,255,255,0.06);
-  --card: rgba(7,18,34,0.8);
-  --green: #00E676;
-  --silver: #C0C8D8;
+  --text: #0F1B1A;
+  --text2: #56655F;
+  --text3: #8A9893;
+  --border: rgba(13,148,136,0.18);
+  --border2: rgba(15,27,26,0.08);
+  --card: #FFFFFF;
+  --green: #16A34A;
+  --silver: #5C6B69;
+  --gold: #C9A35D;
+  --shadow: rgba(15,27,26,0.07);
 }
 html { scroll-behavior: smooth; }
 body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-track { background: var(--bg2); }
 ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 3px; }
 
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: rgba(5,13,26,0.92); backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border2);
   padding: 0 5rem; height: 70px;
   display: flex; align-items: center; justify-content: space-between;
 }
@@ -54,23 +56,23 @@ nav {
 .nav-logo img {
   width: 42px; height: 42px; border-radius: 10px;
   object-fit: cover;
-  box-shadow: 0 0 15px rgba(0,87,255,0.5);
+  box-shadow: 0 4px 16px var(--shadow);
 }
-.nav-logo-text { font-size: 1.35rem; font-weight: 900; color: white; letter-spacing: -0.02em; }
-.nav-logo-text span { color: var(--cyan); }
+.nav-logo-text { font-size: 1.35rem; font-weight: 900; color: var(--text); letter-spacing: -0.02em; }
+.nav-logo-text span { color: var(--blue); }
 .nav-tagline { font-size: 0.62rem; color: var(--text3); letter-spacing: 0.15em; text-transform: uppercase; margin-top: -2px; }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
 .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text2); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--cyan); }
+.nav-links a:hover { color: var(--blue); }
 .nav-cta {
   background: linear-gradient(135deg, var(--blue), var(--blue3));
   color: white !important; padding: 0.6rem 1.5rem;
   border-radius: 8px; font-weight: 700 !important;
-  box-shadow: 0 0 20px var(--glow);
+  box-shadow: 0 4px 16px var(--glow);
   transition: all 0.3s !important;
 }
-.nav-cta:hover { box-shadow: 0 0 35px rgba(0,87,255,0.5) !important; transform: translateY(-1px) !important; }
-.install-nav { display: none; background: rgba(0,87,255,0.15); border: 1px solid var(--border); color: var(--cyan); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+.nav-cta:hover { box-shadow: 0 6px 24px rgba(13,148,136,0.35) !important; transform: translateY(-1px) !important; }
+.install-nav { display: none; background: rgba(13,148,136,0.08); border: 1px solid var(--border); color: var(--blue); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; cursor: pointer; font-family: inherit; }
 .install-nav.show { display: block; }
 
 /* HERO */
@@ -80,8 +82,8 @@ nav {
   padding: 8rem 5rem 5rem;
   position: relative; overflow: hidden;
   background:
-    radial-gradient(ellipse at 75% 40%, rgba(0,87,255,0.12) 0%, transparent 55%),
-    radial-gradient(ellipse at 15% 70%, rgba(0,212,255,0.07) 0%, transparent 45%),
+    radial-gradient(ellipse at 75% 40%, rgba(13,148,136,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 70%, rgba(20,184,166,0.06) 0%, transparent 45%),
     var(--bg);
 }
 /* Animated grid background */
@@ -89,8 +91,8 @@ nav {
   content: '';
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(0,87,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,87,255,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(13,148,136,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13,148,136,0.05) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
 }
@@ -98,12 +100,12 @@ nav {
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 0.6rem;
-  background: rgba(0,87,255,0.12); border: 1px solid rgba(0,212,255,0.25);
-  color: var(--cyan); padding: 0.45rem 1.1rem; border-radius: 100px;
+  background: rgba(13,148,136,0.08); border: 1px solid rgba(13,148,136,0.25);
+  color: var(--blue2); padding: 0.45rem 1.1rem; border-radius: 100px;
   font-size: 0.72rem; font-weight: 700; margin-bottom: 1.5rem;
   letter-spacing: 0.1em; text-transform: uppercase;
 }
-.hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); animation: pulse-dot 1.5s infinite; }
+.hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue3); animation: pulse-dot 1.5s infinite; }
 @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
 
 .hero-h1 {
@@ -111,10 +113,10 @@ nav {
   font-weight: 900; line-height: 1.06;
   letter-spacing: -0.03em; margin-bottom: 1.5rem;
 }
-.h1-white { color: white; }
-.h1-blue { color: var(--blue3); }
-.h1-outline { -webkit-text-stroke: 2px var(--blue3); color: transparent; }
-.h1-cyan { color: var(--cyan); }
+.h1-white { color: var(--text); }
+.h1-blue { color: var(--blue2); }
+.h1-outline { -webkit-text-stroke: 2.5px var(--blue2); color: transparent; }
+.h1-cyan { color: var(--blue); }
 
 .hero-tagline {
   font-size: 0.75rem; font-weight: 700; letter-spacing: 0.25em;
@@ -132,22 +134,22 @@ nav {
   background: linear-gradient(135deg, var(--blue), var(--blue3));
   color: white; padding: 0.95rem 2.2rem; border-radius: 10px;
   font-weight: 700; font-size: 0.95rem; text-decoration: none;
-  transition: all 0.3s; box-shadow: 0 0 30px var(--glow);
+  transition: all 0.3s; box-shadow: 0 8px 24px var(--glow);
   display: inline-flex; align-items: center; gap: 0.5rem;
 }
-.btn-primary:hover { box-shadow: 0 0 50px rgba(0,87,255,0.6); transform: translateY(-3px); }
+.btn-primary:hover { box-shadow: 0 10px 32px rgba(13,148,136,0.35); transform: translateY(-3px); }
 .btn-outline {
-  border: 1px solid rgba(0,212,255,0.3); color: var(--cyan);
+  border: 1px solid rgba(13,148,136,0.3); color: var(--blue2);
   padding: 0.95rem 2.2rem; border-radius: 10px;
   font-weight: 600; font-size: 0.95rem; text-decoration: none;
   transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem;
-  background: rgba(0,212,255,0.04);
+  background: rgba(13,148,136,0.03);
 }
-.btn-outline:hover { border-color: var(--cyan); background: rgba(0,212,255,0.08); }
+.btn-outline:hover { border-color: var(--blue); background: rgba(13,148,136,0.07); }
 
 .hero-free {
   display: flex; align-items: center; gap: 1rem;
-  background: rgba(0,230,118,0.07); border: 1px solid rgba(0,230,118,0.2);
+  background: rgba(22,163,74,0.06); border: 1px solid rgba(22,163,74,0.2);
   border-radius: 12px; padding: 1rem 1.4rem;
 }
 .hero-free-icon { font-size: 1.6rem; }
@@ -160,7 +162,7 @@ nav {
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: 350px; height: 350px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,87,255,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(13,148,136,0.10) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-logo-wrap {
@@ -170,7 +172,7 @@ nav {
 .hero-logo-img {
   width: 260px; height: 260px;
   object-fit: contain;
-  filter: drop-shadow(0 0 30px rgba(0,87,255,0.5)) drop-shadow(0 0 60px rgba(0,212,255,0.2));
+  filter: drop-shadow(0 10px 40px rgba(13,148,136,0.25));
   animation: float 4s ease-in-out infinite;
 }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
@@ -178,30 +180,30 @@ nav {
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.3em;
   text-transform: uppercase; color: var(--text3); margin-top: 1.2rem;
 }
-.hero-tagline-bottom span { color: var(--blue3); }
+.hero-tagline-bottom span { color: var(--blue2); }
 
 /* FLOATING CARDS */
 .float-card {
-  position: absolute; background: var(--bg3);
-  border: 1px solid var(--border); border-radius: 12px;
+  position: absolute; background: var(--white);
+  border: 1px solid var(--border2); border-radius: 12px;
   padding: 0.7rem 1.1rem;
   display: flex; align-items: center; gap: 0.6rem;
   font-size: 0.78rem; font-weight: 600;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 32px var(--shadow);
   animation: float-card 3s ease-in-out infinite;
 }
 .float-card.fc1 { top: 10px; right: -10px; color: var(--green); animation-delay: 0s; }
-.float-card.fc2 { bottom: 30px; left: -10px; color: var(--cyan); animation-delay: 1.5s; }
+.float-card.fc2 { bottom: 30px; left: -10px; color: var(--blue2); animation-delay: 1.5s; }
 @keyframes float-card { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
 
 /* TRUST BAR */
 .trust-bar {
-  background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  background: var(--bg2); border-top: 1px solid var(--border2); border-bottom: 1px solid var(--border2);
   padding: 1.2rem 5rem;
   display: flex; align-items: center; justify-content: center; gap: 4rem; flex-wrap: wrap;
 }
 .trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--text2); }
-.trust-item strong { color: white; }
+.trust-item strong { color: var(--text); }
 
 /* SECTIONS */
 section { padding: 7rem 5rem; }
@@ -209,14 +211,14 @@ section { padding: 7rem 5rem; }
 .sec-center { text-align: center; margin-bottom: 4rem; }
 .sec-badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  background: rgba(0,87,255,0.12); border: 1px solid rgba(0,212,255,0.2);
-  color: var(--cyan); padding: 0.35rem 1rem; border-radius: 100px;
+  background: rgba(13,148,136,0.08); border: 1px solid rgba(13,148,136,0.22);
+  color: var(--blue2); padding: 0.35rem 1rem; border-radius: 100px;
   font-size: 0.7rem; font-weight: 700; margin-bottom: 1rem;
   text-transform: uppercase; letter-spacing: 0.12em;
 }
-.sec-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem; }
-.sec-title .blue { color: var(--blue3); }
-.sec-title .cyan { color: var(--cyan); }
+.sec-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--text); }
+.sec-title .blue { color: var(--blue2); }
+.sec-title .cyan { color: var(--blue); }
 .sec-sub { font-size: 0.98rem; color: var(--text2); max-width: 580px; margin: 0 auto; line-height: 1.8; }
 
 /* SERVICES */
@@ -225,11 +227,11 @@ section { padding: 7rem 5rem; }
 .svc-card {
   background: var(--card); border: 1px solid var(--border2);
   border-radius: 18px; padding: 2rem; position: relative; overflow: hidden;
-  transition: all 0.35s; backdrop-filter: blur(10px);
+  transition: all 0.35s; box-shadow: 0 2px 12px var(--shadow);
 }
 .svc-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--blue), var(--cyan), transparent);
+  background: linear-gradient(90deg, var(--blue), var(--blue3), transparent);
   transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
 }
 .svc-card::after {
@@ -238,27 +240,27 @@ section { padding: 7rem 5rem; }
   background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
   transition: all 0.4s; opacity: 0;
 }
-.svc-card:hover { border-color: rgba(0,87,255,0.35); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px var(--glow); }
+.svc-card:hover { border-color: rgba(13,148,136,0.3); transform: translateY(-6px); box-shadow: 0 20px 45px var(--shadow); }
 .svc-card:hover::before { transform: scaleX(1); }
 .svc-card:hover::after { opacity: 1; }
 .svc-icon {
-  width: 56px; height: 56px; background: rgba(0,87,255,0.12);
-  border: 1px solid rgba(0,87,255,0.2); border-radius: 14px;
+  width: 56px; height: 56px; background: rgba(13,148,136,0.08);
+  border: 1px solid rgba(13,148,136,0.18); border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.5rem; margin-bottom: 1.3rem;
 }
-.svc-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; }
+.svc-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text); }
 .svc-desc { font-size: 0.85rem; color: var(--text2); line-height: 1.75; margin-bottom: 1.2rem; }
 .svc-feats { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1.5rem; }
 .svc-feat { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--text2); }
-.svc-feat::before { content: '▸'; color: var(--cyan); font-size: 0.7rem; }
-.svc-price { font-size: 1.5rem; font-weight: 900; color: var(--blue3); border-top: 1px solid var(--border2); padding-top: 1rem; }
+.svc-feat::before { content: '▸'; color: var(--blue); font-size: 0.7rem; }
+.svc-price { font-size: 1.5rem; font-weight: 900; color: var(--blue2); border-top: 1px solid var(--border2); padding-top: 1rem; }
 .svc-price span { font-size: 0.75rem; color: var(--text3); font-weight: 400; }
 
 .fb-card {
   margin-top: 1.5rem;
-  background: linear-gradient(135deg, rgba(24,119,242,0.15), rgba(24,119,242,0.05));
-  border: 1px solid rgba(24,119,242,0.3); border-radius: 18px; padding: 2rem;
+  background: linear-gradient(135deg, rgba(24,119,242,0.06), rgba(24,119,242,0.02));
+  border: 1px solid rgba(24,119,242,0.2); border-radius: 18px; padding: 2rem;
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;
   position: relative; overflow: hidden;
 }
@@ -267,51 +269,51 @@ section { padding: 7rem 5rem; }
   background: linear-gradient(90deg, #1877F2, #4267B2, transparent);
 }
 .fb-left { display: flex; align-items: center; gap: 1.5rem; }
-.fb-icon { width: 60px; height: 60px; background: rgba(24,119,242,0.15); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 1px solid rgba(24,119,242,0.3); }
-.fb-name { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; }
+.fb-icon { width: 60px; height: 60px; background: rgba(24,119,242,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 1px solid rgba(24,119,242,0.2); }
+.fb-name { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; color: var(--text); }
 .fb-desc { font-size: 0.85rem; color: var(--text2); max-width: 430px; margin-bottom: 0.8rem; }
 .fb-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.fb-chip { background: rgba(24,119,242,0.15); border: 1px solid rgba(24,119,242,0.2); padding: 0.25rem 0.8rem; border-radius: 100px; font-size: 0.72rem; color: #90CAF9; }
+.fb-chip { background: rgba(24,119,242,0.1); border: 1px solid rgba(24,119,242,0.18); padding: 0.25rem 0.8rem; border-radius: 100px; font-size: 0.72rem; color: #1565C0; }
 .fb-price-side { text-align: center; }
-.fb-amount { font-size: 2.2rem; font-weight: 900; color: #90CAF9; }
+.fb-amount { font-size: 2.2rem; font-weight: 900; color: var(--blue2); }
 .fb-note { font-size: 0.72rem; color: var(--text3); margin-bottom: 0.8rem; }
-.fb-btn { background: #1877F2; color: white; padding: 0.75rem 1.8rem; border-radius: 10px; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: inline-block; transition: all 0.2s; white-space: nowrap; }
-.fb-btn:hover { background: #1565C0; box-shadow: 0 0 25px rgba(24,119,242,0.4); }
+.fb-btn { background: linear-gradient(135deg, var(--blue), var(--blue3)); color: white; padding: 0.75rem 1.8rem; border-radius: 10px; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: inline-block; transition: all 0.2s; white-space: nowrap; box-shadow: 0 4px 16px var(--glow); }
+.fb-btn:hover { box-shadow: 0 6px 22px rgba(13,148,136,0.3); }
 
 /* FREE SECTION */
 .free-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .free-eyebrow { font-size: 0.7rem; font-weight: 700; color: var(--green); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; }
 .free-eyebrow::before { content: ''; width: 30px; height: 2px; background: var(--green); }
-.free-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1.2rem; }
+.free-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1.2rem; color: var(--text); }
 .free-title .green { color: var(--green); }
 .free-desc { font-size: 0.95rem; color: var(--text2); line-height: 1.85; margin-bottom: 2rem; }
 .fp-list { display: flex; flex-direction: column; gap: 1rem; }
 .fp {
   display: flex; align-items: flex-start; gap: 1rem;
-  background: rgba(0,230,118,0.05); border: 1px solid rgba(0,230,118,0.12);
+  background: rgba(22,163,74,0.04); border: 1px solid rgba(22,163,74,0.15);
   border-radius: 12px; padding: 1.2rem; transition: all 0.3s;
 }
-.fp:hover { background: rgba(0,230,118,0.08); border-color: rgba(0,230,118,0.2); }
-.fp-icon { width: 38px; height: 38px; min-width: 38px; background: rgba(0,230,118,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
-.fp h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.2rem; }
+.fp:hover { background: rgba(22,163,74,0.07); border-color: rgba(22,163,74,0.25); }
+.fp-icon { width: 38px; height: 38px; min-width: 38px; background: rgba(22,163,74,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+.fp h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.2rem; color: var(--text); }
 .fp p { font-size: 0.8rem; color: var(--text2); line-height: 1.5; }
 
 .comp-box {
-  background: var(--bg3); border: 1px solid var(--border);
-  border-radius: 20px; overflow: hidden;
+  background: var(--card); border: 1px solid var(--border2);
+  border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px var(--shadow);
 }
-.comp-title-row { padding: 1rem 1.5rem; background: rgba(0,87,255,0.1); border-bottom: 1px solid var(--border); font-size: 0.85rem; font-weight: 800; }
+.comp-title-row { padding: 1rem 1.5rem; background: rgba(13,148,136,0.06); border-bottom: 1px solid var(--border2); font-size: 0.85rem; font-weight: 800; color: var(--text); }
 .comp-head { display: grid; grid-template-columns: 1fr 110px 140px; padding: 0.8rem 1.5rem; border-bottom: 1px solid var(--border2); }
 .comp-row { display: grid; grid-template-columns: 1fr 110px 140px; padding: 0.9rem 1.5rem; border-bottom: 1px solid var(--border2); align-items: center; }
 .comp-row:last-child { border-bottom: none; }
 .comp-feat { font-size: 0.83rem; color: var(--text2); }
 .clabel { font-size: 0.75rem; font-weight: 700; text-align: center; }
-.clabel.red { color: #EF5350; }
+.clabel.red { color: #DC2626; }
 .clabel.green { color: var(--green); }
 .cval { font-size: 0.8rem; text-align: center; }
-.cval.red { color: #EF5350; }
+.cval.red { color: #DC2626; }
 .cval.green { color: var(--green); font-weight: 700; }
-.cval.h365 { background: rgba(0,87,255,0.15); color: var(--cyan); font-weight: 700; font-size: 0.75rem; padding: 0.2rem 0.7rem; border-radius: 100px; display: inline-block; }
+.cval.h365 { background: rgba(13,148,136,0.1); color: var(--blue2); font-weight: 700; font-size: 0.75rem; padding: 0.2rem 0.7rem; border-radius: 100px; display: inline-block; }
 
 /* PRICING */
 .pricing-bg { background: var(--bg2); }
@@ -319,124 +321,126 @@ section { padding: 7rem 5rem; }
 .pc {
   background: var(--card); border: 1px solid var(--border2);
   border-radius: 20px; padding: 2rem; position: relative;
-  transition: all 0.3s; backdrop-filter: blur(10px);
+  transition: all 0.3s; box-shadow: 0 2px 14px var(--shadow);
 }
-.pc:hover { border-color: var(--border); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+.pc:hover { border-color: var(--border); transform: translateY(-5px); box-shadow: 0 20px 40px var(--shadow); }
 .pc.hot {
-  background: linear-gradient(135deg, rgba(0,87,255,0.12), rgba(0,87,255,0.06));
-  border-color: rgba(0,87,255,0.4);
-  box-shadow: 0 0 40px rgba(0,87,255,0.15);
+  background: linear-gradient(135deg, rgba(13,148,136,0.06), rgba(13,148,136,0.02));
+  border-color: rgba(13,148,136,0.35);
+  box-shadow: 0 8px 30px rgba(13,148,136,0.12);
   transform: scale(1.04);
 }
 .pc.hot:hover { transform: scale(1.04) translateY(-5px); }
 .hot-badge {
   position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  background: linear-gradient(135deg, var(--blue), var(--blue3));
   color: white; padding: 0.3rem 1.2rem; border-radius: 100px;
   font-size: 0.68rem; font-weight: 800; white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(0,87,255,0.4);
+  box-shadow: 0 4px 15px rgba(13,148,136,0.35);
 }
 .pc-tier { font-size: 0.68rem; font-weight: 800; color: var(--text3); text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 0.4rem; }
-.pc-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; }
-.pc-price { font-size: 2.5rem; font-weight: 900; color: var(--blue3); line-height: 1; margin-bottom: 0.3rem; }
+.pc-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; color: var(--text); }
+.pc-price { font-size: 2.5rem; font-weight: 900; color: var(--blue2); line-height: 1; margin-bottom: 0.3rem; }
 .pc-note { font-size: 0.72rem; color: var(--text3); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border2); }
 .pc-feats { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2rem; }
 .pcf { display: flex; align-items: center; gap: 0.7rem; font-size: 0.83rem; color: var(--text2); }
-.pck { width: 18px; height: 18px; min-width: 18px; background: rgba(0,230,118,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--green); }
+.pck { width: 18px; height: 18px; min-width: 18px; background: rgba(22,163,74,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--green); }
 .pc-btn {
   display: block; text-align: center; padding: 0.9rem;
   border-radius: 10px; font-weight: 700; font-size: 0.9rem;
   text-decoration: none; transition: all 0.2s;
 }
-.pc-ghost { border: 1px solid var(--border); color: var(--blue3); }
-.pc-ghost:hover { border-color: var(--blue3); background: rgba(0,87,255,0.08); }
+.pc-ghost { border: 1px solid var(--border); color: var(--blue2); }
+.pc-ghost:hover { border-color: var(--blue3); background: rgba(13,148,136,0.06); }
 .pc-solid {
   background: linear-gradient(135deg, var(--blue), var(--blue3));
   color: white; box-shadow: 0 4px 20px var(--glow);
 }
-.pc-solid:hover { box-shadow: 0 4px 30px rgba(0,87,255,0.5); }
+.pc-solid:hover { box-shadow: 0 6px 28px rgba(13,148,136,0.3); }
 
 .addon-bar {
-  margin-top: 2rem; background: rgba(255,165,0,0.06);
-  border: 1px solid rgba(255,165,0,0.2); border-radius: 14px;
+  margin-top: 2rem; background: rgba(201,163,93,0.07);
+  border: 1px solid rgba(201,163,93,0.25); border-radius: 14px;
   padding: 1.5rem 2rem; display: flex; align-items: center;
   justify-content: space-between; flex-wrap: wrap; gap: 1rem;
 }
 .addon-icon { font-size: 2rem; }
-.addon-title { font-size: 1rem; font-weight: 800; margin-bottom: 0.2rem; }
+.addon-title { font-size: 1rem; font-weight: 800; margin-bottom: 0.2rem; color: var(--text); }
 .addon-sub { font-size: 0.82rem; color: var(--text2); }
-.addon-price { font-size: 1.6rem; font-weight: 900; color: #FFA726; }
+.addon-price { font-size: 1.6rem; font-weight: 900; color: #B8860B; }
 .addon-sub2 { font-size: 0.72rem; color: var(--text3); }
 
 /* HOW */
 .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; }
 .steps-grid::before {
   content: ''; position: absolute; top: 38px; left: 12%; right: 12%;
-  height: 1px; background: linear-gradient(90deg, transparent, var(--blue), var(--cyan), var(--blue), transparent);
-  opacity: 0.3;
+  height: 1px; background: linear-gradient(90deg, transparent, var(--blue), var(--blue3), var(--blue), transparent);
+  opacity: 0.25;
 }
 .step {
-  background: var(--bg3); border: 1px solid var(--border2);
+  background: var(--card); border: 1px solid var(--border2);
   border-radius: 16px; padding: 2rem 1.5rem; text-align: center;
-  position: relative; transition: all 0.3s;
+  position: relative; transition: all 0.3s; box-shadow: 0 2px 12px var(--shadow);
 }
-.step:hover { border-color: var(--border); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+.step:hover { border-color: var(--border); transform: translateY(-5px); box-shadow: 0 16px 36px var(--shadow); }
 .step-num {
   width: 44px; height: 44px; margin: 0 auto 1rem;
   background: linear-gradient(135deg, var(--blue), var(--blue3));
   border-radius: 50%; display: flex; align-items: center;
   justify-content: center; font-weight: 900; font-size: 1rem;
-  box-shadow: 0 0 20px var(--glow);
+  color: white; box-shadow: 0 6px 18px var(--glow);
 }
 .step-icon { font-size: 2rem; margin-bottom: 0.8rem; }
-.step-title { font-size: 0.95rem; font-weight: 800; margin-bottom: 0.5rem; }
+.step-title { font-size: 0.95rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text); }
 .step-desc { font-size: 0.8rem; color: var(--text2); line-height: 1.65; }
 
 /* CONTACT */
 .contact-bg { background: var(--bg2); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-.contact-logo { width: 80px; margin-bottom: 1.5rem; filter: drop-shadow(0 0 15px rgba(0,87,255,0.4)); }
-.contact-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem; }
-.contact-title .cyan { color: var(--cyan); }
+.contact-logo { width: 80px; margin-bottom: 1.5rem; filter: drop-shadow(0 6px 18px rgba(13,148,136,0.25)); }
+.contact-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--text); }
+.contact-title .cyan { color: var(--blue); }
 .contact-sub { font-size: 0.95rem; color: var(--text2); line-height: 1.85; margin-bottom: 2rem; }
 .clinks { display: flex; flex-direction: column; gap: 0.8rem; }
 .clink {
   display: flex; align-items: center; gap: 1rem;
-  background: var(--bg3); border: 1px solid var(--border2);
+  background: var(--card); border: 1px solid var(--border2);
   border-radius: 12px; padding: 0.9rem 1.2rem;
   text-decoration: none; color: var(--text); transition: all 0.25s;
+  box-shadow: 0 2px 10px var(--shadow);
 }
-.clink:hover { border-color: var(--border); background: rgba(0,87,255,0.06); }
-.clink-icon { width: 36px; height: 36px; min-width: 36px; background: rgba(0,87,255,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
+.clink:hover { border-color: var(--border); background: rgba(13,148,136,0.04); }
+.clink-icon { width: 36px; height: 36px; min-width: 36px; background: rgba(13,148,136,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
 .clink-text span { font-size: 0.88rem; font-weight: 600; display: block; }
 .clink-text small { font-size: 0.75rem; color: var(--text2); }
 
 /* FORM */
 .form-box {
-  background: var(--bg3); border: 1px solid var(--border);
+  background: var(--card); border: 1px solid var(--border);
   border-radius: 22px; padding: 2.2rem; position: relative; overflow: hidden;
+  box-shadow: 0 8px 30px var(--shadow);
 }
 .form-box::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--blue), var(--cyan), var(--blue3));
+  background: linear-gradient(90deg, var(--blue), var(--blue4), var(--blue3));
 }
-.form-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.3rem; }
+.form-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.3rem; color: var(--text); }
 .form-sub { font-size: 0.8rem; color: var(--text2); margin-bottom: 1.5rem; }
 .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
 .fg { margin-bottom: 1rem; }
 .fg label { font-size: 0.72rem; font-weight: 700; color: var(--text3); display: block; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.08em; }
 .fg input, .fg select, .fg textarea {
-  width: 100%; background: rgba(255,255,255,0.04);
+  width: 100%; background: var(--bg2);
   border: 1px solid var(--border2); border-radius: 8px;
-  padding: 0.8rem 1rem; color: white; font-family: inherit;
+  padding: 0.8rem 1rem; color: var(--text); font-family: inherit;
   font-size: 0.88rem; transition: all 0.2s; outline: none;
 }
 .fg input:focus, .fg select:focus, .fg textarea:focus {
-  border-color: rgba(0,87,255,0.5); background: rgba(0,87,255,0.06);
-  box-shadow: 0 0 0 3px rgba(0,87,255,0.1);
+  border-color: rgba(13,148,136,0.45); background: rgba(13,148,136,0.04);
+  box-shadow: 0 0 0 3px rgba(13,148,136,0.1);
 }
 .fg input::placeholder, .fg textarea::placeholder { color: var(--text3); }
-.fg select option { background: var(--bg3); color: white; }
+.fg select option { background: var(--bg); color: var(--text); }
 .fg textarea { resize: none; height: 85px; }
 .fsub {
   width: 100%; background: linear-gradient(135deg, var(--blue), var(--blue3));
@@ -445,11 +449,11 @@ section { padding: 7rem 5rem; }
   cursor: pointer; transition: all 0.3s; font-family: inherit;
   box-shadow: 0 4px 20px var(--glow);
 }
-.fsub:hover { box-shadow: 0 4px 30px rgba(0,87,255,0.5); transform: translateY(-2px); }
+.fsub:hover { box-shadow: 0 6px 28px rgba(13,148,136,0.3); transform: translateY(-2px); }
 .fsub:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 .form-ok {
   display: none; text-align: center; padding: 2rem;
-  background: rgba(0,230,118,0.06); border: 1px solid rgba(0,230,118,0.2);
+  background: rgba(22,163,74,0.05); border: 1px solid rgba(22,163,74,0.18);
   border-radius: 12px; margin-top: 1rem;
 }
 .form-ok h3 { color: var(--green); font-size: 1.1rem; margin-bottom: 0.5rem; }
@@ -460,29 +464,29 @@ section { padding: 7rem 5rem; }
   position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
   width: 60px; height: 60px; background: #25D366; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  text-decoration: none; box-shadow: 0 6px 25px rgba(37,211,102,0.4);
+  text-decoration: none; box-shadow: 0 6px 25px rgba(37,211,102,0.35);
   animation: wa-pulse 2.5s infinite;
 }
-@keyframes wa-pulse { 0%,100%{box-shadow:0 6px 25px rgba(37,211,102,0.4)} 50%{box-shadow:0 6px 35px rgba(37,211,102,0.6),0 0 0 8px rgba(37,211,102,0.08)} }
+@keyframes wa-pulse { 0%,100%{box-shadow:0 6px 25px rgba(37,211,102,0.35)} 50%{box-shadow:0 6px 35px rgba(37,211,102,0.5),0 0 0 8px rgba(37,211,102,0.06)} }
 .wa-btn:hover { transform: scale(1.1); }
 .wa-btn svg { width: 28px; height: 28px; fill: white; }
 
 /* FOOTER */
 footer {
-  background: #020810; padding: 2.5rem 5rem;
+  background: var(--bg2); padding: 2.5rem 5rem;
   border-top: 1px solid var(--border2);
 }
 .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 .footer-logo { display: flex; align-items: center; gap: 0.7rem; }
-.footer-logo img { width: 36px; height: 36px; border-radius: 8px; object-fit: cover; filter: drop-shadow(0 0 8px rgba(0,87,255,0.4)); }
-.footer-logo-text { font-size: 1.1rem; font-weight: 900; color: white; }
-.footer-logo-text span { color: var(--cyan); }
+.footer-logo img { width: 36px; height: 36px; border-radius: 8px; object-fit: cover; filter: drop-shadow(0 4px 12px rgba(13,148,136,0.25)); }
+.footer-logo-text { font-size: 1.1rem; font-weight: 900; color: var(--text); }
+.footer-logo-text span { color: var(--blue); }
 .footer-tagline { font-size: 0.65rem; color: var(--text3); letter-spacing: 0.2em; text-transform: uppercase; }
 .footer-links { display: flex; gap: 2rem; }
 .footer-links a { font-size: 0.8rem; color: var(--text3); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--cyan); }
+.footer-links a:hover { color: var(--blue); }
 .footer-copy { font-size: 0.78rem; color: var(--text3); }
-.footer-copy span { color: var(--blue3); }
+.footer-copy span { color: var(--blue2); }
 
 /* ANIMATIONS */
 @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
@@ -664,9 +668,9 @@ footer {
         </div>
       </div>
       <div class="fb-price-side">
-        <div class="fb-amount">From ₹4,999</div>
-        <div class="fb-note">3 packages available below</div>
-        <a href="#pricing" class="fb-btn">See Meta Ads Packages →</a>
+        <div class="fb-amount">From ₹1,999</div>
+        <div class="fb-note">Service Fee + your own ad budget</div>
+        <a href="#pricing" class="fb-btn">See Meta Ads Plans →</a>
       </div>
     </div>
   </div>
@@ -679,7 +683,7 @@ footer {
       <div>
         <div class="free-eyebrow">Why Choose Hector365</div>
         <h2 class="free-title">Lifetime <span class="green">FREE</span> Hosting —<br>Koi Yearly Charge Nahi!</h2>
-        <p class="free-desc">Doosri jagah website banwao toh hosting ke liye har saal ₹2,000–₹5,000 alag dene padte hain. Hector365 ke saath <strong style="color:white">ek baar pay karo — LIFETIME FREE hosting milti hai!</strong></p>
+        <p class="free-desc">Doosri jagah website banwao toh hosting ke liye har saal ₹2,000–₹5,000 alag dene padte hain. Hector365 ke saath <strong style="color:var(--blue2)">ek baar pay karo — LIFETIME FREE hosting milti hai!</strong></p>
         <div class="fp-list">
           <div class="fp"><div class="fp-icon">🎉</div><div><h4>No Yearly Hosting Charges</h4><p>GitHub Pages pe free hosting — koi recurring payment nahi. Ek baar ka kaam, lifetime ka faida!</p></div></div>
           <div class="fp"><div class="fp-icon">💸</div><div><h4>No Monthly Maintenance Fee</h4><p>Website bani toh bani — koi monthly fee nahi. Updates chahiye toh affordable rates pe available!</p></div></div>
@@ -771,63 +775,77 @@ footer {
     <div class="sec-center" style="margin-top:5rem;">
       <div class="sec-badge">Meta Ads</div>
       <h2 class="sec-title">HECTOR365 <span class="blue">Meta Ads</span> Packages</h2>
-      <p class="sec-sub">Facebook & Instagram pe targeted ads — leads aur sales dono ke liye. Ad budget included, koi hidden charge nahi.</p>
+      <p class="sec-sub">Facebook & Instagram pe targeted ads — leads aur sales dono ke liye. Service Fee + Aapka apna Ad Budget + (optional) Creative — sab clearly alag, koi hidden charge nahi.</p>
     </div>
     <div class="pricing-grid">
       <div class="pc">
         <div class="pc-tier">Starter</div>
-        <div class="pc-name">Starter Package</div>
-        <div class="pc-price">₹4,999</div>
-        <div class="pc-note">Total Investment · Ad budget included</div>
+        <div class="pc-name">Starter Plan</div>
+        <div class="pc-price">₹1,999</div>
+        <div class="pc-note">Service Fee · Upto 15 Days</div>
         <div class="pc-feats">
-          <div class="pcf"><div class="pck">✓</div>15 Days Campaign</div>
-          <div class="pcf"><div class="pck">✓</div>1 Creative</div>
+          <div class="pcf"><div class="pck">✓</div>Upto 15 Days Campaign</div>
           <div class="pcf"><div class="pck">✓</div>1 Location Targeting</div>
           <div class="pcf"><div class="pck">✓</div>Facebook & Instagram Ads</div>
-          <div class="pcf"><div class="pck">✓</div>Campaign Monitoring</div>
-          <div class="pcf"><div class="pck">✓</div>Basic Performance Report</div>
+          <div class="pcf"><div class="pck">✓</div>Campaign Setup & Monitoring</div>
+          <div class="pcf"><div class="pck">✓</div>Live Performance Dashboard</div>
+          <div class="pcf"><div class="pck">✓</div>3 Optimization Check-ins</div>
         </div>
         <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
       </div>
       <div class="pc hot">
-        <div class="hot-badge">⭐ Most Popular</div>
+        <div class="hot-badge">⭐ Best Value</div>
         <div class="pc-tier">Growth</div>
-        <div class="pc-name">Growth Package</div>
-        <div class="pc-price">₹8,500</div>
-        <div class="pc-note">Total Investment · Ad budget included</div>
+        <div class="pc-name">Growth Plan</div>
+        <div class="pc-price">₹3,999</div>
+        <div class="pc-note">Service Fee · Upto 30 Days</div>
         <div class="pc-feats">
-          <div class="pcf"><div class="pck">✓</div>15 Days Campaign</div>
-          <div class="pcf"><div class="pck">✓</div>Up to 2 Creatives</div>
-          <div class="pcf"><div class="pck">✓</div>Up to 2 Locations</div>
+          <div class="pcf"><div class="pck">✓</div>Upto 30 Days Campaign</div>
+          <div class="pcf"><div class="pck">✓</div>Upto 2 Locations Targeting</div>
           <div class="pcf"><div class="pck">✓</div>Facebook & Instagram Ads</div>
-          <div class="pcf"><div class="pck">✓</div>Campaign Optimization</div>
-          <div class="pcf"><div class="pck">✓</div>Regular Performance Reports</div>
+          <div class="pcf"><div class="pck">✓</div>Campaign Setup & Optimization</div>
+          <div class="pcf"><div class="pck">✓</div>Live Performance Dashboard</div>
+          <div class="pcf"><div class="pck">✓</div>Weekly Optimization Check-ins</div>
         </div>
         <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-solid">Order on WhatsApp</a>
       </div>
-      <div class="pc">
-        <div class="pc-tier">Premium</div>
-        <div class="pc-name">Premium Package</div>
-        <div class="pc-price">₹14,999</div>
-        <div class="pc-note">Total Investment · Ad budget included</div>
-        <div class="pc-feats">
-          <div class="pcf"><div class="pck">✓</div>30 Days Campaign</div>
-          <div class="pcf"><div class="pck">✓</div>Multiple Creatives</div>
-          <div class="pcf"><div class="pck">✓</div>Multiple Locations</div>
-          <div class="pcf"><div class="pck">✓</div>Advanced Audience Targeting</div>
-          <div class="pcf"><div class="pck">✓</div>Priority Optimization</div>
-          <div class="pcf"><div class="pck">✓</div>Detailed Performance Reports</div>
-        </div>
-        <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
-      </div>
     </div>
+
     <div class="addon-bar" style="margin-top:2rem;">
       <div style="display:flex;align-items:center;gap:1rem">
-        <div class="addon-icon">✅</div>
+        <div class="addon-icon">💰</div>
         <div>
-          <div class="addon-title">Why Choose Hector365 for Meta Ads?</div>
-          <div class="addon-sub">Local Market Expertise · Facebook & Instagram Advertising · Lead Generation Focus · Regular Reporting · Dedicated Campaign Management</div>
+          <div class="addon-title">Ad Budget — Aapke Hisab Se</div>
+          <div class="addon-sub">Service Fee ke alawa, Ad Budget (jo seedha Facebook/Instagram ko jaata hai) aap khud decide karte hain — minimum ₹150/day se shuru. Jitna budget, utna behtar reach & results. 100% transparent, koi markup nahi.</div>
         </div>
+      </div>
+    </div>
+
+    <div class="addon-bar">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div class="addon-icon">🎨</div>
+        <div>
+          <div class="addon-title">ADD-ON: Ad Creative Design</div>
+          <div class="addon-sub">Result aapki creative pe depend karta hai. Hum professional, conversion-focused ad creatives banate hain jo aapke target audience ko attract karein — chahe parents ho ya customers.</div>
+        </div>
+      </div>
+      <div>
+        <div class="addon-price">Static: ₹399 · Video: ₹999</div>
+        <div class="addon-sub2">Per creative · Optional, apni khud ki creative bhi use kar sakte hain</div>
+      </div>
+    </div>
+
+    <div class="addon-bar">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div class="addon-icon">📍</div>
+        <div>
+          <div class="addon-title">ADD-ON: Extra Campaign / Location</div>
+          <div class="addon-sub">Already plan le liya hai aur ek naya location/campaign add karna hai? Existing plan ke andar hi naya campaign chalwayein, ya isse pura naya independent duration dein.</div>
+        </div>
+      </div>
+      <div>
+        <div class="addon-price">₹500 · ₹999</div>
+        <div class="addon-sub2">₹500 = existing plan duration ke andar &nbsp;·&nbsp; ₹999 = apna pura naya 15-din duration</div>
       </div>
     </div>
 
@@ -901,9 +919,10 @@ footer {
               <option>Professional Portfolio + App — ₹1,999</option>
               <option>Landing Page — ₹2,499</option>
               <option>Business Website — ₹4,999</option>
-              <option>Meta Ads — Starter (₹4,999)</option>
-              <option>Meta Ads — Growth (₹8,500)</option>
-              <option>Meta Ads — Premium (₹14,999)</option>
+              <option>Meta Ads — Starter Plan (₹1,999)</option>
+              <option>Meta Ads — Growth Plan (₹3,999)</option>
+              <option>Meta Ads — Need Ad Creative Too</option>
+              <option>Meta Ads — Extra Campaign/Location (₹500/₹999)</option>
               <option>Custom Domain Setup — ₹799</option>
             </select>
           </div>
