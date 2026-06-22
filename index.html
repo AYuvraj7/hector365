@@ -36,7 +36,20 @@
   --green: #16A34A;
   --silver: #5C6B69;
   --gold: #C9A35D;
+  --orange: #F97316;
+  --yellow: #F59E0B;
+  --red: #DC2626;
   --shadow: rgba(15,27,26,0.07);
+  /* DARK ZONE — used only in Hero + Trust bar */
+  --dbg: #04130F;
+  --dbg2: #071D17;
+  --dtext: #EAFBF6;
+  --dtext2: #8FBDB0;
+  --dtext3: #4F7268;
+  --dteal: #14E0C4;
+  --dteal2: #5EFFE3;
+  --dborder: rgba(20,224,196,0.18);
+  --dglow: rgba(20,224,196,0.22);
 }
 html { scroll-behavior: smooth; }
 body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
@@ -76,23 +89,24 @@ nav {
 .install-nav.show { display: block; }
 
 /* HERO */
+/* HERO — DARK ZONE */
 .hero {
   min-height: 100vh;
   display: flex; align-items: center;
   padding: 8rem 5rem 5rem;
   position: relative; overflow: hidden;
   background:
-    radial-gradient(ellipse at 75% 40%, rgba(13,148,136,0.08) 0%, transparent 55%),
-    radial-gradient(ellipse at 15% 70%, rgba(20,184,166,0.06) 0%, transparent 45%),
-    var(--bg);
+    radial-gradient(ellipse at 75% 30%, rgba(20,224,196,0.16) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 75%, rgba(20,224,196,0.10) 0%, transparent 50%),
+    var(--dbg);
 }
 /* Animated grid background */
 .hero::before {
   content: '';
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(13,148,136,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(13,148,136,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(20,224,196,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,224,196,0.06) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
 }
@@ -100,12 +114,12 @@ nav {
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 0.6rem;
-  background: rgba(13,148,136,0.08); border: 1px solid rgba(13,148,136,0.25);
-  color: var(--blue2); padding: 0.45rem 1.1rem; border-radius: 100px;
+  background: rgba(20,224,196,0.1); border: 1px solid rgba(20,224,196,0.3);
+  color: var(--dteal2); padding: 0.45rem 1.1rem; border-radius: 100px;
   font-size: 0.72rem; font-weight: 700; margin-bottom: 1.5rem;
   letter-spacing: 0.1em; text-transform: uppercase;
 }
-.hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue3); animation: pulse-dot 1.5s infinite; }
+.hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--dteal); animation: pulse-dot 1.5s infinite; }
 @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
 
 .hero-h1 {
@@ -113,48 +127,48 @@ nav {
   font-weight: 900; line-height: 1.06;
   letter-spacing: -0.03em; margin-bottom: 1.5rem;
 }
-.h1-white { color: var(--text); }
-.h1-blue { color: var(--blue2); }
-.h1-outline { -webkit-text-stroke: 2.5px var(--blue2); color: transparent; }
-.h1-cyan { color: var(--blue); }
+.h1-white { color: var(--dtext); }
+.h1-blue { color: var(--dteal2); }
+.h1-outline { -webkit-text-stroke: 2.5px var(--dteal); color: transparent; }
+.h1-cyan { color: var(--dteal); }
 
 .hero-tagline {
   font-size: 0.75rem; font-weight: 700; letter-spacing: 0.25em;
-  text-transform: uppercase; color: var(--text3);
+  text-transform: uppercase; color: var(--dtext3);
   margin-bottom: 1rem;
   display: flex; align-items: center; gap: 0.5rem;
 }
-.hero-tagline::before, .hero-tagline::after { content: '—'; color: var(--blue3); }
+.hero-tagline::before, .hero-tagline::after { content: '—'; color: var(--dteal); }
 
-.hero-p { font-size: 1rem; color: var(--text2); line-height: 1.85; margin-bottom: 2.5rem; max-width: 520px; }
-.hero-p strong { color: var(--green); }
+.hero-p { font-size: 1rem; color: var(--dtext2); line-height: 1.85; margin-bottom: 2.5rem; max-width: 520px; }
+.hero-p strong { color: var(--dteal2); }
 
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
 .btn-primary {
-  background: linear-gradient(135deg, var(--blue), var(--blue3));
-  color: white; padding: 0.95rem 2.2rem; border-radius: 10px;
+  background: linear-gradient(135deg, var(--dteal), #0D9488);
+  color: #04130F; padding: 0.95rem 2.2rem; border-radius: 10px;
   font-weight: 700; font-size: 0.95rem; text-decoration: none;
-  transition: all 0.3s; box-shadow: 0 8px 24px var(--glow);
+  transition: all 0.3s; box-shadow: 0 0 35px var(--dglow);
   display: inline-flex; align-items: center; gap: 0.5rem;
 }
-.btn-primary:hover { box-shadow: 0 10px 32px rgba(13,148,136,0.35); transform: translateY(-3px); }
+.btn-primary:hover { box-shadow: 0 0 55px rgba(20,224,196,0.4); transform: translateY(-3px); }
 .btn-outline {
-  border: 1px solid rgba(13,148,136,0.3); color: var(--blue2);
+  border: 1px solid rgba(20,224,196,0.35); color: var(--dteal2);
   padding: 0.95rem 2.2rem; border-radius: 10px;
   font-weight: 600; font-size: 0.95rem; text-decoration: none;
   transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem;
-  background: rgba(13,148,136,0.03);
+  background: rgba(20,224,196,0.05);
 }
-.btn-outline:hover { border-color: var(--blue); background: rgba(13,148,136,0.07); }
+.btn-outline:hover { border-color: var(--dteal); background: rgba(20,224,196,0.1); }
 
 .hero-free {
   display: flex; align-items: center; gap: 1rem;
-  background: rgba(22,163,74,0.06); border: 1px solid rgba(22,163,74,0.2);
+  background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.28);
   border-radius: 12px; padding: 1rem 1.4rem;
 }
 .hero-free-icon { font-size: 1.6rem; }
-.hero-free-title { font-size: 0.88rem; font-weight: 700; color: var(--green); }
-.hero-free-sub { font-size: 0.75rem; color: var(--text2); margin-top: 0.15rem; }
+.hero-free-title { font-size: 0.88rem; font-weight: 700; color: var(--yellow); }
+.hero-free-sub { font-size: 0.75rem; color: var(--dtext2); margin-top: 0.15rem; }
 
 /* HERO RIGHT */
 .hero-right { position: relative; }
@@ -162,7 +176,7 @@ nav {
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: 350px; height: 350px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(13,148,136,0.10) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(20,224,196,0.28) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-logo-wrap {
@@ -172,38 +186,38 @@ nav {
 .hero-logo-img {
   width: 260px; height: 260px;
   object-fit: contain;
-  filter: drop-shadow(0 10px 40px rgba(13,148,136,0.25));
+  filter: drop-shadow(0 0 35px rgba(20,224,196,0.45)) drop-shadow(0 0 70px rgba(20,224,196,0.2));
   animation: float 4s ease-in-out infinite;
 }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
 .hero-tagline-bottom {
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.3em;
-  text-transform: uppercase; color: var(--text3); margin-top: 1.2rem;
+  text-transform: uppercase; color: var(--dtext3); margin-top: 1.2rem;
 }
-.hero-tagline-bottom span { color: var(--blue2); }
+.hero-tagline-bottom span { color: var(--dteal2); }
 
 /* FLOATING CARDS */
 .float-card {
-  position: absolute; background: var(--white);
-  border: 1px solid var(--border2); border-radius: 12px;
+  position: absolute; background: var(--dbg2);
+  border: 1px solid var(--dborder); border-radius: 12px;
   padding: 0.7rem 1.1rem;
   display: flex; align-items: center; gap: 0.6rem;
   font-size: 0.78rem; font-weight: 600;
-  box-shadow: 0 10px 32px var(--shadow);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.4);
   animation: float-card 3s ease-in-out infinite;
 }
-.float-card.fc1 { top: 10px; right: -10px; color: var(--green); animation-delay: 0s; }
-.float-card.fc2 { bottom: 30px; left: -10px; color: var(--blue2); animation-delay: 1.5s; }
+.float-card.fc1 { top: 10px; right: -10px; color: var(--yellow); animation-delay: 0s; }
+.float-card.fc2 { bottom: 30px; left: -10px; color: var(--dteal2); animation-delay: 1.5s; }
 @keyframes float-card { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
 
-/* TRUST BAR */
+/* TRUST BAR — DARK ZONE */
 .trust-bar {
-  background: var(--bg2); border-top: 1px solid var(--border2); border-bottom: 1px solid var(--border2);
+  background: var(--dbg2); border-top: 1px solid var(--dborder); border-bottom: 1px solid var(--dborder);
   padding: 1.2rem 5rem;
   display: flex; align-items: center; justify-content: center; gap: 4rem; flex-wrap: wrap;
 }
-.trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--text2); }
-.trust-item strong { color: var(--text); }
+.trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--dtext2); }
+.trust-item strong { color: var(--dtext); }
 
 /* SECTIONS */
 section { padding: 7rem 5rem; }
@@ -249,6 +263,10 @@ section { padding: 7rem 5rem; }
   display: flex; align-items: center; justify-content: center;
   font-size: 1.5rem; margin-bottom: 1.3rem;
 }
+.svc-icon.ic-blue { background: rgba(37,99,235,0.08); border-color: rgba(37,99,235,0.2); }
+.svc-icon.ic-orange { background: rgba(249,115,22,0.1); border-color: rgba(249,115,22,0.22); }
+.svc-icon.ic-red { background: rgba(220,38,38,0.08); border-color: rgba(220,38,38,0.2); }
+.svc-icon.ic-yellow { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.24); }
 .svc-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text); }
 .svc-desc { font-size: 0.85rem; color: var(--text2); line-height: 1.75; margin-bottom: 1.2rem; }
 .svc-feats { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1.5rem; }
@@ -308,12 +326,12 @@ section { padding: 7rem 5rem; }
 .comp-row:last-child { border-bottom: none; }
 .comp-feat { font-size: 0.83rem; color: var(--text2); }
 .clabel { font-size: 0.75rem; font-weight: 700; text-align: center; }
-.clabel.red { color: #DC2626; }
+.clabel.red { color: var(--red); }
 .clabel.green { color: var(--green); }
 .cval { font-size: 0.8rem; text-align: center; }
-.cval.red { color: #DC2626; }
+.cval.red { color: var(--red); font-weight: 600; background: rgba(220,38,38,0.07); padding: 0.25rem 0.6rem; border-radius: 8px; display: inline-block; }
 .cval.green { color: var(--green); font-weight: 700; }
-.cval.h365 { background: rgba(13,148,136,0.1); color: var(--blue2); font-weight: 700; font-size: 0.75rem; padding: 0.2rem 0.7rem; border-radius: 100px; display: inline-block; }
+.cval.h365 { background: rgba(22,163,74,0.12); color: var(--green); font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.8rem; border-radius: 100px; display: inline-block; box-shadow: 0 0 0 1px rgba(22,163,74,0.18); }
 
 /* PRICING */
 .pricing-bg { background: var(--bg2); }
@@ -399,6 +417,9 @@ section { padding: 7rem 5rem; }
   justify-content: center; font-weight: 900; font-size: 1rem;
   color: white; box-shadow: 0 6px 18px var(--glow);
 }
+.step-num.sn-blue { background: linear-gradient(135deg, #2563EB, #60A5FA); box-shadow: 0 6px 18px rgba(37,99,235,0.3); }
+.step-num.sn-orange { background: linear-gradient(135deg, #EA580C, #FB923C); box-shadow: 0 6px 18px rgba(234,88,12,0.3); }
+.step-num.sn-green { background: linear-gradient(135deg, #16A34A, #4ADE80); box-shadow: 0 6px 18px rgba(22,163,74,0.3); }
 .step-icon { font-size: 2rem; margin-bottom: 0.8rem; }
 .step-title { font-size: 0.95rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text); }
 .step-desc { font-size: 0.8rem; color: var(--text2); line-height: 1.65; }
@@ -608,7 +629,7 @@ footer {
     </div>
     <div class="svc-grid">
       <div class="svc-card">
-        <div class="svc-icon">👤</div>
+        <div class="svc-icon ic-blue">👤</div>
         <div class="svc-name">Portfolio Website</div>
         <div class="svc-desc">Job seekers, students, teachers & professionals ke liye. Recruiters aur clients ke saamne ek stunning personal website se stand out karo.</div>
         <div class="svc-feats">
@@ -621,7 +642,7 @@ footer {
         <div class="svc-price">₹1,499 <span>one time · no yearly fee</span></div>
       </div>
       <div class="svc-card">
-        <div class="svc-icon">📱</div>
+        <div class="svc-icon ic-orange">📱</div>
         <div class="svc-name">Professional Portfolio + App</div>
         <div class="svc-desc">Sabhi basic features + website phone pe app ki tarah install hogi! Animations, social media links aur offline support bhi.</div>
         <div class="svc-feats">
@@ -634,7 +655,7 @@ footer {
         <div class="svc-price">₹1,999 <span>one time · no yearly fee</span></div>
       </div>
       <div class="svc-card">
-        <div class="svc-icon">🎯</div>
+        <div class="svc-icon ic-red">🎯</div>
         <div class="svc-name">Landing Page</div>
         <div class="svc-desc">Coaching, events, product launches ke liye. Ek focused high-converting page jo visitors ko customers mein badal de. Facebook Ads ke liye perfect!</div>
         <div class="svc-feats">
@@ -647,7 +668,7 @@ footer {
         <div class="svc-price">₹2,499 <span>one time · no yearly fee</span></div>
       </div>
       <div class="svc-card">
-        <div class="svc-icon">🏢</div>
+        <div class="svc-icon ic-yellow">🏢</div>
         <div class="svc-name">Business Website</div>
         <div class="svc-desc">Shops, agencies, institutes & NGOs ke liye. Multi-page professional website with all sections aapke business ko online grow karne ke liye.</div>
         <div class="svc-feats">
@@ -898,9 +919,9 @@ footer {
     </div>
     <div class="steps-grid">
       <div class="step"><div class="step-num">1</div><div class="step-icon">📱</div><div class="step-title">WhatsApp Karo</div><div class="step-desc">Hume WhatsApp pe message karo — free consultation milegi, koi commitment nahi!</div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-icon">📋</div><div class="step-title">Details Bharo</div><div class="step-desc">Ek simple form bharo — sirf 5 minute ka kaam. Bas aapki details chahiye!</div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-icon">⚡</div><div class="step-title">Website Banti Hai</div><div class="step-desc">Hum 24-48 ghante mein aapki premium website professionally taiyar karte hain.</div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-icon">🎉</div><div class="step-title">Live Ho Jaao!</div><div class="step-desc">Website live — link lo, share karo, grow karo! Lifetime FREE hosting!</div></div>
+      <div class="step"><div class="step-num sn-blue">2</div><div class="step-icon">📋</div><div class="step-title">Details Bharo</div><div class="step-desc">Ek simple form bharo — sirf 5 minute ka kaam. Bas aapki details chahiye!</div></div>
+      <div class="step"><div class="step-num sn-orange">3</div><div class="step-icon">⚡</div><div class="step-title">Website Banti Hai</div><div class="step-desc">Hum 24-48 ghante mein aapki premium website professionally taiyar karte hain.</div></div>
+      <div class="step"><div class="step-num sn-green">4</div><div class="step-icon">🎉</div><div class="step-title">Live Ho Jaao!</div><div class="step-desc">Website live — link lo, share karo, grow karo! Lifetime FREE hosting!</div></div>
     </div>
   </div>
 </section>
