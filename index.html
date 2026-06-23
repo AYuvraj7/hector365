@@ -15,32 +15,33 @@
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --bg: #FFFFFF;
-  --bg2: #F7F9F9;
-  --bg3: #EEF3F2;
-  --bg4: #E3ECEA;
-  --blue: #0D9488;
-  --blue2: #0B7A70;
-  --blue3: #14B8A6;
-  --blue4: #5EEAD4;
-  --cyan: #0D9488;
-  --glow: rgba(13,148,136,0.14);
-  --glow2: rgba(20,184,166,0.12);
+  --bg: #04130F;
+  --bg2: #071D17;
+  --bg3: #0A2620;
+  --bg4: #0D2F27;
+  --blue: #14E0C4;
+  --blue2: #5EFFE3;
+  --blue3: #2DF5D5;
+  --blue4: #8FFFEA;
+  --cyan: #14E0C4;
+  --glow: rgba(20,224,196,0.22);
+  --glow2: rgba(20,224,196,0.15);
   --white: #FFFFFF;
-  --text: #0F1B1A;
-  --text2: #56655F;
-  --text3: #8A9893;
-  --border: rgba(13,148,136,0.18);
-  --border2: rgba(15,27,26,0.08);
-  --card: #FFFFFF;
-  --green: #16A34A;
-  --silver: #5C6B69;
-  --gold: #C9A35D;
-  --orange: #F97316;
-  --yellow: #F59E0B;
-  --red: #DC2626;
-  --shadow: rgba(15,27,26,0.07);
-  /* DARK ZONE — used only in Hero + Trust bar */
+  --text: #EAFBF6;
+  --text2: #8FBDB0;
+  --text3: #4F7268;
+  --border: rgba(20,224,196,0.22);
+  --border2: rgba(234,251,246,0.08);
+  --card: #082019;
+  --green: #34D399;
+  --silver: #8FBDB0;
+  --gold: #E0B85E;
+  --orange: #FB923C;
+  --yellow: #FBBF24;
+  --red: #F87171;
+  --yellow-text: #FBBF24;
+  --shadow: rgba(0,0,0,0.35);
+  /* DARK ZONE — used for Hero + Trust bar (same as global now) */
   --dbg: #04130F;
   --dbg2: #071D17;
   --dtext: #EAFBF6;
@@ -60,7 +61,7 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); colo
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: rgba(255,255,255,0.85); backdrop-filter: blur(24px);
+  background: rgba(4,19,15,0.85); backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border2);
   padding: 0 5rem; height: 70px;
   display: flex; align-items: center; justify-content: space-between;
@@ -235,45 +236,75 @@ section { padding: 7rem 5rem; }
 .sec-title .cyan { color: var(--blue); }
 .sec-sub { font-size: 0.98rem; color: var(--text2); max-width: 580px; margin: 0 auto; line-height: 1.8; }
 
-/* SERVICES */
-.services-bg { background: var(--bg2); }
-.svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+/* SERVICES — CARD STACK CAROUSEL */
+.services-bg { background: var(--bg2); overflow: hidden; }
+.stack-wrap { position: relative; max-width: 480px; margin: 0 auto; }
+.stack { position: relative; height: 560px; }
+.stack.pc-stack { height: 760px; }
 .svc-card {
   background: var(--card); border: 1px solid var(--border2);
-  border-radius: 18px; padding: 2rem; position: relative; overflow: hidden;
-  transition: all 0.35s; box-shadow: 0 2px 12px var(--shadow);
+  border-radius: 22px; padding: 2.2rem; overflow: hidden;
+  box-shadow: 0 10px 40px var(--shadow);
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  cursor: grab; user-select: none;
+  transition: transform 0.55s cubic-bezier(.22,.9,.32,1), opacity 0.45s, box-shadow 0.4s;
+  display: flex; flex-direction: column;
 }
+.svc-card:active { cursor: grabbing; }
+.svc-card.dragging { transition: none; }
 .svc-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--blue), var(--blue3), transparent);
-  transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
 }
+.svc-card[data-color="blue"]::before { background: linear-gradient(90deg, #2563EB, #60A5FA); }
+.svc-card[data-color="orange"]::before { background: linear-gradient(90deg, #EA580C, #FB923C); }
+.svc-card[data-color="red"]::before { background: linear-gradient(90deg, #DC2626, #F87171); }
+.svc-card[data-color="yellow"]::before { background: linear-gradient(90deg, #D97706, #FBBF24); }
 .svc-card::after {
-  content: ''; position: absolute; bottom: -80px; right: -80px;
-  width: 200px; height: 200px; border-radius: 50%;
-  background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
-  transition: all 0.4s; opacity: 0;
+  content: ''; position: absolute; bottom: -90px; right: -90px;
+  width: 220px; height: 220px; border-radius: 50%;
+  opacity: 0.5; pointer-events: none;
 }
-.svc-card:hover { border-color: rgba(13,148,136,0.3); transform: translateY(-6px); box-shadow: 0 20px 45px var(--shadow); }
-.svc-card:hover::before { transform: scaleX(1); }
-.svc-card:hover::after { opacity: 1; }
+.svc-card[data-color="blue"]::after { background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%); }
+.svc-card[data-color="orange"]::after { background: radial-gradient(circle, rgba(234,88,12,0.12) 0%, transparent 70%); }
+.svc-card[data-color="red"]::after { background: radial-gradient(circle, rgba(220,38,38,0.12) 0%, transparent 70%); }
+.svc-card[data-color="yellow"]::after { background: radial-gradient(circle, rgba(217,119,6,0.12) 0%, transparent 70%); }
+
 .svc-icon {
-  width: 56px; height: 56px; background: rgba(13,148,136,0.08);
-  border: 1px solid rgba(13,148,136,0.18); border-radius: 14px;
+  width: 64px; height: 64px; background: rgba(13,148,136,0.08);
+  border: 1px solid rgba(13,148,136,0.18); border-radius: 16px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; margin-bottom: 1.3rem;
+  font-size: 1.7rem; margin-bottom: 1.4rem;
 }
-.svc-icon.ic-blue { background: rgba(37,99,235,0.08); border-color: rgba(37,99,235,0.2); }
-.svc-icon.ic-orange { background: rgba(249,115,22,0.1); border-color: rgba(249,115,22,0.22); }
-.svc-icon.ic-red { background: rgba(220,38,38,0.08); border-color: rgba(220,38,38,0.2); }
-.svc-icon.ic-yellow { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.24); }
-.svc-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text); }
-.svc-desc { font-size: 0.85rem; color: var(--text2); line-height: 1.75; margin-bottom: 1.2rem; }
-.svc-feats { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1.5rem; }
-.svc-feat { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--text2); }
+.svc-icon.ic-blue { background: rgba(96,165,250,0.18); border-color: rgba(96,165,250,0.4); }
+.svc-icon.ic-orange { background: rgba(251,146,60,0.18); border-color: rgba(251,146,60,0.4); }
+.svc-icon.ic-red { background: rgba(248,113,113,0.18); border-color: rgba(248,113,113,0.4); }
+.svc-icon.ic-yellow { background: rgba(251,191,36,0.18); border-color: rgba(251,191,36,0.4); }
+.svc-name { font-size: 1.45rem; font-weight: 900; margin-bottom: 0.6rem; color: var(--text); letter-spacing: -0.01em; }
+.svc-desc { font-size: 0.88rem; color: var(--text2); line-height: 1.7; margin-bottom: 1.3rem; }
+.svc-feats { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.4rem; flex: 1; }
+.svc-feat { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; color: var(--text2); }
 .svc-feat::before { content: '▸'; color: var(--blue); font-size: 0.7rem; }
-.svc-price { font-size: 1.5rem; font-weight: 900; color: var(--blue2); border-top: 1px solid var(--border2); padding-top: 1rem; }
-.svc-price span { font-size: 0.75rem; color: var(--text3); font-weight: 400; }
+.svc-feat.hl { color: var(--text); font-weight: 700; }
+.svc-feat.hl::before { content: '★'; color: var(--yellow); }
+.svc-price { font-size: 2.1rem; font-weight: 900; color: var(--yellow-text); border-top: 1px solid var(--border2); padding-top: 1.1rem; }
+.svc-price span { font-size: 0.74rem; color: var(--text3); font-weight: 400; display: block; margin-top: 0.2rem; }
+
+.stack-nav {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.4rem; margin-top: 2rem;
+}
+.stack-arrow {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--card); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; color: var(--blue2); cursor: pointer;
+  transition: all 0.2s; box-shadow: 0 4px 14px var(--shadow);
+}
+.stack-arrow:hover { background: var(--blue); color: white; transform: scale(1.08); }
+.stack-dots { display: flex; gap: 0.5rem; }
+.stack-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border2); cursor: pointer; transition: all 0.3s; }
+.stack-dot.active { background: var(--blue); width: 24px; border-radius: 4px; }
+.stack-hint { text-align: center; font-size: 0.76rem; color: var(--text3); margin-top: 0.9rem; }
 
 .fb-card {
   margin-top: 1.5rem;
@@ -333,22 +364,43 @@ section { padding: 7rem 5rem; }
 .cval.green { color: var(--green); font-weight: 700; }
 .cval.h365 { background: rgba(22,163,74,0.12); color: var(--green); font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.8rem; border-radius: 100px; display: inline-block; box-shadow: 0 0 0 1px rgba(22,163,74,0.18); }
 
+/* COMPARISON BAR CHART */
+.bar-chart { background: var(--card); border: 1px solid var(--border2); border-radius: 20px; padding: 2rem; box-shadow: 0 4px 20px var(--shadow); }
+.bar-chart-title { font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.5rem; }
+.bar-group { margin-bottom: 1.6rem; }
+.bar-group:last-child { margin-bottom: 0; }
+.bar-label { font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+.bar-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem; }
+.bar-row-name { font-size: 0.74rem; color: var(--text3); width: 64px; flex-shrink: 0; font-weight: 600; }
+.bar-track { flex: 1; height: 22px; background: var(--bg2); border-radius: 6px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 6px; width: 0%; min-width: 64px; transition: width 1.2s cubic-bezier(.22,.9,.32,1); display: flex; align-items: center; justify-content: flex-end; padding-right: 0.5rem; }
+.bar-fill.red { background: linear-gradient(90deg, #F87171, var(--red)); }
+.bar-fill.green { background: linear-gradient(90deg, var(--blue3), var(--green)); }
+.bar-fill-text { font-size: 0.66rem; font-weight: 800; color: white; white-space: nowrap; }
+
 /* PRICING */
 .pricing-bg { background: var(--bg2); }
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+/* PRICING — UNIFIED CARD STACK (reuses .stack from services) */
+
 .pc {
   background: var(--card); border: 1px solid var(--border2);
   border-radius: 20px; padding: 2rem; position: relative;
-  transition: all 0.3s; box-shadow: 0 2px 14px var(--shadow);
+  transition: border-color 0.3s, box-shadow 0.3s; box-shadow: 0 2px 14px var(--shadow);
+  user-select: none;
 }
-.pc:hover { border-color: var(--border); transform: translateY(-5px); box-shadow: 0 20px 40px var(--shadow); }
+/* When inside the unified pricing stack, behave like the services card-stack */
+.pc-stack .pc {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  overflow-y: auto; cursor: grab;
+  transition: transform 0.55s cubic-bezier(.22,.9,.32,1), opacity 0.45s;
+}
+.pc-stack .pc:active { cursor: grabbing; }
+.pc-stack .pc.dragging { transition: none; }
 .pc.hot {
   background: linear-gradient(135deg, rgba(13,148,136,0.06), rgba(13,148,136,0.02));
   border-color: rgba(13,148,136,0.35);
   box-shadow: 0 8px 30px rgba(13,148,136,0.12);
-  transform: scale(1.04);
 }
-.pc.hot:hover { transform: scale(1.04) translateY(-5px); }
 .hot-badge {
   position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
   background: linear-gradient(135deg, var(--blue), var(--blue3));
@@ -358,7 +410,7 @@ section { padding: 7rem 5rem; }
 }
 .pc-tier { font-size: 0.68rem; font-weight: 800; color: var(--text3); text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 0.4rem; }
 .pc-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; color: var(--text); }
-.pc-price { font-size: 2.5rem; font-weight: 900; color: var(--blue2); line-height: 1; margin-bottom: 0.3rem; }
+.pc-price { font-size: 2.8rem; font-weight: 900; color: var(--yellow-text); line-height: 1; margin-bottom: 0.3rem; }
 .pc-note { font-size: 0.72rem; color: var(--text3); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border2); }
 .pc-feats { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2rem; }
 .pcf { display: flex; align-items: center; gap: 0.7rem; font-size: 0.83rem; color: var(--text2); }
@@ -627,60 +679,71 @@ footer {
       <h2 class="sec-title">Everything You Need to <span class="cyan">Dominate</span> Online</h2>
       <p class="sec-sub">From personal portfolios to full business websites — premium quality, honest prices, lifetime free hosting.</p>
     </div>
-    <div class="svc-grid">
-      <div class="svc-card">
-        <div class="svc-icon ic-blue">👤</div>
-        <div class="svc-name">Portfolio Website</div>
-        <div class="svc-desc">Job seekers, students, teachers & professionals ke liye. Recruiters aur clients ke saamne ek stunning personal website se stand out karo.</div>
-        <div class="svc-feats">
-          <div class="svc-feat">Name, Photo, Skills & Education</div>
-          <div class="svc-feat">Work Experience Section</div>
-          <div class="svc-feat">Contact Details & Social Links</div>
-          <div class="svc-feat">100% Mobile Responsive</div>
-          <div class="svc-feat">FREE Hosting — Lifetime</div>
+
+    <div class="stack-wrap">
+      <div class="stack" id="svcStack">
+        <div class="svc-card" data-color="blue" data-index="0">
+          <div class="svc-icon ic-blue">👤</div>
+          <div class="svc-name">Portfolio Website</div>
+          <div class="svc-desc">Job seekers, students, teachers & professionals ke liye. Recruiters aur clients ke saamne ek stunning personal website se stand out karo.</div>
+          <div class="svc-feats">
+            <div class="svc-feat">Name, Photo, Skills & Education</div>
+            <div class="svc-feat">Work Experience Section</div>
+            <div class="svc-feat">Contact Details & Social Links</div>
+            <div class="svc-feat">100% Mobile Responsive</div>
+            <div class="svc-feat hl">FREE Hosting — Lifetime</div>
+          </div>
+          <div class="svc-price">₹1,499 <span>one time · no yearly fee</span></div>
         </div>
-        <div class="svc-price">₹1,499 <span>one time · no yearly fee</span></div>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon ic-orange">📱</div>
-        <div class="svc-name">Professional Portfolio + App</div>
-        <div class="svc-desc">Sabhi basic features + website phone pe app ki tarah install hogi! Animations, social media links aur offline support bhi.</div>
-        <div class="svc-feats">
-          <div class="svc-feat">Everything in Basic +</div>
-          <div class="svc-feat">Phone pe Install (PWA App)</div>
-          <div class="svc-feat">Social Media Integration</div>
-          <div class="svc-feat">Smooth Animations</div>
-          <div class="svc-feat">Offline Support</div>
+        <div class="svc-card" data-color="orange" data-index="1">
+          <div class="svc-icon ic-orange">📱</div>
+          <div class="svc-name">Professional Portfolio + App</div>
+          <div class="svc-desc">Sabhi basic features + website phone pe app ki tarah install hogi! Animations, social media links aur offline support bhi.</div>
+          <div class="svc-feats">
+            <div class="svc-feat">Everything in Basic +</div>
+            <div class="svc-feat hl">Phone pe Install (PWA App)</div>
+            <div class="svc-feat">Social Media Integration</div>
+            <div class="svc-feat">Smooth Animations</div>
+            <div class="svc-feat">Offline Support</div>
+          </div>
+          <div class="svc-price">₹1,999 <span>one time · no yearly fee</span></div>
         </div>
-        <div class="svc-price">₹1,999 <span>one time · no yearly fee</span></div>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon ic-red">🎯</div>
-        <div class="svc-name">Landing Page</div>
-        <div class="svc-desc">Coaching, events, product launches ke liye. Ek focused high-converting page jo visitors ko customers mein badal de. Facebook Ads ke liye perfect!</div>
-        <div class="svc-feats">
-          <div class="svc-feat">Single High-Converting Page</div>
-          <div class="svc-feat">WhatsApp CTA Button</div>
-          <div class="svc-feat">Testimonials Section</div>
-          <div class="svc-feat">Active Contact Form</div>
-          <div class="svc-feat">Facebook Ads Ready</div>
+        <div class="svc-card" data-color="red" data-index="2">
+          <div class="svc-icon ic-red">🎯</div>
+          <div class="svc-name">Landing Page</div>
+          <div class="svc-desc">Coaching, events, product launches ke liye. Ek focused high-converting page jo visitors ko customers mein badal de. Facebook Ads ke liye perfect!</div>
+          <div class="svc-feats">
+            <div class="svc-feat">Single High-Converting Page</div>
+            <div class="svc-feat">WhatsApp CTA Button</div>
+            <div class="svc-feat">Testimonials Section</div>
+            <div class="svc-feat">Active Contact Form</div>
+            <div class="svc-feat hl">Facebook Ads Ready</div>
+          </div>
+          <div class="svc-price">₹2,499 <span>one time · no yearly fee</span></div>
         </div>
-        <div class="svc-price">₹2,499 <span>one time · no yearly fee</span></div>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon ic-yellow">🏢</div>
-        <div class="svc-name">Business Website</div>
-        <div class="svc-desc">Shops, agencies, institutes & NGOs ke liye. Multi-page professional website with all sections aapke business ko online grow karne ke liye.</div>
-        <div class="svc-feats">
-          <div class="svc-feat">Multiple Pages (Home, About, Services)</div>
-          <div class="svc-feat">Gallery / Portfolio Section</div>
-          <div class="svc-feat">WhatsApp Floating Button</div>
-          <div class="svc-feat">Active Contact Form</div>
-          <div class="svc-feat">FREE Hosting + Domain Setup</div>
+        <div class="svc-card" data-color="yellow" data-index="3">
+          <div class="svc-icon ic-yellow">🏢</div>
+          <div class="svc-name">Business Website</div>
+          <div class="svc-desc">Shops, agencies, institutes & NGOs ke liye. Multi-page professional website with all sections aapke business ko online grow karne ke liye.</div>
+          <div class="svc-feats">
+            <div class="svc-feat">Multiple Pages (Home, About, Services)</div>
+            <div class="svc-feat">Gallery / Portfolio Section</div>
+            <div class="svc-feat">WhatsApp Floating Button</div>
+            <div class="svc-feat">Active Contact Form</div>
+            <div class="svc-feat hl">FREE Hosting + Domain Setup</div>
+          </div>
+          <div class="svc-price">₹4,999 <span>one time · no yearly fee</span></div>
         </div>
-        <div class="svc-price">₹4,999 <span>one time · no yearly fee</span></div>
       </div>
+
+      <div class="stack-nav">
+        <div class="stack-arrow" id="svcPrev">←</div>
+        <div class="stack-dots" id="svcDots"></div>
+        <div class="stack-arrow" id="svcNext">→</div>
+      </div>
+      <div class="stack-hint">👆 Card ko swipe karo ya arrow dabao</div>
     </div>
+
     <!-- FB ADS -->
     <div class="fb-card">
       <div class="fb-left">
@@ -721,7 +784,44 @@ footer {
         </div>
       </div>
       <div>
-        <div class="comp-box">
+        <div class="bar-chart">
+          <div class="bar-chart-title">📊 Cost & Time — Visual Compare</div>
+          <div class="bar-group">
+            <div class="bar-label">Website Cost</div>
+            <div class="bar-row">
+              <div class="bar-row-name">Others</div>
+              <div class="bar-track"><div class="bar-fill red" data-w="100"><span class="bar-fill-text">₹10,000+</span></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-row-name">Hector365</div>
+              <div class="bar-track"><div class="bar-fill green" data-w="15"><span class="bar-fill-text">₹1,499</span></div></div>
+            </div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-label">Delivery Time (hours)</div>
+            <div class="bar-row">
+              <div class="bar-row-name">Others</div>
+              <div class="bar-track"><div class="bar-fill red" data-w="100"><span class="bar-fill-text">~720 hrs</span></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-row-name">Hector365</div>
+              <div class="bar-track"><div class="bar-fill green" data-w="7"><span class="bar-fill-text">24 hrs</span></div></div>
+            </div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-label">Yearly Hosting Cost</div>
+            <div class="bar-row">
+              <div class="bar-row-name">Others</div>
+              <div class="bar-track"><div class="bar-fill red" data-w="100"><span class="bar-fill-text">₹5,000/yr</span></div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-row-name">Hector365</div>
+              <div class="bar-track"><div class="bar-fill green" data-w="3"><span class="bar-fill-text">₹0 FREE</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="comp-box" style="margin-top:1.5rem;">
           <div class="comp-title-row">⚡ Hector365 vs Others</div>
           <div class="comp-head">
             <div style="font-size:0.78rem;font-weight:700;">Feature</div>
@@ -749,111 +849,125 @@ footer {
       <h2 class="sec-title">Simple, <span class="blue">Honest</span> Pricing</h2>
       <p class="sec-sub">Koi hidden charges nahi. Ek baar pay karo — website lifetime chale. Hosting ALWAYS free!</p>
     </div>
-    <div class="pricing-grid">
-      <div class="pc">
-        <div class="pc-tier">Basic</div>
-        <div class="pc-name">Portfolio Website</div>
-        <div class="pc-price">₹1,499</div>
-        <div class="pc-note">One time only · FREE hosting lifetime · Zero yearly charges</div>
-        <div class="pc-feats">
-          <div class="pcf"><div class="pck">✓</div>Name, Photo, Skills</div>
-          <div class="pcf"><div class="pck">✓</div>Education & Experience</div>
-          <div class="pcf"><div class="pck">✓</div>Contact Section</div>
-          <div class="pcf"><div class="pck">✓</div>Mobile Responsive</div>
-          <div class="pcf"><div class="pck">✓</div>FREE Hosting Forever</div>
-          <div class="pcf"><div class="pck">✓</div>Delivered in 24 Hours</div>
-          <div class="pcf"><div class="pck">✓</div>1 Free Revision</div>
-        </div>
-        <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
-      </div>
-      <div class="pc hot">
-        <div class="hot-badge">⭐ Most Popular</div>
-        <div class="pc-tier">Professional</div>
-        <div class="pc-name">Portfolio + PWA App</div>
-        <div class="pc-price">₹1,999</div>
-        <div class="pc-note">One time only · FREE hosting lifetime · Zero yearly charges</div>
-        <div class="pc-feats">
-          <div class="pcf"><div class="pck">✓</div>Everything in Basic +</div>
-          <div class="pcf"><div class="pck">✓</div>Phone pe Install (App)</div>
-          <div class="pcf"><div class="pck">✓</div>Social Media Links</div>
-          <div class="pcf"><div class="pck">✓</div>Animations & Effects</div>
-          <div class="pcf"><div class="pck">✓</div>Offline Support</div>
-          <div class="pcf"><div class="pck">✓</div>Delivered in 48 Hours</div>
-          <div class="pcf"><div class="pck">✓</div>2 Free Revisions</div>
-        </div>
-        <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-solid">Order on WhatsApp</a>
-      </div>
-      <div class="pc">
-        <div class="pc-tier">Premium</div>
-        <div class="pc-name">Business Website</div>
-        <div class="pc-price">₹4,999</div>
-        <div class="pc-note">One time only · FREE hosting lifetime · Zero yearly charges</div>
-        <div class="pc-feats">
-          <div class="pcf"><div class="pck">✓</div>Everything in Pro +</div>
-          <div class="pcf"><div class="pck">✓</div>Multiple Pages</div>
-          <div class="pcf"><div class="pck">✓</div>Services & Gallery</div>
-          <div class="pcf"><div class="pck">✓</div>WhatsApp Float Button</div>
-          <div class="pcf"><div class="pck">✓</div>Active Contact Form</div>
-          <div class="pcf"><div class="pck">✓</div>Delivered in 72 Hours</div>
-          <div class="pcf"><div class="pck">✓</div>3 Free Revisions</div>
-        </div>
-        <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
-      </div>
-    </div>
 
-    <!-- META ADS PACKAGES -->
-    <div class="sec-center" style="margin-top:5rem;">
-      <div class="sec-badge">Meta Ads</div>
-      <h2 class="sec-title">HECTOR365 <span class="blue">Meta Ads</span> Packages</h2>
-      <p class="sec-sub">Facebook & Instagram pe targeted ads — leads aur sales dono ke liye. Service Fee + Aapka apna Ad Budget + (optional) Creative — sab clearly alag, koi hidden charge nahi.</p>
-    </div>
-    <div class="pricing-grid">
-      <div class="pc">
-        <div class="pc-tier">Starter</div>
-        <div class="pc-name">Starter Plan</div>
-        <div class="pc-price">₹1,999</div>
-        <div class="pc-note">Service Fee · Upto 15 Days</div>
-        <div class="pc-feats">
-          <div class="pcf"><div class="pck">✓</div>Upto 15 Days Campaign</div>
-          <div class="pcf"><div class="pck">✓</div>1 Location Targeting</div>
-          <div class="pcf"><div class="pck">✓</div>Facebook & Instagram Ads</div>
-          <div class="pcf"><div class="pck">✓</div>Campaign Setup & Monitoring</div>
-          <div class="pcf"><div class="pck">✓</div>Live Performance Dashboard</div>
+    <div class="stack-wrap">
+      <div class="stack pc-stack" id="pcStack">
+        <div class="pc" data-index="0">
+          <div class="pc-tier">Website · Basic</div>
+          <div class="pc-name">Portfolio Website</div>
+          <div class="pc-price">₹1,499</div>
+          <div class="pc-note">One time only · FREE hosting lifetime · Zero yearly charges</div>
+          <div class="pc-feats">
+            <div class="pcf"><div class="pck">✓</div>Name, Photo, Skills</div>
+            <div class="pcf"><div class="pck">✓</div>Education & Experience</div>
+            <div class="pcf"><div class="pck">✓</div>Contact Section</div>
+            <div class="pcf"><div class="pck">✓</div>Mobile Responsive</div>
+            <div class="pcf"><div class="pck">✓</div>FREE Hosting Forever</div>
+            <div class="pcf"><div class="pck">✓</div>Delivered in 24 Hours</div>
+            <div class="pcf"><div class="pck">✓</div>1 Free Revision</div>
+          </div>
+          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
         </div>
-        <div class="pc-sched">
-          <div class="pc-sched-title">📋 Optimization Schedule</div>
-          <div class="pc-sched-row"><span>Day 3</span>CTR & response check, targeting tweak</div>
-          <div class="pc-sched-row"><span>Day 7</span>Budget shift to best-performing audience</div>
-          <div class="pc-sched-row"><span>Day 12</span>Final review + performance report</div>
+        <div class="pc hot" data-index="1">
+          <div class="hot-badge">⭐ Most Popular</div>
+          <div class="pc-tier">Website · Professional</div>
+          <div class="pc-name">Portfolio + PWA App</div>
+          <div class="pc-price">₹1,999</div>
+          <div class="pc-note">One time only · FREE hosting lifetime · Zero yearly charges</div>
+          <div class="pc-feats">
+            <div class="pcf"><div class="pck">✓</div>Everything in Basic +</div>
+            <div class="pcf"><div class="pck">✓</div>Phone pe Install (App)</div>
+            <div class="pcf"><div class="pck">✓</div>Social Media Links</div>
+            <div class="pcf"><div class="pck">✓</div>Animations & Effects</div>
+            <div class="pcf"><div class="pck">✓</div>Offline Support</div>
+            <div class="pcf"><div class="pck">✓</div>Delivered in 48 Hours</div>
+            <div class="pcf"><div class="pck">✓</div>2 Free Revisions</div>
+          </div>
+          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-solid">Order on WhatsApp</a>
         </div>
-        <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
+        <div class="pc" data-index="2">
+          <div class="pc-tier">Website · Premium</div>
+          <div class="pc-name">Business Website</div>
+          <div class="pc-price">₹4,999</div>
+          <div class="pc-note">One time only · FREE hosting lifetime · Zero yearly charges</div>
+          <div class="pc-feats">
+            <div class="pcf"><div class="pck">✓</div>Everything in Pro +</div>
+            <div class="pcf"><div class="pck">✓</div>Multiple Pages</div>
+            <div class="pcf"><div class="pck">✓</div>Services & Gallery</div>
+            <div class="pcf"><div class="pck">✓</div>WhatsApp Float Button</div>
+            <div class="pcf"><div class="pck">✓</div>Active Contact Form</div>
+            <div class="pcf"><div class="pck">✓</div>Delivered in 72 Hours</div>
+            <div class="pcf"><div class="pck">✓</div>3 Free Revisions</div>
+          </div>
+          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
+        </div>
+        <div class="pc" data-index="3">
+          <div class="pc-tier">Meta Ads · Starter</div>
+          <div class="pc-name">Starter Plan</div>
+          <div class="pc-price">₹1,999</div>
+          <div class="pc-note">Service Fee · Upto 15 Days</div>
+          <div class="pc-feats">
+            <div class="pcf"><div class="pck">✓</div>Upto 15 Days Campaign</div>
+            <div class="pcf"><div class="pck">✓</div>1 Location Targeting</div>
+            <div class="pcf"><div class="pck">✓</div>Facebook & Instagram Ads</div>
+            <div class="pcf"><div class="pck">✓</div>Campaign Setup & Monitoring</div>
+            <div class="pcf"><div class="pck">✓</div>Live Performance Dashboard</div>
+          </div>
+          <div class="pc-sched">
+            <div class="pc-sched-title">📋 Optimization Schedule</div>
+            <div class="pc-sched-row"><span>Day 3</span>CTR & response check, targeting tweak</div>
+            <div class="pc-sched-row"><span>Day 7</span>Budget shift to best-performing audience</div>
+            <div class="pc-sched-row"><span>Day 12</span>Final review + performance report</div>
+          </div>
+          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
+        </div>
+        <div class="pc hot" data-index="4">
+          <div class="hot-badge">⭐ Best Value</div>
+          <div class="pc-tier">Meta Ads · Growth</div>
+          <div class="pc-name">Growth Plan</div>
+          <div class="pc-price">₹3,999</div>
+          <div class="pc-note">Service Fee · Upto 30 Days</div>
+          <div class="pc-feats">
+            <div class="pcf"><div class="pck">✓</div>Upto 30 Days Campaign</div>
+            <div class="pcf"><div class="pck">✓</div>Upto 2 Locations Targeting</div>
+            <div class="pcf"><div class="pck">✓</div>Facebook & Instagram Ads</div>
+            <div class="pcf"><div class="pck">✓</div>Campaign Setup & Optimization</div>
+            <div class="pcf"><div class="pck">✓</div>Live Performance Dashboard</div>
+          </div>
+          <div class="pc-sched">
+            <div class="pc-sched-title">📋 Optimization Schedule</div>
+            <div class="pc-sched-row"><span>Day 3</span>Initial response check, both locations</div>
+            <div class="pc-sched-row"><span>Day 7</span>Cost-per-result compare, budget rebalance</div>
+            <div class="pc-sched-row"><span>Day 10</span>Creative fatigue check, refresh if needed</div>
+            <div class="pc-sched-row"><span>Day 15</span>Mid-point full review, budget reallocation</div>
+            <div class="pc-sched-row"><span>Day 20</span>Performance trend check & tweak</div>
+            <div class="pc-sched-row"><span>Day 25-30</span>Final review + complete report</div>
+          </div>
+          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-solid">Order on WhatsApp</a>
+        </div>
+        <div class="pc" data-index="5">
+          <div class="pc-tier">Meta Ads · Add-on Info</div>
+          <div class="pc-name">Ads Add-ons</div>
+          <div class="pc-price" style="font-size:1.5rem;">Flexible Pricing</div>
+          <div class="pc-note">Sab alag, koi hidden charge nahi</div>
+          <div class="pc-feats">
+            <div class="pcf"><div class="pck">💰</div>Ad Budget: aapke hisab se, min ₹150/day</div>
+            <div class="pcf"><div class="pck">🎨</div>Creative: Static ₹399 · Video ₹999</div>
+            <div class="pcf"><div class="pck">📍</div>Extra Campaign/Location: ₹500 · ₹999</div>
+            <div class="pcf"><div class="pck">🌐</div>Custom Domain (.com): + ₹799/year</div>
+          </div>
+          <p class="pc-disclaimer" style="margin-top:0;margin-bottom:1rem;">* Optimization days based on campaign performance, na ki sirf calendar ke hisab se.</p>
+          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
+        </div>
       </div>
-      <div class="pc hot">
-        <div class="hot-badge">⭐ Best Value</div>
-        <div class="pc-tier">Growth</div>
-        <div class="pc-name">Growth Plan</div>
-        <div class="pc-price">₹3,999</div>
-        <div class="pc-note">Service Fee · Upto 30 Days</div>
-        <div class="pc-feats">
-          <div class="pcf"><div class="pck">✓</div>Upto 30 Days Campaign</div>
-          <div class="pcf"><div class="pck">✓</div>Upto 2 Locations Targeting</div>
-          <div class="pcf"><div class="pck">✓</div>Facebook & Instagram Ads</div>
-          <div class="pcf"><div class="pck">✓</div>Campaign Setup & Optimization</div>
-          <div class="pcf"><div class="pck">✓</div>Live Performance Dashboard</div>
-        </div>
-        <div class="pc-sched">
-          <div class="pc-sched-title">📋 Optimization Schedule</div>
-          <div class="pc-sched-row"><span>Day 3</span>Initial response check, both locations</div>
-          <div class="pc-sched-row"><span>Day 7</span>Cost-per-result compare, budget rebalance</div>
-          <div class="pc-sched-row"><span>Day 10</span>Creative fatigue check, refresh if needed</div>
-          <div class="pc-sched-row"><span>Day 15</span>Mid-point full review, budget reallocation</div>
-          <div class="pc-sched-row"><span>Day 20</span>Performance trend check & tweak</div>
-          <div class="pc-sched-row"><span>Day 25-30</span>Final review + complete report</div>
-        </div>
-        <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-solid">Order on WhatsApp</a>
+
+      <div class="stack-nav">
+        <div class="stack-arrow" id="pcPrev">←</div>
+        <div class="stack-dots" id="pcDots"></div>
+        <div class="stack-arrow" id="pcNext">→</div>
       </div>
+      <div class="stack-hint">👆 Card ko swipe karo ya arrow dabao — Website Plans → Meta Ads Plans</div>
     </div>
-    <p class="pc-disclaimer">* Optimization days based on campaign performance; hum actual data ke hisab se adjust karte hain, na ki sirf calendar ke hisab se.</p>
 
     <div class="addon-bar" style="margin-top:2rem;">
       <div style="display:flex;align-items:center;gap:1rem">
@@ -1027,11 +1141,104 @@ if('serviceWorker' in navigator) window.addEventListener('load', () => navigator
 
 // Scroll animations
 const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';} }), {threshold:0.1});
-document.querySelectorAll('.svc-card,.pc,.step,.fp,.clink,.comp-row').forEach(el => {
+document.querySelectorAll('.step,.fp,.clink,.comp-row').forEach(el => {
   el.style.opacity='0'; el.style.transform='translateY(22px)';
   el.style.transition='opacity 0.5s ease, transform 0.5s ease';
   obs.observe(el);
 });
+
+// ===== CARD STACK CAROUSEL (Services) =====
+function initStack(stackId, prevId, nextId, dotsId) {
+  const stack = document.getElementById(stackId);
+  if (!stack) return;
+  const cards = Array.from(stack.children);
+  const total = cards.length;
+  let current = 0;
+  let startX = 0, deltaX = 0, dragging = false;
+
+  const dotsWrap = document.getElementById(dotsId);
+  cards.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'stack-dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(d);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function render() {
+    cards.forEach((card, i) => {
+      const rel = (i - current + total) % total;
+      card.style.zIndex = total - rel;
+      if (rel === 0) {
+        card.style.transform = 'translateX(0) scale(1) rotate(0deg)';
+        card.style.opacity = '1';
+        card.querySelectorAll(':scope > *').forEach(c => c.style.visibility = 'visible');
+      } else if (rel === 1) {
+        card.style.transform = 'translateX(18px) scale(0.95) rotate(2deg)';
+        card.style.opacity = '0.85';
+        card.querySelectorAll(':scope > *').forEach(c => c.style.visibility = 'hidden');
+      } else if (rel === 2) {
+        card.style.transform = 'translateX(32px) scale(0.9) rotate(4deg)';
+        card.style.opacity = '0.6';
+        card.querySelectorAll(':scope > *').forEach(c => c.style.visibility = 'hidden');
+      } else {
+        card.style.transform = 'translateX(40px) scale(0.85) rotate(5deg)';
+        card.style.opacity = '0';
+        card.querySelectorAll(':scope > *').forEach(c => c.style.visibility = 'hidden');
+      }
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function goTo(i) { current = ((i % total) + total) % total; render(); }
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  document.getElementById(nextId).addEventListener('click', next);
+  document.getElementById(prevId).addEventListener('click', prev);
+
+  // Drag / swipe support
+  function onDown(x) { dragging = true; startX = x; stack.querySelector('.svc-card[style*="z-index: ' + total + '"]')?.classList.add('dragging'); }
+  function onMove(x) {
+    if (!dragging) return;
+    deltaX = x - startX;
+    const topCard = cards[current];
+    topCard.classList.add('dragging');
+    topCard.style.transform = `translateX(${deltaX}px) rotate(${deltaX * 0.05}deg)`;
+  }
+  function onUp() {
+    if (!dragging) return;
+    dragging = false;
+    const topCard = cards[current];
+    topCard.classList.remove('dragging');
+    if (deltaX < -60) next();
+    else if (deltaX > 60) prev();
+    else render();
+    deltaX = 0;
+  }
+
+  stack.addEventListener('mousedown', e => onDown(e.clientX));
+  window.addEventListener('mousemove', e => onMove(e.clientX));
+  window.addEventListener('mouseup', onUp);
+  stack.addEventListener('touchstart', e => onDown(e.touches[0].clientX), {passive:true});
+  stack.addEventListener('touchmove', e => onMove(e.touches[0].clientX), {passive:true});
+  stack.addEventListener('touchend', onUp);
+
+  render();
+}
+initStack('svcStack', 'svcPrev', 'svcNext', 'svcDots');
+initStack('pcStack', 'pcPrev', 'pcNext', 'pcDots');
+
+// ===== BAR CHART ANIMATION =====
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.width = entry.target.dataset.w + '%';
+      barObs.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.3});
+document.querySelectorAll('.bar-fill').forEach(bar => barObs.observe(bar));
 </script>
 </body>
 </html>
