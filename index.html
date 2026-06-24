@@ -6,7 +6,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0D9488">
+<meta name="theme-color" content="#0B1020">
 <meta name="description" content="Hector365 — Services. Solutions. Success. Professional Digital Agency. Websites, Landing Pages & Facebook Ads. Lifetime FREE hosting!">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -15,42 +15,43 @@
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --bg: #04130F;
-  --bg2: #071D17;
-  --bg3: #0A2620;
-  --bg4: #0D2F27;
-  --blue: #14E0C4;
-  --blue2: #5EFFE3;
-  --blue3: #2DF5D5;
-  --blue4: #8FFFEA;
-  --cyan: #14E0C4;
-  --glow: rgba(20,224,196,0.22);
-  --glow2: rgba(20,224,196,0.15);
+  --bg: #0B1020;
+  --bg2: #121830;
+  --bg3: #1A2240;
+  --bg4: #212B4D;
+  --blue: #00E5C3;
+  --blue2: #00C2A4;
+  --blue3: #4F7CFF;
+  --blue4: #7B9CFF;
+  --cyan: #00E5C3;
+  --glow: rgba(0,229,195,0.22);
+  --glow2: rgba(79,124,255,0.18);
   --white: #FFFFFF;
-  --text: #EAFBF6;
-  --text2: #8FBDB0;
-  --text3: #4F7268;
-  --border: rgba(20,224,196,0.22);
-  --border2: rgba(234,251,246,0.08);
-  --card: #082019;
-  --green: #34D399;
-  --silver: #8FBDB0;
-  --gold: #E0B85E;
+  --text: #F1F5F9;
+  --text2: #9AA5C0;
+  --text3: #5C6584;
+  --border: rgba(0,229,195,0.2);
+  --border2: rgba(241,245,249,0.08);
+  --card: rgba(255,255,255,0.04);
+  --card-solid: #131A33;
+  --green: #22C55E;
+  --silver: #9AA5C0;
+  --gold: #F59E0B;
   --orange: #FB923C;
-  --yellow: #FBBF24;
+  --yellow: #F59E0B;
   --red: #F87171;
-  --yellow-text: #FBBF24;
-  --shadow: rgba(0,0,0,0.35);
+  --yellow-text: #F59E0B;
+  --shadow: rgba(0,0,0,0.45);
   /* DARK ZONE — used for Hero + Trust bar (same as global now) */
-  --dbg: #04130F;
-  --dbg2: #071D17;
-  --dtext: #EAFBF6;
-  --dtext2: #8FBDB0;
-  --dtext3: #4F7268;
-  --dteal: #14E0C4;
-  --dteal2: #5EFFE3;
-  --dborder: rgba(20,224,196,0.18);
-  --dglow: rgba(20,224,196,0.22);
+  --dbg: #0B1020;
+  --dbg2: #121830;
+  --dtext: #F1F5F9;
+  --dtext2: #9AA5C0;
+  --dtext3: #5C6584;
+  --dteal: #00E5C3;
+  --dteal2: #4F7CFF;
+  --dborder: rgba(0,229,195,0.2);
+  --dglow: rgba(0,229,195,0.22);
 }
 html { scroll-behavior: smooth; }
 body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
@@ -85,8 +86,8 @@ nav {
   box-shadow: 0 4px 16px var(--glow);
   transition: all 0.3s !important;
 }
-.nav-cta:hover { box-shadow: 0 6px 24px rgba(13,148,136,0.35) !important; transform: translateY(-1px) !important; }
-.install-nav { display: none; background: rgba(13,148,136,0.08); border: 1px solid var(--border); color: var(--blue); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+.nav-cta:hover { box-shadow: 0 6px 24px rgba(0,229,195,0.35) !important; transform: translateY(-1px) !important; }
+.install-nav { display: none; background: rgba(0,229,195,0.08); border: 1px solid var(--border); color: var(--blue); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.78rem; font-weight: 600; cursor: pointer; font-family: inherit; }
 .install-nav.show { display: block; }
 
 /* HERO */
@@ -97,8 +98,8 @@ nav {
   padding: 8rem 5rem 5rem;
   position: relative; overflow: hidden;
   background:
-    radial-gradient(ellipse at 75% 30%, rgba(20,224,196,0.16) 0%, transparent 55%),
-    radial-gradient(ellipse at 10% 75%, rgba(20,224,196,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 30%, rgba(0,229,195,0.16) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 75%, rgba(0,229,195,0.10) 0%, transparent 50%),
     var(--dbg);
 }
 /* Animated grid background */
@@ -106,8 +107,8 @@ nav {
   content: '';
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(20,224,196,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20,224,196,0.06) 1px, transparent 1px);
+    linear-gradient(rgba(0,229,195,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,195,0.06) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
 }
@@ -115,7 +116,7 @@ nav {
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 0.6rem;
-  background: rgba(20,224,196,0.1); border: 1px solid rgba(20,224,196,0.3);
+  background: rgba(0,229,195,0.1); border: 1px solid rgba(0,229,195,0.3);
   color: var(--dteal2); padding: 0.45rem 1.1rem; border-radius: 100px;
   font-size: 0.72rem; font-weight: 700; margin-bottom: 1.5rem;
   letter-spacing: 0.1em; text-transform: uppercase;
@@ -146,21 +147,21 @@ nav {
 
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
 .btn-primary {
-  background: linear-gradient(135deg, var(--dteal), #0D9488);
-  color: #04130F; padding: 0.95rem 2.2rem; border-radius: 10px;
+  background: linear-gradient(135deg, var(--dteal), var(--blue3));
+  color: #0B1020; padding: 0.95rem 2.2rem; border-radius: 10px;
   font-weight: 700; font-size: 0.95rem; text-decoration: none;
   transition: all 0.3s; box-shadow: 0 0 35px var(--dglow);
   display: inline-flex; align-items: center; gap: 0.5rem;
 }
-.btn-primary:hover { box-shadow: 0 0 55px rgba(20,224,196,0.4); transform: translateY(-3px); }
+.btn-primary:hover { box-shadow: 0 0 55px rgba(0,229,195,0.4), 0 0 30px rgba(79,124,255,0.25); transform: translateY(-3px); }
 .btn-outline {
-  border: 1px solid rgba(20,224,196,0.35); color: var(--dteal2);
+  border: 1px solid rgba(0,229,195,0.35); color: var(--dteal2);
   padding: 0.95rem 2.2rem; border-radius: 10px;
   font-weight: 600; font-size: 0.95rem; text-decoration: none;
   transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem;
-  background: rgba(20,224,196,0.05);
+  background: rgba(0,229,195,0.05);
 }
-.btn-outline:hover { border-color: var(--dteal); background: rgba(20,224,196,0.1); }
+.btn-outline:hover { border-color: var(--dteal); background: rgba(0,229,195,0.1); }
 
 .hero-free {
   display: flex; align-items: center; gap: 1rem;
@@ -177,7 +178,7 @@ nav {
   position: absolute; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: 350px; height: 350px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(20,224,196,0.28) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0,229,195,0.28) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-logo-wrap {
@@ -187,7 +188,7 @@ nav {
 .hero-logo-img {
   width: 260px; height: 260px;
   object-fit: contain;
-  filter: drop-shadow(0 0 35px rgba(20,224,196,0.45)) drop-shadow(0 0 70px rgba(20,224,196,0.2));
+  filter: drop-shadow(0 0 35px rgba(0,229,195,0.45)) drop-shadow(0 0 70px rgba(0,229,195,0.2));
   animation: float 4s ease-in-out infinite;
 }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
@@ -220,13 +221,34 @@ nav {
 .trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--dtext2); }
 .trust-item strong { color: var(--dtext); }
 
+/* RESULTS & PROOF */
+.results-bg { background: var(--bg); }
+.stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; }
+.stat-card {
+  background: var(--card); border: 1px solid var(--border2);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-radius: 18px; padding: 1.8rem 1.4rem; text-align: center;
+  position: relative; overflow: hidden; box-shadow: 0 4px 20px var(--shadow);
+  transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+.stat-card:hover { transform: translateY(-6px); border-color: rgba(0,229,195,0.45); box-shadow: 0 12px 32px var(--shadow), 0 0 24px var(--glow); }
+.stat-card::before {
+  content: ''; position: absolute; top: -40%; right: -40%;
+  width: 140px; height: 140px; border-radius: 50%;
+  background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+}
+.stat-icon { font-size: 1.8rem; margin-bottom: 0.7rem; }
+.stat-num { font-size: 2.1rem; font-weight: 900; color: var(--blue2); line-height: 1; margin-bottom: 0.4rem; letter-spacing: -0.02em; }
+.stat-label { font-size: 0.78rem; color: var(--text2); font-weight: 600; line-height: 1.4; }
+@media(max-width:900px){ .stats-grid{grid-template-columns:repeat(2,1fr)} }
+
 /* SECTIONS */
 section { padding: 7rem 5rem; }
 .section-inner { max-width: 1200px; margin: 0 auto; }
 .sec-center { text-align: center; margin-bottom: 4rem; }
 .sec-badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  background: rgba(13,148,136,0.08); border: 1px solid rgba(13,148,136,0.22);
+  background: rgba(0,229,195,0.08); border: 1px solid rgba(0,229,195,0.22);
   color: var(--blue2); padding: 0.35rem 1rem; border-radius: 100px;
   font-size: 0.7rem; font-weight: 700; margin-bottom: 1rem;
   text-transform: uppercase; letter-spacing: 0.12em;
@@ -236,75 +258,135 @@ section { padding: 7rem 5rem; }
 .sec-title .cyan { color: var(--blue); }
 .sec-sub { font-size: 0.98rem; color: var(--text2); max-width: 580px; margin: 0 auto; line-height: 1.8; }
 
-/* SERVICES — CARD STACK CAROUSEL */
+/* SERVICES & PRICING — 3D COVERFLOW CAROUSEL */
 .services-bg { background: var(--bg2); overflow: hidden; }
-.stack-wrap { position: relative; max-width: 480px; margin: 0 auto; }
-.stack { position: relative; height: 560px; }
-.stack.pc-stack { height: 760px; }
-.svc-card {
+.cf-wrap { position: relative; max-width: 100%; margin: 0 auto; }
+.cf-stage {
+  position: relative; height: 340px;
+  perspective: 1200px; overflow: hidden;
+}
+.cf-track {
+  position: absolute; top: 0; left: 50%; width: 1px; height: 100%;
+  transform-style: preserve-3d;
+}
+.cf-card {
+  position: absolute; top: 50%; left: 0;
+  width: 270px; margin-left: -135px;
   background: var(--card); border: 1px solid var(--border2);
-  border-radius: 22px; padding: 2.2rem; overflow: hidden;
-  box-shadow: 0 10px 40px var(--shadow);
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border-radius: 18px; padding: 1.5rem;
+  box-shadow: 0 10px 30px var(--shadow);
   cursor: grab; user-select: none;
-  transition: transform 0.55s cubic-bezier(.22,.9,.32,1), opacity 0.45s, box-shadow 0.4s;
   display: flex; flex-direction: column;
+  transition: transform 0.5s cubic-bezier(.22,.9,.32,1), opacity 0.5s, box-shadow 0.4s, border-color 0.4s;
+  backface-visibility: hidden;
 }
-.svc-card:active { cursor: grabbing; }
-.svc-card.dragging { transition: none; }
-.svc-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+.cf-card:active { cursor: grabbing; }
+.cf-card.dragging { transition: none; }
+.cf-card.is-active {
+  border-color: rgba(0,229,195,0.5);
+  box-shadow: 0 20px 50px rgba(0,229,195,0.18), 0 0 0 1px rgba(0,229,195,0.3), 0 0 40px rgba(79,124,255,0.12);
 }
-.svc-card[data-color="blue"]::before { background: linear-gradient(90deg, #2563EB, #60A5FA); }
-.svc-card[data-color="orange"]::before { background: linear-gradient(90deg, #EA580C, #FB923C); }
-.svc-card[data-color="red"]::before { background: linear-gradient(90deg, #DC2626, #F87171); }
-.svc-card[data-color="yellow"]::before { background: linear-gradient(90deg, #D97706, #FBBF24); }
-.svc-card::after {
-  content: ''; position: absolute; bottom: -90px; right: -90px;
-  width: 220px; height: 220px; border-radius: 50%;
-  opacity: 0.5; pointer-events: none;
+.cf-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  border-radius: 18px 18px 0 0;
 }
-.svc-card[data-color="blue"]::after { background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%); }
-.svc-card[data-color="orange"]::after { background: radial-gradient(circle, rgba(234,88,12,0.12) 0%, transparent 70%); }
-.svc-card[data-color="red"]::after { background: radial-gradient(circle, rgba(220,38,38,0.12) 0%, transparent 70%); }
-.svc-card[data-color="yellow"]::after { background: radial-gradient(circle, rgba(217,119,6,0.12) 0%, transparent 70%); }
+.cf-card[data-color="blue"]::before { background: linear-gradient(90deg, #2563EB, #60A5FA); }
+.cf-card[data-color="orange"]::before { background: linear-gradient(90deg, #EA580C, #FB923C); }
+.cf-card[data-color="red"]::before { background: linear-gradient(90deg, #DC2626, #F87171); }
+.cf-card[data-color="yellow"]::before { background: linear-gradient(90deg, #D97706, #FBBF24); }
+.cf-card[data-color="teal"]::before { background: linear-gradient(90deg, var(--blue), var(--blue3)); }
+.cf-card[data-color="purple"]::before { background: linear-gradient(90deg, #7C3AED, #A78BFA); }
+.cf-card[data-color="green"]::before { background: linear-gradient(90deg, #22C55E, #4ADE80); }
+.cf-card[data-color="pink"]::before { background: linear-gradient(90deg, #DB2777, #F472B6); }
+.cf-card[data-color="cyan"]::before { background: linear-gradient(90deg, #0891B2, #22D3EE); }
 
-.svc-icon {
-  width: 64px; height: 64px; background: rgba(13,148,136,0.08);
-  border: 1px solid rgba(13,148,136,0.18); border-radius: 16px;
+.cf-icon {
+  width: 42px; height: 42px; background: rgba(0,229,195,0.08);
+  border: 1px solid rgba(0,229,195,0.18); border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.7rem; margin-bottom: 1.4rem;
+  font-size: 1.25rem; margin-bottom: 0.7rem;
 }
-.svc-icon.ic-blue { background: rgba(96,165,250,0.18); border-color: rgba(96,165,250,0.4); }
-.svc-icon.ic-orange { background: rgba(251,146,60,0.18); border-color: rgba(251,146,60,0.4); }
-.svc-icon.ic-red { background: rgba(248,113,113,0.18); border-color: rgba(248,113,113,0.4); }
-.svc-icon.ic-yellow { background: rgba(251,191,36,0.18); border-color: rgba(251,191,36,0.4); }
-.svc-name { font-size: 1.45rem; font-weight: 900; margin-bottom: 0.6rem; color: var(--text); letter-spacing: -0.01em; }
-.svc-desc { font-size: 0.88rem; color: var(--text2); line-height: 1.7; margin-bottom: 1.3rem; }
-.svc-feats { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.4rem; flex: 1; }
-.svc-feat { display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; color: var(--text2); }
-.svc-feat::before { content: '▸'; color: var(--blue); font-size: 0.7rem; }
-.svc-feat.hl { color: var(--text); font-weight: 700; }
-.svc-feat.hl::before { content: '★'; color: var(--yellow); }
-.svc-price { font-size: 2.1rem; font-weight: 900; color: var(--yellow-text); border-top: 1px solid var(--border2); padding-top: 1.1rem; }
-.svc-price span { font-size: 0.74rem; color: var(--text3); font-weight: 400; display: block; margin-top: 0.2rem; }
+.cf-icon.ic-blue { background: rgba(96,165,250,0.18); border-color: rgba(96,165,250,0.4); }
+.cf-icon.ic-orange { background: rgba(251,146,60,0.18); border-color: rgba(251,146,60,0.4); }
+.cf-icon.ic-red { background: rgba(248,113,113,0.18); border-color: rgba(248,113,113,0.4); }
+.cf-icon.ic-yellow { background: rgba(251,191,36,0.18); border-color: rgba(251,191,36,0.4); }
+.cf-icon.ic-purple { background: rgba(167,139,250,0.18); border-color: rgba(167,139,250,0.4); }
+.cf-icon.ic-green { background: rgba(74,222,128,0.18); border-color: rgba(74,222,128,0.4); }
+.cf-icon.ic-pink { background: rgba(244,114,182,0.18); border-color: rgba(244,114,182,0.4); }
+.cf-icon.ic-cyan { background: rgba(34,211,238,0.18); border-color: rgba(34,211,238,0.4); }
+.cf-name { font-size: 1.05rem; font-weight: 900; margin-bottom: 0.35rem; color: var(--text); letter-spacing: -0.01em; }
+.cf-tier { font-size: 0.62rem; font-weight: 800; color: var(--text3); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 0.3rem; }
+.cf-feats { display: flex; flex-direction: column; gap: 0.4rem; margin: 0.6rem 0; }
+.cf-feat { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: var(--text2); line-height: 1.3; }
+.cf-feat::before { content: '✓'; color: var(--green); font-size: 0.72rem; font-weight: 800; }
+.cf-feat.hl { color: var(--text); font-weight: 700; }
+.cf-feat.hl::before { content: '★'; color: var(--yellow); }
+.cf-price-row { display: flex; align-items: baseline; gap: 0.4rem; margin-top: auto; padding-top: 0.7rem; border-top: 1px solid var(--border2); }
+.cf-price { font-size: 1.6rem; font-weight: 900; color: var(--yellow-text); line-height: 1; }
+.cf-price-note { font-size: 0.66rem; color: var(--text3); }
+.cf-badge {
+  position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--blue), var(--blue3));
+  color: white; padding: 0.22rem 0.85rem; border-radius: 100px;
+  font-size: 0.6rem; font-weight: 800; white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,229,195,0.35); z-index: 5;
+}
+.cf-more {
+  background: none; border: none; color: var(--blue2);
+  font-size: 0.72rem; font-weight: 700; cursor: pointer;
+  padding: 0.4rem 0; text-align: left; font-family: inherit;
+  display: flex; align-items: center; gap: 0.3rem;
+}
+.cf-more:hover { color: var(--blue); }
+.cf-more .arr { transition: transform 0.25s; font-size: 0.65rem; }
+.cf-more.open .arr { transform: rotate(180deg); }
+.cf-detail {
+  max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+  font-size: 0.74rem; color: var(--text2); line-height: 1.5;
+}
+.cf-detail-row { display: flex; gap: 0.5rem; margin-bottom: 0.35rem; }
+.cf-detail-row:last-child { margin-bottom: 0; }
+.cf-detail-row span { min-width: 48px; font-weight: 700; color: var(--blue2); flex-shrink: 0; }
+.cf-btn {
+  display: block; text-align: center; padding: 0.6rem;
+  border-radius: 9px; font-weight: 700; font-size: 0.8rem;
+  text-decoration: none; transition: all 0.2s; margin-top: 0.7rem;
+}
+.cf-ghost { border: 1px solid var(--border); color: var(--blue2); }
+.cf-ghost:hover { border-color: var(--blue3); background: rgba(0,229,195,0.06); }
+.cf-solid {
+  background: linear-gradient(135deg, var(--blue), var(--blue3));
+  color: white; box-shadow: 0 4px 16px var(--glow);
+}
+.cf-solid:hover { box-shadow: 0 6px 22px rgba(0,229,195,0.3); }
 
-.stack-nav {
+.cf-nav {
   display: flex; align-items: center; justify-content: center;
-  gap: 1.4rem; margin-top: 2rem;
+  gap: 1.2rem; margin-top: 1.6rem;
 }
-.stack-arrow {
-  width: 46px; height: 46px; border-radius: 50%;
+.cf-arrow {
+  width: 42px; height: 42px; border-radius: 50%;
   background: var(--card); border: 1px solid var(--border);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem; color: var(--blue2); cursor: pointer;
+  font-size: 1rem; color: var(--blue2); cursor: pointer;
   transition: all 0.2s; box-shadow: 0 4px 14px var(--shadow);
 }
-.stack-arrow:hover { background: var(--blue); color: white; transform: scale(1.08); }
-.stack-dots { display: flex; gap: 0.5rem; }
-.stack-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border2); cursor: pointer; transition: all 0.3s; }
-.stack-dot.active { background: var(--blue); width: 24px; border-radius: 4px; }
-.stack-hint { text-align: center; font-size: 0.76rem; color: var(--text3); margin-top: 0.9rem; }
+.cf-arrow:hover { background: var(--blue); color: white; transform: scale(1.08); }
+.cf-dots { display: flex; gap: 0.45rem; }
+.cf-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border2); cursor: pointer; transition: all 0.3s; }
+.cf-dot.active { background: var(--blue); width: 20px; border-radius: 4px; }
+.cf-hint { text-align: center; font-size: 0.72rem; color: var(--text3); margin-top: 0.7rem; }
+
+@media(max-width:640px){
+  .cf-stage{ height: 380px; }
+  .cf-card{ width: 230px; margin-left: -115px; padding: 1.2rem; }
+}
+@media(max-width:380px){
+  .cf-card{ width: 205px; margin-left: -102px; padding: 1rem; }
+}
+
 
 .fb-card {
   margin-top: 1.5rem;
@@ -327,7 +409,7 @@ section { padding: 7rem 5rem; }
 .fb-amount { font-size: 2.2rem; font-weight: 900; color: var(--blue2); }
 .fb-note { font-size: 0.72rem; color: var(--text3); margin-bottom: 0.8rem; }
 .fb-btn { background: linear-gradient(135deg, var(--blue), var(--blue3)); color: white; padding: 0.75rem 1.8rem; border-radius: 10px; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: inline-block; transition: all 0.2s; white-space: nowrap; box-shadow: 0 4px 16px var(--glow); }
-.fb-btn:hover { box-shadow: 0 6px 22px rgba(13,148,136,0.3); }
+.fb-btn:hover { box-shadow: 0 6px 22px rgba(0,229,195,0.3); }
 
 /* FREE SECTION */
 .free-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
@@ -339,19 +421,20 @@ section { padding: 7rem 5rem; }
 .fp-list { display: flex; flex-direction: column; gap: 1rem; }
 .fp {
   display: flex; align-items: flex-start; gap: 1rem;
-  background: rgba(22,163,74,0.04); border: 1px solid rgba(22,163,74,0.15);
+  background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15);
   border-radius: 12px; padding: 1.2rem; transition: all 0.3s;
 }
-.fp:hover { background: rgba(22,163,74,0.07); border-color: rgba(22,163,74,0.25); }
-.fp-icon { width: 38px; height: 38px; min-width: 38px; background: rgba(22,163,74,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+.fp:hover { background: rgba(34,197,94,0.07); border-color: rgba(34,197,94,0.25); }
+.fp-icon { width: 38px; height: 38px; min-width: 38px; background: rgba(34,197,94,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
 .fp h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.2rem; color: var(--text); }
 .fp p { font-size: 0.8rem; color: var(--text2); line-height: 1.5; }
 
 .comp-box {
   background: var(--card); border: 1px solid var(--border2);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px var(--shadow);
 }
-.comp-title-row { padding: 1rem 1.5rem; background: rgba(13,148,136,0.06); border-bottom: 1px solid var(--border2); font-size: 0.85rem; font-weight: 800; color: var(--text); }
+.comp-title-row { padding: 1rem 1.5rem; background: rgba(0,229,195,0.07); border-bottom: 1px solid var(--border2); font-size: 0.85rem; font-weight: 800; color: var(--text); }
 .comp-head { display: grid; grid-template-columns: 1fr 110px 140px; padding: 0.8rem 1.5rem; border-bottom: 1px solid var(--border2); }
 .comp-row { display: grid; grid-template-columns: 1fr 110px 140px; padding: 0.9rem 1.5rem; border-bottom: 1px solid var(--border2); align-items: center; }
 .comp-row:last-child { border-bottom: none; }
@@ -362,80 +445,10 @@ section { padding: 7rem 5rem; }
 .cval { font-size: 0.8rem; text-align: center; }
 .cval.red { color: var(--red); font-weight: 600; background: rgba(220,38,38,0.07); padding: 0.25rem 0.6rem; border-radius: 8px; display: inline-block; }
 .cval.green { color: var(--green); font-weight: 700; }
-.cval.h365 { background: rgba(22,163,74,0.12); color: var(--green); font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.8rem; border-radius: 100px; display: inline-block; box-shadow: 0 0 0 1px rgba(22,163,74,0.18); }
-
-/* COMPARISON BAR CHART */
-.bar-chart { background: var(--card); border: 1px solid var(--border2); border-radius: 20px; padding: 2rem; box-shadow: 0 4px 20px var(--shadow); }
-.bar-chart-title { font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.5rem; }
-.bar-group { margin-bottom: 1.6rem; }
-.bar-group:last-child { margin-bottom: 0; }
-.bar-label { font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
-.bar-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem; }
-.bar-row-name { font-size: 0.74rem; color: var(--text3); width: 64px; flex-shrink: 0; font-weight: 600; }
-.bar-track { flex: 1; height: 22px; background: var(--bg2); border-radius: 6px; overflow: hidden; position: relative; }
-.bar-fill { height: 100%; border-radius: 6px; width: 0%; min-width: 64px; transition: width 1.2s cubic-bezier(.22,.9,.32,1); display: flex; align-items: center; justify-content: flex-end; padding-right: 0.5rem; }
-.bar-fill.red { background: linear-gradient(90deg, #F87171, var(--red)); }
-.bar-fill.green { background: linear-gradient(90deg, var(--blue3), var(--green)); }
-.bar-fill-text { font-size: 0.66rem; font-weight: 800; color: white; white-space: nowrap; }
+.cval.h365 { background: rgba(34,197,94,0.12); color: var(--green); font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.8rem; border-radius: 100px; display: inline-block; box-shadow: 0 0 0 1px rgba(34,197,94,0.18); }
 
 /* PRICING */
 .pricing-bg { background: var(--bg2); }
-/* PRICING — UNIFIED CARD STACK (reuses .stack from services) */
-
-.pc {
-  background: var(--card); border: 1px solid var(--border2);
-  border-radius: 20px; padding: 2rem; position: relative;
-  transition: border-color 0.3s, box-shadow 0.3s; box-shadow: 0 2px 14px var(--shadow);
-  user-select: none;
-}
-/* When inside the unified pricing stack, behave like the services card-stack */
-.pc-stack .pc {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  overflow-y: auto; cursor: grab;
-  transition: transform 0.55s cubic-bezier(.22,.9,.32,1), opacity 0.45s;
-}
-.pc-stack .pc:active { cursor: grabbing; }
-.pc-stack .pc.dragging { transition: none; }
-.pc.hot {
-  background: linear-gradient(135deg, rgba(13,148,136,0.06), rgba(13,148,136,0.02));
-  border-color: rgba(13,148,136,0.35);
-  box-shadow: 0 8px 30px rgba(13,148,136,0.12);
-}
-.hot-badge {
-  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--blue), var(--blue3));
-  color: white; padding: 0.3rem 1.2rem; border-radius: 100px;
-  font-size: 0.68rem; font-weight: 800; white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(13,148,136,0.35);
-}
-.pc-tier { font-size: 0.68rem; font-weight: 800; color: var(--text3); text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 0.4rem; }
-.pc-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 1rem; color: var(--text); }
-.pc-price { font-size: 2.8rem; font-weight: 900; color: var(--yellow-text); line-height: 1; margin-bottom: 0.3rem; }
-.pc-note { font-size: 0.72rem; color: var(--text3); margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border2); }
-.pc-feats { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2rem; }
-.pcf { display: flex; align-items: center; gap: 0.7rem; font-size: 0.83rem; color: var(--text2); }
-.pck { width: 18px; height: 18px; min-width: 18px; background: rgba(22,163,74,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--green); }
-.pc-sched {
-  background: var(--bg2); border: 1px solid var(--border2);
-  border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 1.5rem;
-}
-.pc-sched-title { font-size: 0.78rem; font-weight: 800; color: var(--text); margin-bottom: 0.65rem; }
-.pc-sched-row { display: flex; gap: 0.6rem; font-size: 0.76rem; color: var(--text2); line-height: 1.5; margin-bottom: 0.45rem; }
-.pc-sched-row:last-child { margin-bottom: 0; }
-.pc-sched-row span { min-width: 56px; font-weight: 700; color: var(--blue2); flex-shrink: 0; }
-.pc-disclaimer { text-align: center; font-size: 0.74rem; color: var(--text3); margin-top: 1.5rem; font-style: italic; }
-.pc-btn {
-  display: block; text-align: center; padding: 0.9rem;
-  border-radius: 10px; font-weight: 700; font-size: 0.9rem;
-  text-decoration: none; transition: all 0.2s;
-}
-.pc-ghost { border: 1px solid var(--border); color: var(--blue2); }
-.pc-ghost:hover { border-color: var(--blue3); background: rgba(13,148,136,0.06); }
-.pc-solid {
-  background: linear-gradient(135deg, var(--blue), var(--blue3));
-  color: white; box-shadow: 0 4px 20px var(--glow);
-}
-.pc-solid:hover { box-shadow: 0 6px 28px rgba(13,148,136,0.3); }
 
 .addon-bar {
   margin-top: 2rem; background: rgba(201,163,93,0.07);
@@ -458,10 +471,11 @@ section { padding: 7rem 5rem; }
 }
 .step {
   background: var(--card); border: 1px solid var(--border2);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border-radius: 16px; padding: 2rem 1.5rem; text-align: center;
   position: relative; transition: all 0.3s; box-shadow: 0 2px 12px var(--shadow);
 }
-.step:hover { border-color: var(--border); transform: translateY(-5px); box-shadow: 0 16px 36px var(--shadow); }
+.step:hover { border-color: var(--border); transform: translateY(-5px); box-shadow: 0 16px 36px var(--shadow), 0 0 20px var(--glow); }
 .step-num {
   width: 44px; height: 44px; margin: 0 auto 1rem;
   background: linear-gradient(135deg, var(--blue), var(--blue3));
@@ -471,7 +485,7 @@ section { padding: 7rem 5rem; }
 }
 .step-num.sn-blue { background: linear-gradient(135deg, #2563EB, #60A5FA); box-shadow: 0 6px 18px rgba(37,99,235,0.3); }
 .step-num.sn-orange { background: linear-gradient(135deg, #EA580C, #FB923C); box-shadow: 0 6px 18px rgba(234,88,12,0.3); }
-.step-num.sn-green { background: linear-gradient(135deg, #16A34A, #4ADE80); box-shadow: 0 6px 18px rgba(22,163,74,0.3); }
+.step-num.sn-green { background: linear-gradient(135deg, #22C55E, #4ADE80); box-shadow: 0 6px 18px rgba(34,197,94,0.3); }
 .step-icon { font-size: 2rem; margin-bottom: 0.8rem; }
 .step-title { font-size: 0.95rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--text); }
 .step-desc { font-size: 0.8rem; color: var(--text2); line-height: 1.65; }
@@ -479,7 +493,7 @@ section { padding: 7rem 5rem; }
 /* CONTACT */
 .contact-bg { background: var(--bg2); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-.contact-logo { width: 80px; margin-bottom: 1.5rem; filter: drop-shadow(0 6px 18px rgba(13,148,136,0.25)); }
+.contact-logo { width: 80px; margin-bottom: 1.5rem; filter: drop-shadow(0 6px 18px rgba(0,229,195,0.25)); }
 .contact-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem; color: var(--text); }
 .contact-title .cyan { color: var(--blue); }
 .contact-sub { font-size: 0.95rem; color: var(--text2); line-height: 1.85; margin-bottom: 2rem; }
@@ -487,18 +501,20 @@ section { padding: 7rem 5rem; }
 .clink {
   display: flex; align-items: center; gap: 1rem;
   background: var(--card); border: 1px solid var(--border2);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border-radius: 12px; padding: 0.9rem 1.2rem;
   text-decoration: none; color: var(--text); transition: all 0.25s;
   box-shadow: 0 2px 10px var(--shadow);
 }
-.clink:hover { border-color: var(--border); background: rgba(13,148,136,0.04); }
-.clink-icon { width: 36px; height: 36px; min-width: 36px; background: rgba(13,148,136,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
+.clink:hover { border-color: var(--border); background: rgba(0,229,195,0.05); box-shadow: 0 4px 16px var(--shadow), 0 0 16px var(--glow); }
+.clink-icon { width: 36px; height: 36px; min-width: 36px; background: rgba(0,229,195,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
 .clink-text span { font-size: 0.88rem; font-weight: 600; display: block; }
 .clink-text small { font-size: 0.75rem; color: var(--text2); }
 
 /* FORM */
 .form-box {
   background: var(--card); border: 1px solid var(--border);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
   border-radius: 22px; padding: 2.2rem; position: relative; overflow: hidden;
   box-shadow: 0 8px 30px var(--shadow);
 }
@@ -518,8 +534,8 @@ section { padding: 7rem 5rem; }
   font-size: 0.88rem; transition: all 0.2s; outline: none;
 }
 .fg input:focus, .fg select:focus, .fg textarea:focus {
-  border-color: rgba(13,148,136,0.45); background: rgba(13,148,136,0.04);
-  box-shadow: 0 0 0 3px rgba(13,148,136,0.1);
+  border-color: rgba(0,229,195,0.45); background: rgba(0,229,195,0.04);
+  box-shadow: 0 0 0 3px rgba(0,229,195,0.1);
 }
 .fg input::placeholder, .fg textarea::placeholder { color: var(--text3); }
 .fg select option { background: var(--bg); color: var(--text); }
@@ -531,11 +547,11 @@ section { padding: 7rem 5rem; }
   cursor: pointer; transition: all 0.3s; font-family: inherit;
   box-shadow: 0 4px 20px var(--glow);
 }
-.fsub:hover { box-shadow: 0 6px 28px rgba(13,148,136,0.3); transform: translateY(-2px); }
+.fsub:hover { box-shadow: 0 6px 28px rgba(0,229,195,0.3); transform: translateY(-2px); }
 .fsub:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 .form-ok {
   display: none; text-align: center; padding: 2rem;
-  background: rgba(22,163,74,0.05); border: 1px solid rgba(22,163,74,0.18);
+  background: rgba(34,197,94,0.05); border: 1px solid rgba(34,197,94,0.18);
   border-radius: 12px; margin-top: 1rem;
 }
 .form-ok h3 { color: var(--green); font-size: 1.1rem; margin-bottom: 0.5rem; }
@@ -560,7 +576,7 @@ footer {
 }
 .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 .footer-logo { display: flex; align-items: center; gap: 0.7rem; }
-.footer-logo img { width: 36px; height: 36px; border-radius: 8px; object-fit: cover; filter: drop-shadow(0 4px 12px rgba(13,148,136,0.25)); }
+.footer-logo img { width: 36px; height: 36px; border-radius: 8px; object-fit: cover; filter: drop-shadow(0 4px 12px rgba(0,229,195,0.25)); }
 .footer-logo-text { font-size: 1.1rem; font-weight: 900; color: var(--text); }
 .footer-logo-text span { color: var(--blue); }
 .footer-tagline { font-size: 0.65rem; color: var(--text3); letter-spacing: 0.2em; text-transform: uppercase; }
@@ -585,10 +601,8 @@ footer {
   section{padding:4rem 1.2rem} .hero{padding:6rem 1.2rem 3rem}
   .hero-inner{grid-template-columns:1fr;gap:2.5rem}
   .hero-logo-img{width:180px;height:180px}
-  .svc-grid,.pricing-grid{grid-template-columns:1fr}
   .free-grid,.contact-grid{grid-template-columns:1fr;gap:3rem}
   .steps-grid{grid-template-columns:repeat(2,1fr)} .steps-grid::before{display:none}
-  .pc.hot{transform:scale(1)} .pc.hot:hover{transform:translateY(-5px)}
   .trust-bar{padding:1rem 1.2rem;gap:1.5rem}
   .fb-card{flex-direction:column}
   .addon-bar{flex-direction:column;text-align:center}
@@ -616,8 +630,8 @@ footer {
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#services">Website</a></li>
+    <li><a href="#meta-ads">Meta Ads</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="https://wa.me/918959992195" target="_blank" class="nav-cta">WhatsApp →</a></li>
@@ -671,105 +685,147 @@ footer {
   <div class="trust-item">💬 <strong>WhatsApp</strong> Support</div>
 </div>
 
-<!-- SERVICES -->
-<section id="services" class="services-bg">
+<!-- RESULTS & PROOF -->
+<section class="results-bg" id="results">
   <div class="section-inner">
     <div class="sec-center">
-      <div class="sec-badge">Our Services</div>
-      <h2 class="sec-title">Everything You Need to <span class="cyan">Dominate</span> Online</h2>
-      <p class="sec-sub">From personal portfolios to full business websites — premium quality, honest prices, lifetime free hosting.</p>
+      <div class="sec-badge">Results & Proof</div>
+      <h2 class="sec-title">Numbers That <span class="cyan">Speak</span></h2>
+      <p class="sec-sub">Real results from real campaigns — yeh sab transparent dashboard pe live track hota hai.</p>
     </div>
-
-    <div class="stack-wrap">
-      <div class="stack" id="svcStack">
-        <div class="svc-card" data-color="blue" data-index="0">
-          <div class="svc-icon ic-blue">👤</div>
-          <div class="svc-name">Portfolio Website</div>
-          <div class="svc-desc">Job seekers, students, teachers & professionals ke liye. Recruiters aur clients ke saamne ek stunning personal website se stand out karo.</div>
-          <div class="svc-feats">
-            <div class="svc-feat">Name, Photo, Skills & Education</div>
-            <div class="svc-feat">Work Experience Section</div>
-            <div class="svc-feat">Contact Details & Social Links</div>
-            <div class="svc-feat">100% Mobile Responsive</div>
-            <div class="svc-feat hl">FREE Hosting — Lifetime</div>
-          </div>
-          <div class="svc-price">₹1,499 <span>one time · no yearly fee</span></div>
-        </div>
-        <div class="svc-card" data-color="orange" data-index="1">
-          <div class="svc-icon ic-orange">📱</div>
-          <div class="svc-name">Professional Portfolio + App</div>
-          <div class="svc-desc">Sabhi basic features + website phone pe app ki tarah install hogi! Animations, social media links aur offline support bhi.</div>
-          <div class="svc-feats">
-            <div class="svc-feat">Everything in Basic +</div>
-            <div class="svc-feat hl">Phone pe Install (PWA App)</div>
-            <div class="svc-feat">Social Media Integration</div>
-            <div class="svc-feat">Smooth Animations</div>
-            <div class="svc-feat">Offline Support</div>
-          </div>
-          <div class="svc-price">₹1,999 <span>one time · no yearly fee</span></div>
-        </div>
-        <div class="svc-card" data-color="red" data-index="2">
-          <div class="svc-icon ic-red">🎯</div>
-          <div class="svc-name">Landing Page</div>
-          <div class="svc-desc">Coaching, events, product launches ke liye. Ek focused high-converting page jo visitors ko customers mein badal de. Facebook Ads ke liye perfect!</div>
-          <div class="svc-feats">
-            <div class="svc-feat">Single High-Converting Page</div>
-            <div class="svc-feat">WhatsApp CTA Button</div>
-            <div class="svc-feat">Testimonials Section</div>
-            <div class="svc-feat">Active Contact Form</div>
-            <div class="svc-feat hl">Facebook Ads Ready</div>
-          </div>
-          <div class="svc-price">₹2,499 <span>one time · no yearly fee</span></div>
-        </div>
-        <div class="svc-card" data-color="yellow" data-index="3">
-          <div class="svc-icon ic-yellow">🏢</div>
-          <div class="svc-name">Business Website</div>
-          <div class="svc-desc">Shops, agencies, institutes & NGOs ke liye. Multi-page professional website with all sections aapke business ko online grow karne ke liye.</div>
-          <div class="svc-feats">
-            <div class="svc-feat">Multiple Pages (Home, About, Services)</div>
-            <div class="svc-feat">Gallery / Portfolio Section</div>
-            <div class="svc-feat">WhatsApp Floating Button</div>
-            <div class="svc-feat">Active Contact Form</div>
-            <div class="svc-feat hl">FREE Hosting + Domain Setup</div>
-          </div>
-          <div class="svc-price">₹4,999 <span>one time · no yearly fee</span></div>
-        </div>
-      </div>
-
-      <div class="stack-nav">
-        <div class="stack-arrow" id="svcPrev">←</div>
-        <div class="stack-dots" id="svcDots"></div>
-        <div class="stack-arrow" id="svcNext">→</div>
-      </div>
-      <div class="stack-hint">👆 Card ko swipe karo ya arrow dabao</div>
-    </div>
-
-    <!-- FB ADS -->
-    <div class="fb-card">
-      <div class="fb-left">
-        <div class="fb-icon">📢</div>
-        <div>
-          <div class="fb-name">Facebook & Instagram Ads</div>
-          <div class="fb-desc">Targeted ads jo aapke exact customers tak pahunche. Lead generation, sales & brand awareness — maximum ROI ke liye expert management.</div>
-          <div class="fb-chips">
-            <span class="fb-chip">✓ Campaign Setup</span>
-            <span class="fb-chip">✓ Audience Research</span>
-            <span class="fb-chip">✓ Creative Design</span>
-            <span class="fb-chip">✓ Performance Tracking</span>
-            <span class="fb-chip">✓ A/B Testing</span>
-          </div>
-        </div>
-      </div>
-      <div class="fb-price-side">
-        <div class="fb-amount">From ₹1,999</div>
-        <div class="fb-note">Service Fee + your own ad budget</div>
-        <a href="#pricing" class="fb-btn">See Meta Ads Plans →</a>
-      </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-icon">📈</div><div class="stat-num" data-count="70000" data-suffix="+">0</div><div class="stat-label">Reach Generated</div></div>
+      <div class="stat-card"><div class="stat-icon">👁️</div><div class="stat-num" data-count="170000" data-suffix="+">0</div><div class="stat-label">Views Managed</div></div>
+      <div class="stat-card"><div class="stat-icon">📊</div><div class="stat-num" data-text="Live">0</div><div class="stat-label">Reporting Dashboard</div></div>
+      <div class="stat-card"><div class="stat-icon">💬</div><div class="stat-num" data-text="24/7">0</div><div class="stat-label">WhatsApp Support</div></div>
+      <div class="stat-card"><div class="stat-icon">📍</div><div class="stat-num" data-text="Local">0</div><div class="stat-label">Business Growth Focus</div></div>
     </div>
   </div>
 </section>
 
-<!-- FREE HOSTING -->
+<!-- WEBSITE DEVELOPMENT -->
+<section id="services" class="services-bg">
+  <div class="section-inner">
+    <div class="sec-center">
+      <div class="sec-badge">Website Development</div>
+      <h2 class="sec-title">Everything You Need to <span class="cyan">Dominate</span> Online</h2>
+      <p class="sec-sub">From personal portfolios to full business websites — premium quality, honest prices, lifetime free hosting. Drag karo ya arrow dabao.</p>
+    </div>
+
+    <div class="cf-wrap">
+      <div class="cf-stage">
+        <div class="cf-track" id="svcStack">
+          <div class="cf-card" data-color="blue" data-index="0">
+            <div class="cf-icon ic-blue">👤</div>
+            <div class="cf-tier">Basic</div>
+            <div class="cf-name">Portfolio Website</div>
+            <div class="cf-feats">
+              <div class="cf-feat">Name, Photo, Skills & Education</div>
+              <div class="cf-feat">100% Mobile Responsive</div>
+              <div class="cf-feat hl">FREE Hosting — Lifetime</div>
+            </div>
+            <div class="cf-price-row"><div class="cf-price">₹1,499</div><div class="cf-price-note">one time</div></div>
+            <a href="https://wa.me/918959992195" target="_blank" class="cf-btn cf-ghost">Order on WhatsApp</a>
+          </div>
+          <div class="cf-card" data-color="orange" data-index="1">
+            <div class="cf-icon ic-orange">📱</div>
+            <div class="cf-tier">Professional</div>
+            <div class="cf-name">Portfolio + PWA App</div>
+            <div class="cf-feats">
+              <div class="cf-feat">Everything in Basic +</div>
+              <div class="cf-feat hl">Phone pe Install (App)</div>
+              <div class="cf-feat">Animations & Offline Support</div>
+            </div>
+            <div class="cf-price-row"><div class="cf-price">₹1,999</div><div class="cf-price-note">one time</div></div>
+            <a href="https://wa.me/918959992195" target="_blank" class="cf-btn cf-solid">Order on WhatsApp</a>
+          </div>
+          <div class="cf-card" data-color="red" data-index="2">
+            <div class="cf-icon ic-red">🎯</div>
+            <div class="cf-tier">Landing Page</div>
+            <div class="cf-name">High-Converting Page</div>
+            <div class="cf-feats">
+              <div class="cf-feat">Single Focused Page</div>
+              <div class="cf-feat">WhatsApp CTA + Testimonials</div>
+              <div class="cf-feat hl">Facebook Ads Ready</div>
+            </div>
+            <div class="cf-price-row"><div class="cf-price">₹2,499</div><div class="cf-price-note">one time</div></div>
+            <a href="https://wa.me/918959992195" target="_blank" class="cf-btn cf-ghost">Order on WhatsApp</a>
+          </div>
+          <div class="cf-card" data-color="yellow" data-index="3">
+            <div class="cf-icon ic-yellow">🏢</div>
+            <div class="cf-tier">Premium</div>
+            <div class="cf-name">Business Website</div>
+            <div class="cf-feats">
+              <div class="cf-feat">Multiple Pages + Gallery</div>
+              <div class="cf-feat">WhatsApp Float + Contact Form</div>
+              <div class="cf-feat hl">FREE Hosting + Domain Setup</div>
+            </div>
+            <div class="cf-price-row"><div class="cf-price">₹4,999</div><div class="cf-price-note">one time</div></div>
+            <a href="https://wa.me/918959992195" target="_blank" class="cf-btn cf-ghost">Order on WhatsApp</a>
+          </div>
+          <div class="cf-card" data-color="purple" data-index="4">
+            <div class="cf-icon ic-purple">🛒</div>
+            <div class="cf-tier">E-Commerce</div>
+            <div class="cf-name">Online Store</div>
+            <div class="cf-feats">
+              <div class="cf-feat">Product Catalog + Cart</div>
+              <div class="cf-feat">UPI/Online Payment Setup</div>
+              <div class="cf-feat hl">WhatsApp Order Alerts</div>
+              <div class="cf-feat" style="font-size:0.7rem;color:var(--text3);">*Normal usage free, business grow hone par minimal charges possible</div>
+            </div>
+            <div class="cf-price-row"><div class="cf-price">₹7,999</div><div class="cf-price-note">one time</div></div>
+            <a href="https://wa.me/918959992195" target="_blank" class="cf-btn cf-ghost">Order on WhatsApp</a>
+          </div>
+          <div class="cf-card" data-color="green" data-index="5">
+            <div class="cf-icon ic-green">📈</div>
+            <div class="cf-tier">SEO Service</div>
+            <div class="cf-name">Google Ranking</div>
+            <div class="cf-feats">
+              <div class="cf-feat">Search Console + GMB Setup</div>
+              <div class="cf-feat">On-Page SEO Optimization</div>
+              <div class="cf-feat hl">Monthly Ranking Report</div>
+            </div>
+            <div class="cf-price-row"><div class="cf-price">₹3,999</div><div class="cf-price-note">setup</div></div>
+            <a href="https://wa.me/918959992195" target="_blank" class="cf-btn cf-ghost">Order on WhatsApp</a>
+          </div>
+          <div class="cf-card" data-color="pink" data-index="6">
+            <div class="cf-icon ic-pink">📱</div>
+            <div class="cf-tier">Social Media</div>
+            <div class="cf-name">Management</div>
+            <div class="cf-feats">
+              <div class="cf-feat">8 Posts + 4 Reels/Month</div>
+              <div class="cf-feat">Caption & Hashtag Research</div>
+              <div class="cf-feat hl">Monthly Performance Report</div>
+            </div>
+            <div class="cf-price-row"><div class="cf-price">₹2,999</div><div class="cf-price-note">/month</div></div>
+            <a href="https://wa.me/918959992195" target="_blank" class="cf-btn cf-ghost">Order on WhatsApp</a>
+          </div>
+          <div class="cf-card" data-color="cyan" data-index="7">
+            <div class="cf-icon ic-cyan">🎨</div>
+            <div class="cf-tier">Branding</div>
+            <div class="cf-name">Logo & Brand Kit</div>
+            <div class="cf-feats">
+              <div class="cf-feat">3 Logo Concepts</div>
+              <div class="cf-feat">Brand Colors & Fonts Kit</div>
+              <div class="cf-feat hl">Free Business Card Design</div>
+            </div>
+            <div class="cf-price-row"><div class="cf-price">₹999</div><div class="cf-price-note">one time</div></div>
+            <a href="https://wa.me/918959992195" target="_blank" class="cf-btn cf-ghost">Order on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cf-nav">
+        <div class="cf-arrow" id="svcPrev">←</div>
+        <div class="cf-dots" id="svcDots"></div>
+        <div class="cf-arrow" id="svcNext">→</div>
+      </div>
+      <div class="cf-hint">👆 Drag karo, swipe karo ya arrow dabao</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
 <section>
   <div class="section-inner">
     <div class="free-grid">
@@ -784,44 +840,7 @@ footer {
         </div>
       </div>
       <div>
-        <div class="bar-chart">
-          <div class="bar-chart-title">📊 Cost & Time — Visual Compare</div>
-          <div class="bar-group">
-            <div class="bar-label">Website Cost</div>
-            <div class="bar-row">
-              <div class="bar-row-name">Others</div>
-              <div class="bar-track"><div class="bar-fill red" data-w="100"><span class="bar-fill-text">₹10,000+</span></div></div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-row-name">Hector365</div>
-              <div class="bar-track"><div class="bar-fill green" data-w="15"><span class="bar-fill-text">₹1,499</span></div></div>
-            </div>
-          </div>
-          <div class="bar-group">
-            <div class="bar-label">Delivery Time (hours)</div>
-            <div class="bar-row">
-              <div class="bar-row-name">Others</div>
-              <div class="bar-track"><div class="bar-fill red" data-w="100"><span class="bar-fill-text">~720 hrs</span></div></div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-row-name">Hector365</div>
-              <div class="bar-track"><div class="bar-fill green" data-w="7"><span class="bar-fill-text">24 hrs</span></div></div>
-            </div>
-          </div>
-          <div class="bar-group">
-            <div class="bar-label">Yearly Hosting Cost</div>
-            <div class="bar-row">
-              <div class="bar-row-name">Others</div>
-              <div class="bar-track"><div class="bar-fill red" data-w="100"><span class="bar-fill-text">₹5,000/yr</span></div></div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-row-name">Hector365</div>
-              <div class="bar-track"><div class="bar-fill green" data-w="3"><span class="bar-fill-text">₹0 FREE</span></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="comp-box" style="margin-top:1.5rem;">
+        <div class="comp-box">
           <div class="comp-title-row">⚡ Hector365 vs Others</div>
           <div class="comp-head">
             <div style="font-size:0.78rem;font-weight:700;">Feature</div>
@@ -841,140 +860,95 @@ footer {
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing" class="pricing-bg">
+<!-- META ADS SERVICES -->
+<section id="meta-ads" class="services-bg">
   <div class="section-inner">
     <div class="sec-center">
-      <div class="sec-badge">Pricing</div>
-      <h2 class="sec-title">Simple, <span class="blue">Honest</span> Pricing</h2>
-      <p class="sec-sub">Koi hidden charges nahi. Ek baar pay karo — website lifetime chale. Hosting ALWAYS free!</p>
+      <div class="sec-badge">Meta Ads Services</div>
+      <h2 class="sec-title">Facebook & Instagram <span class="cyan">Ads</span> That Convert</h2>
+      <p class="sec-sub">Targeted ads jo aapke exact customers tak pahunche. Service Fee + aapka apna Ad Budget — sab clearly alag, koi hidden charge nahi.</p>
     </div>
 
-    <div class="stack-wrap">
-      <div class="stack pc-stack" id="pcStack">
-        <div class="pc" data-index="0">
-          <div class="pc-tier">Website · Basic</div>
-          <div class="pc-name">Portfolio Website</div>
-          <div class="pc-price">₹1,499</div>
-          <div class="pc-note">One time only · FREE hosting lifetime · Zero yearly charges</div>
-          <div class="pc-feats">
-            <div class="pcf"><div class="pck">✓</div>Name, Photo, Skills</div>
-            <div class="pcf"><div class="pck">✓</div>Education & Experience</div>
-            <div class="pcf"><div class="pck">✓</div>Contact Section</div>
-            <div class="pcf"><div class="pck">✓</div>Mobile Responsive</div>
-            <div class="pcf"><div class="pck">✓</div>FREE Hosting Forever</div>
-            <div class="pcf"><div class="pck">✓</div>Delivered in 24 Hours</div>
-            <div class="pcf"><div class="pck">✓</div>1 Free Revision</div>
+    <div class="fb-card" style="margin-bottom:2.5rem;">
+      <div class="fb-left">
+        <div class="fb-icon">📢</div>
+        <div>
+          <div class="fb-name">Facebook & Instagram Ads</div>
+          <div class="fb-desc">Lead generation, sales & brand awareness — maximum ROI ke liye expert management aur live dashboard tracking.</div>
+          <div class="fb-chips">
+            <span class="fb-chip">✓ Campaign Setup</span>
+            <span class="fb-chip">✓ Audience Research</span>
+            <span class="fb-chip">✓ Creative Design</span>
+            <span class="fb-chip">✓ Performance Tracking</span>
+            <span class="fb-chip">✓ A/B Testing</span>
           </div>
-          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
         </div>
-        <div class="pc hot" data-index="1">
-          <div class="hot-badge">⭐ Most Popular</div>
-          <div class="pc-tier">Website · Professional</div>
-          <div class="pc-name">Portfolio + PWA App</div>
-          <div class="pc-price">₹1,999</div>
-          <div class="pc-note">One time only · FREE hosting lifetime · Zero yearly charges</div>
-          <div class="pc-feats">
-            <div class="pcf"><div class="pck">✓</div>Everything in Basic +</div>
-            <div class="pcf"><div class="pck">✓</div>Phone pe Install (App)</div>
-            <div class="pcf"><div class="pck">✓</div>Social Media Links</div>
-            <div class="pcf"><div class="pck">✓</div>Animations & Effects</div>
-            <div class="pcf"><div class="pck">✓</div>Offline Support</div>
-            <div class="pcf"><div class="pck">✓</div>Delivered in 48 Hours</div>
-            <div class="pcf"><div class="pck">✓</div>2 Free Revisions</div>
+      </div>
+      <div class="fb-price-side">
+        <div class="fb-amount">From ₹1,999</div>
+        <div class="fb-note">Service Fee + your own ad budget</div>
+        <a href="https://wa.me/918959992195" target="_blank" class="fb-btn">Order on WhatsApp →</a>
+      </div>
+    </div>
+
+    <div class="cf-wrap">
+      <div class="cf-stage">
+        <div class="cf-track" id="pcStack">
+          <div class="cf-card" data-color="teal" data-index="0">
+            <div class="cf-tier">Meta Ads · Starter</div>
+            <div class="cf-name">Starter Plan</div>
+            <div class="cf-feats">
+              <div class="cf-feat">Upto 15 Days · 1 Location</div>
+              <div class="cf-feat">Facebook & Instagram Ads</div>
+              <div class="cf-feat hl">Live Performance Dashboard</div>
+            </div>
+            <button class="cf-more" type="button">View Optimization Schedule <span class="arr">▾</span></button>
+            <div class="cf-detail">
+              <div class="cf-detail-row"><span>Day 3</span>CTR & response check, targeting tweak</div>
+              <div class="cf-detail-row"><span>Day 7</span>Budget shift to best-performing audience</div>
+              <div class="cf-detail-row"><span>Day 12</span>Final review + performance report</div>
+            </div>
+            <div class="cf-price-row"><div class="cf-price">₹1,999</div><div class="cf-price-note">service fee</div></div>
+            <a href="https://wa.me/918959992195" target="_blank" class="cf-btn cf-ghost">Order on WhatsApp</a>
           </div>
-          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-solid">Order on WhatsApp</a>
-        </div>
-        <div class="pc" data-index="2">
-          <div class="pc-tier">Website · Premium</div>
-          <div class="pc-name">Business Website</div>
-          <div class="pc-price">₹4,999</div>
-          <div class="pc-note">One time only · FREE hosting lifetime · Zero yearly charges</div>
-          <div class="pc-feats">
-            <div class="pcf"><div class="pck">✓</div>Everything in Pro +</div>
-            <div class="pcf"><div class="pck">✓</div>Multiple Pages</div>
-            <div class="pcf"><div class="pck">✓</div>Services & Gallery</div>
-            <div class="pcf"><div class="pck">✓</div>WhatsApp Float Button</div>
-            <div class="pcf"><div class="pck">✓</div>Active Contact Form</div>
-            <div class="pcf"><div class="pck">✓</div>Delivered in 72 Hours</div>
-            <div class="pcf"><div class="pck">✓</div>3 Free Revisions</div>
+          <div class="cf-card" data-color="teal" data-index="1">
+            <div class="cf-badge">⭐ Best Value</div>
+            <div class="cf-tier">Meta Ads · Growth</div>
+            <div class="cf-name">Growth Plan</div>
+            <div class="cf-feats">
+              <div class="cf-feat">Upto 30 Days · 2 Locations</div>
+              <div class="cf-feat">Campaign Setup & Optimization</div>
+              <div class="cf-feat hl">Live Performance Dashboard</div>
+            </div>
+            <button class="cf-more" type="button">View Optimization Schedule <span class="arr">▾</span></button>
+            <div class="cf-detail">
+              <div class="cf-detail-row"><span>Day 3</span>Initial response check, both locations</div>
+              <div class="cf-detail-row"><span>Day 7</span>Cost-per-result compare, budget rebalance</div>
+              <div class="cf-detail-row"><span>Day 10</span>Creative fatigue check, refresh if needed</div>
+              <div class="cf-detail-row"><span>Day 15</span>Mid-point full review, budget reallocation</div>
+              <div class="cf-detail-row"><span>Day 20</span>Performance trend check & tweak</div>
+              <div class="cf-detail-row"><span>Day 25-30</span>Final review + complete report</div>
+            </div>
+            <div class="cf-price-row"><div class="cf-price">₹3,999</div><div class="cf-price-note">service fee</div></div>
+            <a href="https://wa.me/918959992195" target="_blank" class="cf-btn cf-solid">Order on WhatsApp</a>
           </div>
-          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
-        </div>
-        <div class="pc" data-index="3">
-          <div class="pc-tier">Meta Ads · Starter</div>
-          <div class="pc-name">Starter Plan</div>
-          <div class="pc-price">₹1,999</div>
-          <div class="pc-note">Service Fee · Upto 15 Days</div>
-          <div class="pc-feats">
-            <div class="pcf"><div class="pck">✓</div>Upto 15 Days Campaign</div>
-            <div class="pcf"><div class="pck">✓</div>1 Location Targeting</div>
-            <div class="pcf"><div class="pck">✓</div>Facebook & Instagram Ads</div>
-            <div class="pcf"><div class="pck">✓</div>Campaign Setup & Monitoring</div>
-            <div class="pcf"><div class="pck">✓</div>Live Performance Dashboard</div>
-          </div>
-          <div class="pc-sched">
-            <div class="pc-sched-title">📋 Optimization Schedule</div>
-            <div class="pc-sched-row"><span>Day 3</span>CTR & response check, targeting tweak</div>
-            <div class="pc-sched-row"><span>Day 7</span>Budget shift to best-performing audience</div>
-            <div class="pc-sched-row"><span>Day 12</span>Final review + performance report</div>
-          </div>
-          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
-        </div>
-        <div class="pc hot" data-index="4">
-          <div class="hot-badge">⭐ Best Value</div>
-          <div class="pc-tier">Meta Ads · Growth</div>
-          <div class="pc-name">Growth Plan</div>
-          <div class="pc-price">₹3,999</div>
-          <div class="pc-note">Service Fee · Upto 30 Days</div>
-          <div class="pc-feats">
-            <div class="pcf"><div class="pck">✓</div>Upto 30 Days Campaign</div>
-            <div class="pcf"><div class="pck">✓</div>Upto 2 Locations Targeting</div>
-            <div class="pcf"><div class="pck">✓</div>Facebook & Instagram Ads</div>
-            <div class="pcf"><div class="pck">✓</div>Campaign Setup & Optimization</div>
-            <div class="pcf"><div class="pck">✓</div>Live Performance Dashboard</div>
-          </div>
-          <div class="pc-sched">
-            <div class="pc-sched-title">📋 Optimization Schedule</div>
-            <div class="pc-sched-row"><span>Day 3</span>Initial response check, both locations</div>
-            <div class="pc-sched-row"><span>Day 7</span>Cost-per-result compare, budget rebalance</div>
-            <div class="pc-sched-row"><span>Day 10</span>Creative fatigue check, refresh if needed</div>
-            <div class="pc-sched-row"><span>Day 15</span>Mid-point full review, budget reallocation</div>
-            <div class="pc-sched-row"><span>Day 20</span>Performance trend check & tweak</div>
-            <div class="pc-sched-row"><span>Day 25-30</span>Final review + complete report</div>
-          </div>
-          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-solid">Order on WhatsApp</a>
-        </div>
-        <div class="pc" data-index="5">
-          <div class="pc-tier">Meta Ads · Add-on Info</div>
-          <div class="pc-name">Ads Add-ons</div>
-          <div class="pc-price" style="font-size:1.5rem;">Flexible Pricing</div>
-          <div class="pc-note">Sab alag, koi hidden charge nahi</div>
-          <div class="pc-feats">
-            <div class="pcf"><div class="pck">💰</div>Ad Budget: aapke hisab se, min ₹150/day</div>
-            <div class="pcf"><div class="pck">🎨</div>Creative: Static ₹399 · Video ₹999</div>
-            <div class="pcf"><div class="pck">📍</div>Extra Campaign/Location: ₹500 · ₹999</div>
-            <div class="pcf"><div class="pck">🌐</div>Custom Domain (.com): + ₹799/year</div>
-          </div>
-          <p class="pc-disclaimer" style="margin-top:0;margin-bottom:1rem;">* Optimization days based on campaign performance, na ki sirf calendar ke hisab se.</p>
-          <a href="https://wa.me/918959992195" target="_blank" class="pc-btn pc-ghost">Order on WhatsApp</a>
         </div>
       </div>
 
-      <div class="stack-nav">
-        <div class="stack-arrow" id="pcPrev">←</div>
-        <div class="stack-dots" id="pcDots"></div>
-        <div class="stack-arrow" id="pcNext">→</div>
+      <div class="cf-nav">
+        <div class="cf-arrow" id="pcPrev">←</div>
+        <div class="cf-dots" id="pcDots"></div>
+        <div class="cf-arrow" id="pcNext">→</div>
       </div>
-      <div class="stack-hint">👆 Card ko swipe karo ya arrow dabao — Website Plans → Meta Ads Plans</div>
+      <div class="cf-hint">👆 Drag karo, swipe karo ya arrow dabao</div>
     </div>
 
-    <div class="addon-bar" style="margin-top:2rem;">
+    <div class="addon-bar" style="margin-top:2.5rem;">
       <div style="display:flex;align-items:center;gap:1rem">
         <div class="addon-icon">💰</div>
         <div>
           <div class="addon-title">Ad Budget — Aapke Hisab Se</div>
-          <div class="addon-sub">Service Fee ke alawa, Ad Budget (jo seedha Facebook/Instagram ko jaata hai) aap khud decide karte hain — minimum ₹150/day se shuru. Jitna budget, utna behtar reach & results. 100% transparent, koi markup nahi.</div>
+          <div class="addon-sub">Service Fee ke alawa, Ad Budget (jo seedha Facebook/Instagram ko jaata hai) aap khud decide karte hain — minimum ₹150/day se shuru. 100% transparent, koi markup nahi.</div>
         </div>
       </div>
     </div>
@@ -984,12 +958,12 @@ footer {
         <div class="addon-icon">🎨</div>
         <div>
           <div class="addon-title">ADD-ON: Ad Creative Design</div>
-          <div class="addon-sub">Result aapki creative pe depend karta hai. Hum professional, conversion-focused ad creatives banate hain jo aapke target audience ko attract karein — chahe parents ho ya customers.</div>
+          <div class="addon-sub">Result aapki creative pe depend karta hai. Hum professional, conversion-focused ad creatives banate hain — chahe parents ho ya customers.</div>
         </div>
       </div>
       <div>
         <div class="addon-price">Static: ₹399 · Video: ₹999</div>
-        <div class="addon-sub2">Per creative · Optional, apni khud ki creative bhi use kar sakte hain</div>
+        <div class="addon-sub2">Per creative · Optional</div>
       </div>
     </div>
 
@@ -998,12 +972,12 @@ footer {
         <div class="addon-icon">📍</div>
         <div>
           <div class="addon-title">ADD-ON: Extra Campaign / Location</div>
-          <div class="addon-sub">Already plan le liya hai aur ek naya location/campaign add karna hai? Existing plan ke andar hi naya campaign chalwayein, ya isse pura naya independent duration dein.</div>
+          <div class="addon-sub">Already plan le liya hai aur naya location/campaign add karna hai? Existing plan duration ke andar, ya naya independent duration.</div>
         </div>
       </div>
       <div>
         <div class="addon-price">₹500 · ₹999</div>
-        <div class="addon-sub2">₹500 = existing plan duration ke andar &nbsp;·&nbsp; ₹999 = apna pura naya 15-din duration</div>
+        <div class="addon-sub2">₹500 existing duration · ₹999 naya 15-din</div>
       </div>
     </div>
 
@@ -1012,7 +986,7 @@ footer {
         <div class="addon-icon">🌐</div>
         <div>
           <div class="addon-title">ADD-ON: Custom Domain (.com)</div>
-          <div class="addon-sub">Apna khud ka domain — e.g. <strong>yourname.com</strong> ya <strong>yourbusiness.com</strong> — website se professionally connect karein. Hosting still FREE!</div>
+          <div class="addon-sub">Apna khud ka domain — e.g. <strong>yourname.com</strong> — website se professionally connect karein. Hosting still FREE!</div>
         </div>
       </div>
       <div>
@@ -1077,6 +1051,10 @@ footer {
               <option>Professional Portfolio + App — ₹1,999</option>
               <option>Landing Page — ₹2,499</option>
               <option>Business Website — ₹4,999</option>
+              <option>E-Commerce Store — ₹7,999</option>
+              <option>SEO / Google Ranking — ₹3,999</option>
+              <option>Social Media Management — ₹2,999/mo</option>
+              <option>Logo & Branding — ₹999</option>
               <option>Meta Ads — Starter Plan (₹1,999)</option>
               <option>Meta Ads — Growth Plan (₹3,999)</option>
               <option>Meta Ads — Need Ad Creative Too</option>
@@ -1107,8 +1085,8 @@ footer {
       </div>
     </div>
     <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#services">Website</a>
+      <a href="#meta-ads">Meta Ads</a>
       <a href="https://www.instagram.com/officialhector365/" target="_blank">Instagram</a>
       <a href="https://www.facebook.com/hector365official" target="_blank">Facebook</a>
     </div>
@@ -1148,49 +1126,66 @@ document.querySelectorAll('.step,.fp,.clink,.comp-row').forEach(el => {
 });
 
 // ===== CARD STACK CAROUSEL (Services) =====
-function initStack(stackId, prevId, nextId, dotsId) {
-  const stack = document.getElementById(stackId);
-  if (!stack) return;
-  const cards = Array.from(stack.children);
+function initCoverflow(trackId, prevId, nextId, dotsId) {
+  const track = document.getElementById(trackId);
+  if (!track) return;
+  const cards = Array.from(track.children);
   const total = cards.length;
+  const stage = track.parentElement;
   let current = 0;
   let startX = 0, deltaX = 0, dragging = false;
 
+  // Responsive spacing: smaller gaps on narrow screens so side cards don't overflow
+  function getSpacing() {
+    const w = window.innerWidth;
+    if (w < 380) return { gap: 118, scaleStep: 0.22, rotate: 28, maxVisible: 1 };
+    if (w < 640) return { gap: 135, scaleStep: 0.2, rotate: 30, maxVisible: 1 };
+    if (w < 900) return { gap: 150, scaleStep: 0.14, rotate: 24, maxVisible: 2 };
+    return { gap: 195, scaleStep: 0.12, rotate: 28, maxVisible: 2 };
+  }
+
   const dotsWrap = document.getElementById(dotsId);
+  dotsWrap.innerHTML = '';
   cards.forEach((_, i) => {
     const d = document.createElement('div');
-    d.className = 'stack-dot' + (i === 0 ? ' active' : '');
+    d.className = 'cf-dot' + (i === 0 ? ' active' : '');
     d.addEventListener('click', () => goTo(i));
     dotsWrap.appendChild(d);
   });
   const dots = Array.from(dotsWrap.children);
 
-  function render() {
+  function render(withDrag) {
+    const { gap, scaleStep, rotate, maxVisible } = getSpacing();
     cards.forEach((card, i) => {
-      const rel = (i - current + total) % total;
-      card.style.zIndex = total - rel;
-      if (rel === 0) {
-        card.style.transform = 'translateX(0) scale(1) rotate(0deg)';
-        card.style.opacity = '1';
-        card.querySelectorAll(':scope > *').forEach(c => c.style.visibility = 'visible');
-      } else if (rel === 1) {
-        card.style.transform = 'translateX(18px) scale(0.95) rotate(2deg)';
-        card.style.opacity = '0.85';
-        card.querySelectorAll(':scope > *').forEach(c => c.style.visibility = 'hidden');
-      } else if (rel === 2) {
-        card.style.transform = 'translateX(32px) scale(0.9) rotate(4deg)';
-        card.style.opacity = '0.6';
-        card.querySelectorAll(':scope > *').forEach(c => c.style.visibility = 'hidden');
-      } else {
-        card.style.transform = 'translateX(40px) scale(0.85) rotate(5deg)';
+      let offset = i - current;
+      // wrap-around to shortest path
+      if (offset > total / 2) offset -= total;
+      if (offset < -total / 2) offset -= -total;
+      const dist = Math.abs(offset);
+      const dragPx = withDrag ? deltaX : 0;
+
+      if (dist > maxVisible) {
         card.style.opacity = '0';
-        card.querySelectorAll(':scope > *').forEach(c => c.style.visibility = 'hidden');
+        card.style.pointerEvents = 'none';
+        card.style.transform = `translate(-50%, -50%) translateX(${offset * gap + dragPx}px) scale(0.7)`;
+        card.style.zIndex = 0;
+        card.classList.remove('is-active');
+        return;
       }
+      card.style.pointerEvents = 'auto';
+      const scale = Math.max(1 - dist * scaleStep, 0.6);
+      const rotateY = offset === 0 ? 0 : (offset > 0 ? -rotate : rotate);
+      const translateX = offset * gap + dragPx;
+      const opacity = dist === 0 ? 1 : (dist === 1 ? 0.65 : 0.35);
+      card.style.transform = `translate(-50%, -50%) translateX(${translateX}px) rotateY(${rotateY}deg) scale(${scale})`;
+      card.style.opacity = opacity;
+      card.style.zIndex = 10 - dist;
+      card.classList.toggle('is-active', offset === 0);
     });
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
   }
 
-  function goTo(i) { current = ((i % total) + total) % total; render(); }
+  function goTo(i) { current = ((i % total) + total) % total; render(false); }
   function next() { goTo(current + 1); }
   function prev() { goTo(current - 1); }
 
@@ -1198,47 +1193,79 @@ function initStack(stackId, prevId, nextId, dotsId) {
   document.getElementById(prevId).addEventListener('click', prev);
 
   // Drag / swipe support
-  function onDown(x) { dragging = true; startX = x; stack.querySelector('.svc-card[style*="z-index: ' + total + '"]')?.classList.add('dragging'); }
+  function onDown(x) { dragging = true; startX = x; deltaX = 0; }
   function onMove(x) {
     if (!dragging) return;
     deltaX = x - startX;
-    const topCard = cards[current];
-    topCard.classList.add('dragging');
-    topCard.style.transform = `translateX(${deltaX}px) rotate(${deltaX * 0.05}deg)`;
+    render(true);
   }
   function onUp() {
     if (!dragging) return;
     dragging = false;
-    const topCard = cards[current];
-    topCard.classList.remove('dragging');
-    if (deltaX < -60) next();
-    else if (deltaX > 60) prev();
-    else render();
+    if (deltaX < -50) next();
+    else if (deltaX > 50) prev();
+    else render(false);
     deltaX = 0;
   }
 
-  stack.addEventListener('mousedown', e => onDown(e.clientX));
+  stage.addEventListener('mousedown', e => onDown(e.clientX));
   window.addEventListener('mousemove', e => onMove(e.clientX));
   window.addEventListener('mouseup', onUp);
-  stack.addEventListener('touchstart', e => onDown(e.touches[0].clientX), {passive:true});
-  stack.addEventListener('touchmove', e => onMove(e.touches[0].clientX), {passive:true});
-  stack.addEventListener('touchend', onUp);
+  stage.addEventListener('touchstart', e => onDown(e.touches[0].clientX), {passive:true});
+  stage.addEventListener('touchmove', e => {
+    onMove(e.touches[0].clientX);
+    if (dragging && Math.abs(deltaX) > 8) e.preventDefault();
+  }, {passive:false});
+  stage.addEventListener('touchend', onUp);
+  window.addEventListener('resize', () => render(false));
 
-  render();
+  // Clicking a side card brings it to center
+  cards.forEach((card, i) => {
+    card.addEventListener('click', (e) => {
+      if (i !== current && !e.target.closest('a,button')) goTo(i);
+    });
+  });
+
+  render(false);
 }
-initStack('svcStack', 'svcPrev', 'svcNext', 'svcDots');
-initStack('pcStack', 'pcPrev', 'pcNext', 'pcDots');
+initCoverflow('svcStack', 'svcPrev', 'svcNext', 'svcDots');
+initCoverflow('pcStack', 'pcPrev', 'pcNext', 'pcDots');
 
-// ===== BAR CHART ANIMATION =====
-const barObs = new IntersectionObserver(entries => {
+// Expandable "View Schedule" toggles inside pricing cards
+document.querySelectorAll('.cf-more').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const detail = btn.nextElementSibling;
+    const isOpen = btn.classList.toggle('open');
+    detail.style.maxHeight = isOpen ? detail.scrollHeight + 'px' : '0';
+  });
+});
+
+// ===== STAT COUNTER ANIMATION (Results & Proof) =====
+function formatNum(n) {
+  return n.toLocaleString('en-IN');
+}
+const statObs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.width = entry.target.dataset.w + '%';
-      barObs.unobserve(entry.target);
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    statObs.unobserve(el);
+    if (el.dataset.text) { el.textContent = el.dataset.text; return; }
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = formatNum(Math.floor(target * eased)) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = formatNum(target) + suffix;
     }
+    requestAnimationFrame(tick);
   });
 }, {threshold: 0.3});
-document.querySelectorAll('.bar-fill').forEach(bar => barObs.observe(bar));
+document.querySelectorAll('.stat-num').forEach(el => statObs.observe(el));
 </script>
 </body>
 </html>
