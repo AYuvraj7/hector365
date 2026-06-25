@@ -1,4 +1,4 @@
-const CACHE = 'hector365-v2';
+const CACHE = 'hector365-v3';
 const FILES = ['./index.html', './manifest.json', './logo.png'];
 
 // On install, pre-cache the core files (used as offline fallback only)
