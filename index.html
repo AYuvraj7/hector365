@@ -238,9 +238,13 @@ nav {
   background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
 }
 .stat-icon { font-size: 1.8rem; margin-bottom: 0.7rem; }
-.stat-num { font-size: 2.1rem; font-weight: 900; color: var(--blue2); line-height: 1; margin-bottom: 0.4rem; letter-spacing: -0.02em; }
+.stat-num { font-size: clamp(1.5rem, 5vw, 2.1rem); font-weight: 900; color: var(--blue2); line-height: 1; margin-bottom: 0.4rem; letter-spacing: -0.02em; word-break: keep-all; }
 .stat-label { font-size: 0.78rem; color: var(--text2); font-weight: 600; line-height: 1.4; }
 @media(max-width:900px){ .stats-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:480px){
+  .stat-card{ padding: 1.4rem 0.8rem; }
+  .stat-num{ font-size: clamp(1.3rem, 7vw, 1.8rem); }
+}
 
 /* SECTIONS */
 section { padding: 7rem 5rem; }
